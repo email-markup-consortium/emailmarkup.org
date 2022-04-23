@@ -18,9 +18,32 @@
       margin: auto;
       padding: 1rem;
       color: #222;
-      font-size: 16px;
+      font-size: 1rem;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
       line-height: 1.5;
+    }
+    a {
+        color:#222;
+    }
+    h2 {
+        display:inline;
+        padding-right:10px;
+    }
+    .social-nav{
+        padding-left:0;
+    }
+    .social-nav li {
+        display:inline;
+        padding-right:10px;
+    }
+    .social-nav li img {
+        width:30px;
+    }
+    .social-nav li img:hover {
+        transform: scale(1.5);
+    }
+    img.new-tab {
+        width:20px;
     }
   </style>
 </head>
@@ -49,26 +72,27 @@
   
   <p>Recipients should be able to easily access the content of every email sent to them, regardless of their device, email client, assistive technology or internet speed. The EMC collaborates with developers, creation and sending tools, and email clients to drive this vision forward at every step of the email journey.</p>
   
-  <h2>Quick Links</h2>
+  <h2>Quick Links</h2><img class="new-tab" src="img/new-tab-icon.png" alt="">
   
   <ul>
+    
     <li>
-      <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/mission.md">
-        Mission statement
+      <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/mission.md" target="_blank">
+        Mission Statement
       </a>
     </li>
     <li>
-      <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md">
+      <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md" target="_blank">
         Code of conduct
       </a>
     </li>
     <li>
-      <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/compliant-standards.md">
+      <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/compliant-standards.md" target="_blank">
         Compliant Standards
       </a>
     </li>
     <li>
-      <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/glossary.md">
+      <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/glossary.md" target="_blank">
         Glossary
       </a>
     </li>
@@ -79,17 +103,17 @@
   <h3>Join Us</h3>
   
   <ul>
-    <li><a href="https://forms.gle/XVdT3JGUbLZQEHXu6">Individual membership application form</a></li>
-    <li><a href="https://forms.gle/yifokDd3rfdFRG7i8">Corporate membership application form</a></li>
-    <li>Not ready to apply? Join the <a href="https://github.com/email-markup-consortium/email-markup-consortium/discussions">discussion on GitHub</a></li>
+    <li><a href="https://forms.gle/XVdT3JGUbLZQEHXu6" target="_blank">Individual membership application form</a></li>
+    <li><a href="https://forms.gle/yifokDd3rfdFRG7i8" target="_blank">Corporate membership application form</a></li>
+    <li>Not ready to apply? Join the <a href="https://github.com/email-markup-consortium/email-markup-consortium/discussions" target="_blank">discussion on GitHub</a></li>
   </ul>
   
   <h3>Spread the Word</h3>
   
   <ul>
-    <li><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Femailmarkup.org">Twitter</a></li>
-    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Femailmarkup.org">LinkedIn</a></li>
-    <li><a href="https://www.facebook.com/sharer?u=https%3A%2F%2Femailmarkup.org">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Femailmarkup.org" target="_blank">Twitter</a></li>
+    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Femailmarkup.org" target="_blank">LinkedIn</a></li>
+    <li><a href="https://www.facebook.com/sharer?u=https%3A%2F%2Femailmarkup.org" target="_blank">Facebook</a></li>
   </ul>
   
   <h2>Supporters</h2>
@@ -97,10 +121,10 @@
   <p>The Email Markup Consortium and its mission are supported by employees of Salesforce, Squarespace, Litmus, Email on Acid, SparkPost, Constant Contact, ActionRocket, Parcel, GitHub, and more.</p>
   
   <footer>
-    <ul>
-      <li><a href="https://forms.gle/1Qra9paKh8Ukm2NT7">Contact us</a></li>
-      <li><a href="https://twitter.com/emailmarkup">Twitter</a></li>
-      <li><a href="https://github.com/email-markup-consortium">GitHub</a></li>
+    <ul class="social-nav">
+      <li><a href="https://forms.gle/1Qra9paKh8Ukm2NT7" target="_blank"><img src="img/mail-icon.png" alt="contact us"></a></li>
+      <li><a href="https://twitter.com/emailmarkup"target="_blank"><img src="img/twitter-icon.png" alt="visit us on twitter"></a></li>
+      <li><a href="https://github.com/email-markup-consortium"target="_blank"><img src="img/github-icon.png" alt="go to our github repo"></a></li>
     </ul>
   </footer>
 </body>

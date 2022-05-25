@@ -214,23 +214,17 @@
 
     .navbar-links {
       display: flex;
+      gap: 25px;
       justify-content: center;
       align-items: center;
       padding-block: .4rem;
       padding-inline: 1rem;
+      list-style-type: none;
     }
 
     .navbar-links.is-contained-mobile {
       border-radius: 300px;
       background-color: var(--color-primary-offset);
-    }
-
-    .navbar-links a+a {
-      margin-inline-start: 2rem;
-    }
-
-    .navbar-links .icon+.icon {
-      margin-inline-start: .75rem;
     }
 
     .navbar-links a {
@@ -288,20 +282,28 @@
       </h1>
 
       <ul class="navbar-links is-contained-mobile">
-        <a href="https://github.com/email-markup-consortium/email-markup-consortium/discussions">Forum</a>
-        <a href="https://dev.to/emailmarkup">Blog</a>
+        <li>
+          <a href="https://github.com/email-markup-consortium/email-markup-consortium/discussions">Forum</a>
+        </li>
+        <li>
+          <a href="https://dev.to/emailmarkup">Blog</a>
+        </li>
 
-        <a class="icon" href="https://twitter.com/emailmarkup" target="_blank" aria-label="Twitter">
-          <svg viewBox="23 23 64 64">
-            <use xlink:href="#icon-twitter" width="110" height="110"></use>
-          </svg>
-        </a>
+        <li>
+          <a class="icon" href="https://twitter.com/emailmarkup" target="_blank" aria-label="Twitter">
+            <svg viewBox="23 23 64 64">
+              <use xlink:href="#icon-twitter" width="110" height="110"></use>
+            </svg>
+          </a>
+        </li>
         
-        <a class="icon" href="https://github.com/email-markup-consortium/" target="_blank" aria-label="GitHub">
-          <svg viewBox="23 23 64 64">
-            <use xlink:href="#icon-github" width="110" height="110"></use>
-          </svg>
-        </a>
+        <li>
+          <a class="icon" href="https://github.com/email-markup-consortium/" target="_blank" aria-label="GitHub">
+            <svg viewBox="23 23 64 64">
+              <use xlink:href="#icon-github" width="110" height="110"></use>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
 
@@ -453,31 +455,41 @@
   </main>
 
   <footer class="navbar">
-      <h1 class="navbar-logo">
+      <div class="navbar-logo">
         <a href="/" class="logo">
           <svg viewBox="0 0 170 50">
             <title>Email Markup Consortium</title>
             <use xlink:href="#logo-emc" width="170" height="48"></use>
           </svg>
         </a>
-      </h1>
+      </div>
 
       <ul class="navbar-links">
-        <a href="https://dev.to/emailmarkup">Blog</a>
-        <a href="https://dev.to/feed/emailmarkup">RSS</a>
-        <a href="https://forms.gle/fQ7eC6YwABDGTrYQ9">Contact</a>
-
-        <a class="icon" href="https://twitter.com/emailmarkup" target="_blank" aria-label="Twitter">
-          <svg viewBox="23 23 64 64">
-            <use xlink:href="#icon-twitter" width="110" height="110"></use>
-          </svg>
-        </a>
+        <li>
+          <a href="https://dev.to/emailmarkup">Blog</a>
+        </li>
+        <li>
+          <a href="https://dev.to/feed/emailmarkup">RSS</a>
+        </li>
+        <li>
+          <a href="https://forms.gle/fQ7eC6YwABDGTrYQ9">Contact</a>
+        </li>
         
-        <a class="icon" href="https://github.com/email-markup-consortium/" target="_blank" aria-label="GitHub">
-          <svg viewBox="23 23 64 64">
-            <use xlink:href="#icon-github" width="110" height="110"></use>
-          </svg>
-        </a>
+        <li>
+          <a class="icon" href="https://twitter.com/emailmarkup" target="_blank" aria-label="Twitter">
+            <svg viewBox="23 23 64 64">
+              <use xlink:href="#icon-twitter" width="110" height="110"></use>
+            </svg>
+          </a>
+        </li>
+        
+        <li>        
+          <a class="icon" href="https://github.com/email-markup-consortium/" target="_blank" aria-label="GitHub">
+            <svg viewBox="23 23 64 64">
+              <use xlink:href="#icon-github" width="110" height="110"></use>
+            </svg>
+          </a>
+        </li>
       </ul>
   </footer>
 

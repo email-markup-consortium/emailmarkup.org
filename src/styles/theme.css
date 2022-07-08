@@ -54,10 +54,13 @@
 	--color-purple: var(--color-base-purple), 54%;
 	--color-red: var(--color-base-red), 54%;
 	--color-yellow: var(--color-base-yellow), 59%;
+	
+	--color-brand: 185, 77%, 22%;
 }
 
 :root {
 	color-scheme: light;
+	--theme-brand-primary: hsl(var(--color-brand));
 	--theme-accent: hsla(var(--color-blue), 1);
 	--theme-text-accent: hsla(var(--color-blue), 1);
 	--theme-accent-opacity: 0.15;
@@ -87,6 +90,7 @@ body {
 
 :root.theme-dark {
 	color-scheme: dark;
+	--theme-brand-primary: hsl(0, 0%, 100%);
 	--theme-accent-opacity: 0.15;
 	--theme-accent: hsla(var(--color-blue), 1);
 	--theme-text-accent: hsla(var(--color-blue), 1);

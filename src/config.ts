@@ -35,10 +35,11 @@ export const KNOWN_LANGUAGES = {
 export const SIDEBAR = {
 	en: [
 		{ text: '', header: true },
+		{ text: 'Home', link: '' },
+		
 		{ text: 'Pages', header: true },
-		{ text: 'Introduction', link: 'en/introduction' },
-		{ text: 'Mission', link: 'en/mission' },
-		{ text: 'Glossary', link: 'en/glossary' },
-		{ text: 'Compliant Standards', link: 'en/compliant-standards' }
+		{ text: 'Mission', link: 'en/docs/mission' },
+		{ text: 'Glossary', link: 'en/docs/glossary' },
+		{ text: 'Compliant Standards', link: 'en/docs/compliant-standards' }
 	],
 };

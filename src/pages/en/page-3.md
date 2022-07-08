@@ -1,7 +1,7 @@
 ---
 title: Page 3
 description: Lorem ipsum dolor sit amet - 3
-layout: ../../layouts/MainLayout.astro
+layout: '@layouts/MainLayout'
 ---
 
 This is a fully-featured page, written in Markdown!
@@ -20,7 +20,7 @@ Nam quam dolor, pellentesque sed odio euismod, feugiat tempus tellus. Quisque ar
 ---
 title: Markdown Page!
 lang: en
-layout: ~/layouts/MainLayout.astro
+layout: ~/'@layouts/MainLayout'.astro
 ---
 
 # Markdown example

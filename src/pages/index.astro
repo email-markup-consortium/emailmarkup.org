@@ -1,24 +1,16 @@
+---
+import HeadCommon from '@components/HeadCommon';
+import HeadSEO from '@components/HeadSEO';
+
+const { content = {} } = Astro.props;
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <HeadCommon />
+  <HeadSEO {content} canonicalURL={Astro.canonicalURL} />  
   
-  <title>Email Markup Consortium</title>
-  <meta name="description" content="A community-led group of industry professionals working to improve the email experience for everyone">
-  
-  <meta property="og:title" content="Email Markup Consortium"/>
-  <meta property="og:description" content="A community-led group of industry professionals working to improve the email experience for everyone" />
-  <meta property="og:site_name" content="Email Markup Consortium" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://emailmarkup.org"/>
-
-  
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=PT+Mono:wght@400&family=Work+Sans:ital,wght@0,500;0,700;1,500">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
 
   <style>
     /* base */

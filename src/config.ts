@@ -1,17 +1,15 @@
 export const SITE = {
-	title: 'Documentation',
-	description: 'Your website description.',
+	title: 'Email Markup Consortium',
+	description: 'A community-led group of industry professionals working to improve the email experience for everyone',
 	defaultLanguage: 'en_US',
 };
 
 export const OPEN_GRAPH = {
 	image: {
-		src: 'https://github.com/withastro/astro/blob/main/assets/social/banner.jpg?raw=true',
-		alt:
-			'astro logo on a starry expanse of space,' +
-			' with a purple saturn-like planet floating in the right foreground',
+		src: 'https://emailmarkup.org/img/default-og-image.png',
+		alt: 'Email Markup Consortium logo'
 	},
-	twitter: 'astrodotbuild',
+	twitter: 'EmailMarkup',
 };
 
 export const KNOWN_LANGUAGES = {
@@ -36,7 +34,8 @@ export const SIDEBAR = {
 	en: [
 		{ text: '', header: true },
 		{ text: 'Home', link: '' },
-		
+		{ text: 'Code of Conduct', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md' },
+
 		{ text: 'Pages', header: true },
 		{ text: 'Mission', link: 'en/docs/mission' },
 		{ text: 'Glossary', link: 'en/docs/glossary' },

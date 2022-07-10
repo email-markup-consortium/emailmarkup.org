@@ -140,10 +140,11 @@ const { content = {} } = Astro.props;
       text-decoration: none;
       background-color: var(--color-primary);
       color: var(--color-txt-contrast);
-      padding: .7rem 1.17rem;
+      padding: .5rem 1.17rem;
       border-radius: 300px;
       font-size: 1.1rem;
       transition: .2s background-color linear;
+      display: inline-block;
     }
     .btn:hover {
       background-color: var(--color-primary-offset);
@@ -339,38 +340,8 @@ const { content = {} } = Astro.props;
       <p>
         Recipients should be able to easily access the content of every email sent to them, regardless of their device, email client, assistive technology or internet speed. The EMC collaborates with developers, creation and sending tools, and email clients to drive this vision forward at every step of the email journey.
       </p>
-    </section>
 
-
-    <section class="container has-padding-t-0 cols">
-      <div class="col">
-        <h2>Quick Links</h2>
-      </div>
-
-      <div class="col has-txt-bold">
-        <ul>
-          <li>
-            <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/mission.md">
-              Mission Statement
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md">
-              Code of conduct
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/compliant-standards.md">
-              Compliant Standards
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/email-markup-consortium/email-markup-consortium/blob/main/glossary.md">
-              Glossary
-            </a>
-          </li>
-        </ul>
-      </div>
+      <a href="/en/docs/" class="btn">Read the docs</a>
     </section>
 
 

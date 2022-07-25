@@ -35,6 +35,7 @@ export const SIDEBAR = {
 		{ text: '', header: true },
 		{ text: 'Home', link: '' },
 		{ text: 'Code of Conduct', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md' },
+		{ text: 'Sponsors', link: 'en/sponsors' },
 
 		{ text: 'Pages', header: true },
 		{ text: 'Mission', link: 'en/docs/mission' },

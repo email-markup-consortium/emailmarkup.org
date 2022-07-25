@@ -23,7 +23,7 @@ const { content = {} } = Astro.props;
       --color-txt-contrast: #fff;
 
       --color-neutral: #fff;
-      --color-secondary: #3dbdb6;
+      --color-secondary: #E9EAF7;
       --color-primary: #0d5c63;
       --color-primary-offset: #167073;
     }
@@ -99,6 +99,10 @@ const { content = {} } = Astro.props;
       font-weight: 700;
     }
 
+    .txt-primrary {
+      color: var(--color-primary);
+    }
+
     .has-bg-neutral {
       background-color: var(--color-neutral);
     }
@@ -111,7 +115,7 @@ const { content = {} } = Astro.props;
       background-color: var(--color-primary);
     }
 
-    .has-bg-primary *, .has-bg-secondary * {
+    .has-bg-primary * {
       color: var(--color-txt-contrast);
     }
 
@@ -215,15 +219,21 @@ const { content = {} } = Astro.props;
       list-style-type: none;
     }
 
-    .navbar-links.is-contained-mobile {
-      border-radius: 300px;
-      background-color: var(--color-primary-offset);
-    }
-
     .navbar-links a {
       text-decoration: none;
       font-size: .9rem;
       vertical-align: middle;
+    }
+
+    @media screen and (max-width:600px) {
+      .navbar-links.is-contained-mobile {
+        border-radius: 300px;
+        background-color: var(--color-primary-offset);
+      }
+
+      .navbar-links.is-contained-mobile a {
+        color: var(--color-txt-contrast);
+      }
     }
 
     @media screen and (min-width:600px) {
@@ -305,7 +315,7 @@ const { content = {} } = Astro.props;
     </div>
 
     <div class="container is-hero">
-      <p class="hero-tagline">
+      <p class="hero-tagline txt-primrary">
         Working to improve the user experience, accessibility, performance, consistency, and reliability of email markup
       </p>
   

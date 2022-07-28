@@ -25,6 +25,14 @@ Accessibility issues are categorized into 4 categories depending on how serious 
 - **Serious** - Results in serious barriers for people with disabilities, and will partially prevent them from accessing fundamental features or content. People relying on assistive technologies will experience significant frustration as a result. Issues falling under this category are major problems, and remediation should be a priority. Should be very common.
 - **Critical** - Results in blocked content for people with disabilities, and will definitely prevent them from accessing fundamental features or content. This type of issue puts your organization at risk. Prioritize fixing as soon as possible, within the week if possible. Remediation should be a top priority. Should be infrequent.
 
+## Results interpretation
+
+We analyze the HTML email code that is sent to the user as is.
+
+The HTML that gets sent does not always reflect the efforts made by the HTML email developer to build accessible emails. This is because sender tools may modify the HTML before it is sent. Similarly, this does not mean accessibility issues are always the sender tool's fault.
+
+Email clients may also modify the HTML code that is eventually rendered on the page. This could introduce accessibility issues that the unmodified HTML email addresses. Issues introduced by email clients in the browser may not be covered in these reports.
+
 ## Reports
 
 <ul>

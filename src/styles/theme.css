@@ -127,3 +127,8 @@ body {
 	color: var(--theme-selection-color);
 	background-color: var(--theme-selection-bg);
 }
+
+
+:root.theme-dark img.dark-scheme-invert {
+	filter: grayscale(1) invert(1);
+}

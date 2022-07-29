@@ -8,6 +8,9 @@ setup: |
   posts = posts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 ---
 
+> **Sponsor**
+> <a href="https://parcel.io"><img class="dark-scheme-invert" src="/img/logo-parcel-light.png" alt="Parcel.io"></a>
+
 ## Data
 
 Reports published here relies on data sourced by the the Email Markup Consortium [Data Collection project](https://dev.to/emailmarkup/collecting-data-1gdb) unless otherwise stated.

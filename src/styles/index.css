@@ -383,3 +383,9 @@ h2.heading {
 :target {
 	scroll-margin: calc(var(--theme-sidebar-offset, 5rem) + 2rem) 0 2rem;
 }
+
+blockquote img {
+	display: block;
+	max-width: 350px;
+	margin-top: 2rem;
+}

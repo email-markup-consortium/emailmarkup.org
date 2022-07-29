@@ -40,6 +40,9 @@ export const SIDEBAR = {
 		{ text: 'Pages', header: true },
 		{ text: 'Mission', link: 'en/docs/mission' },
 		{ text: 'Glossary', link: 'en/docs/glossary' },
-		{ text: 'Compliant Standards', link: 'en/docs/compliant-standards' }
+		{ text: 'Compliant Standards', link: 'en/docs/compliant-standards' },
+
+		{ text: 'Reports', header: true },
+		{ text: 'Accessibility', link: 'en/reports/accessibility' },
 	],
 };

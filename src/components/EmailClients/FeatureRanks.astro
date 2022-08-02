@@ -1,0 +1,222 @@
+---
+const response = await fetch('https://www.caniemail.com/api/data.json');
+const caniemail = await response.json();
+
+function getCaniemailFeatureName(slug) {
+  return caniemail.data.find(feature => feature.slug == slug).title
+}
+
+function getCaniemailFeaturesURL(features) {
+  return `https://caniemail.com/search/?s=${features.join(encodeURIComponent('+'))}`;
+}
+
+
+// {"accessibility":[], "performance":[], ...
+let tags = {};
+
+
+// {"families":{"gmail":{"name":"Gmail","clients":{"desktop-webmail":{"tags":["y":[], "n":[], "a":[]]},"ios":{"tags":[]}, ...
+let emailClientFamilies = {
+  families: {},
+
+  // families[familyName].clients[clientName].tags[tagName][support]
+  addFeatureToTag: function (emailClientFamily, emailClient, tag, featureSlug, support) {
+    this.addClientToFamily(emailClientFamily, emailClient);
+    this.addTagToClient(emailClientFamily, emailClient, tag);
+
+    this.families[emailClientFamily]
+      .clients[emailClient]
+      .tags[tag][support].push(featureSlug);
+  },
+
+
+
+  // families[familyName].clients[clientName].tags[tagName]
+  addTagToClient: function (emailClientFamily, emailClient, tag) {
+    if (!this.tagExists(emailClientFamily, emailClient, tag)) {
+      this.families[emailClientFamily]
+        .clients[emailClient]
+        .tags[tag] = {
+          'y': [],
+          'a': [],
+          'n': [],
+          'u': []
+        };
+    }
+  },
+
+
+
+  // families[familyName].clients[clientName]
+  addClientToFamily: function (emailClientFamily, emailClient) {
+    if (!this.clientExists(emailClientFamily, emailClient)) {
+      this.families[emailClientFamily]
+          .clients[emailClient] = { tags: [] };
+    }
+  },
+
+
+
+  clientExists(emailClientFamily, emailClient) {
+    return this.families[emailClientFamily]
+                .clients.hasOwnProperty(emailClient);
+  },
+
+
+
+  tagExists(emailClientFamily, emailClient, tag) {
+    return this.families[emailClientFamily]
+              .clients[emailClient]
+              .tags.hasOwnProperty(tag);
+  }
+};
+
+
+
+
+// populate emailClientFamilies with families
+for (const [key, value] of Object.entries(caniemail.nicenames.family)) {
+  emailClientFamilies.families[key] = {
+    name: value,
+    clients: {}
+  }
+}
+
+
+
+
+// loop over caniemail data and get data we care about
+// populate tags with tagNames and features
+// populate emailClientFamilies with email clients and tagged features
+caniemail.data
+  .filter(feature => feature.tags.length)
+  .forEach(feature => {
+
+    // add unique tag names and tagged features
+    feature.tags.forEach(tag => {
+      if (!tags.hasOwnProperty(tag)) {
+        tags[tag] = [];
+      }
+
+      // add feature to tags.tagName
+      if (!tags[tag].includes(feature.slug)) {
+        tags[tag].push(feature.slug)
+      }
+    });
+
+
+
+
+    // loop over families, then loop over clients
+    for (const [emailClientFamily, emailClients] of Object.entries(feature.stats)) {
+      for (const [emailClient, stats] of Object.entries(emailClients)) {
+        // only care about current support (last val from list)
+        // e.g. values `y`, `a #1`
+        let currentSupport = Object.values(stats).pop().toString().trim()[0];
+
+        // add tags and feature to email client data
+        feature.tags.forEach(tag => {
+          emailClientFamilies.addFeatureToTag(
+            emailClientFamily,
+            emailClient,
+            tag,
+            feature.slug,
+            currentSupport
+          );
+        });
+      }
+    }
+  })
+---
+
+
+<h2>Feature Categories</h2>
+{ Object.entries(tags).map(([tagName, tagFeatures]) => (
+  <details>
+      <summary>
+        <h3>{tagName}</h3>
+      </summary>
+      <ul class="mulit-cols">
+        {tagFeatures.map(featureName => <li>{getCaniemailFeatureName(featureName)}</li>)}
+      </ul>
+  </details>
+)) }
+
+
+{ Object.entries(emailClientFamilies.families).map(([emailClientFamily, emailClients]) => (
+  <Fragment>
+    <h2>{emailClients.name}</h2>
+
+
+    { Object.entries(emailClients.clients).map(([emailClientName, emailClientData]) => (
+      <Fragment>
+        <h3>{emailClientName}</h3>
+      
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Supported</th>
+              <th>Partial</th>
+              <th>Unsupported</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            { Object.entries(emailClientData.tags).sort().map(([tagName, features]) => (
+              <Fragment>
+                <tr>
+                  <td>
+                    {tagName}
+                  </td>
+                  <td>
+                    {features.y.length}
+                    {
+                      features.y.length ? <span>(<a href={getCaniemailFeaturesURL(features.y)}>view</a>)</span> : ''
+                    }
+                  </td>
+                  <td>
+                    {features.a.length} 
+                    {
+                      features.a.length ? <span>(<a href={getCaniemailFeaturesURL(features.a)}>view</a>)</span> : ''
+                    }
+                  </td>
+                  <td>
+                    {features.n.length} 
+                    {
+                      features.n.length ? <span>(<a href={getCaniemailFeaturesURL(features.n)}>view</a>)</span> : ''
+                    }
+                  </td>
+                  <td>
+                    {tags[tagName].length}
+                  </td>
+                  
+                  <!-- dummy: Astro won't render without another element -->
+                  <template></template>
+                </tr>
+              </Fragment>
+            )) }
+          </tbody>
+        </table>
+      </Fragment>
+    )) }
+
+    
+  </Fragment>
+)) }
+
+
+
+
+<style>
+  details h3 {
+    display: inline-block;
+  }
+
+  @media screen and (min-width:450px) {
+    .mulit-cols {
+      column-count: 2;
+    }
+  }
+</style>

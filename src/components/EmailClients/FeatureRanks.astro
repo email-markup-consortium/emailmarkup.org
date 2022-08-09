@@ -21,14 +21,20 @@ let emailClientFamilies = {
 
   // families[familyName].clients[clientName].tags[tagName][support]
   addFeatureToTag: function (emailClientFamily, emailClient, tag, featureSlug, support) {
-    this.addClientToFamily(emailClientFamily, emailClient);
-    this.addTagToClient(emailClientFamily, emailClient, tag);
-
     this.families[emailClientFamily]
       .clients[emailClient]
       .tags[tag][support].push(featureSlug);
   },
 
+
+  // adds a tag to all email clients (families[familyName].clients)
+  addTagToAllClients: function (tag) {
+    for (const [familyID, familyData] of Object.entries(this.families)) {
+      for (const clientID in familyData.clients) {
+        this.addTagToClient(familyID, clientID, tag)
+      }
+    }
+  },
 
 
   // families[familyName].clients[clientName].tags[tagName]
@@ -46,7 +52,6 @@ let emailClientFamilies = {
   },
 
 
-
   // families[familyName].clients[clientName]
   addClientToFamily: function (emailClientFamily, emailClient) {
     if (!this.clientExists(emailClientFamily, emailClient)) {
@@ -56,12 +61,10 @@ let emailClientFamilies = {
   },
 
 
-
   clientExists(emailClientFamily, emailClient) {
     return this.families[emailClientFamily]
                 .clients.hasOwnProperty(emailClient);
   },
-
 
 
   tagExists(emailClientFamily, emailClient, tag) {
@@ -90,12 +93,22 @@ for (const [key, value] of Object.entries(caniemail.nicenames.family)) {
 // populate emailClientFamilies with email clients and tagged features
 caniemail.data
   .filter(feature => feature.tags.length)
-  .forEach(feature => {
+  // add all email clients to email client families
+  .map(feature => {
+    for (const [emailClientFamily, emailClients] of Object.entries(feature.stats)) {
+      Object.keys(emailClients).forEach(client => emailClientFamilies.addClientToFamily(emailClientFamily, client));
+    }
 
-    // add unique tag names and tagged features
+    return feature;
+  })
+  // add all tag categories and features to `tags`
+  // add all tags to all email clients
+  .map(feature => {
     feature.tags.forEach(tag => {
       if (!tags.hasOwnProperty(tag)) {
         tags[tag] = [];
+        
+        emailClientFamilies.addTagToAllClients(tag);
       }
 
       // add feature to tags.tagName
@@ -104,10 +117,11 @@ caniemail.data
       }
     });
 
-
-
-
-    // loop over families, then loop over clients
+    return feature;
+  })
+  // populate categorised features in each email clients
+  // "stats": {"family":{"client":{}, "another-client":{}}, "apple-mail":{"macos":{},"ios":{}},"gmail":{...}, ...}
+  .forEach(feature => {
     for (const [emailClientFamily, emailClients] of Object.entries(feature.stats)) {
       for (const [emailClient, stats] of Object.entries(emailClients)) {
         // only care about current support (last val from list)

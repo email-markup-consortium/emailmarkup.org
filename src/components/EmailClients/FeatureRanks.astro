@@ -11,6 +11,23 @@ function getCaniemailFeaturesURL(features) {
 }
 
 
+function findUntestedFeatures(tagName, testedFeatures) {
+  return tags[tagName].filter(feature => {
+    for(const [support, features] of Object.entries(testedFeatures)) {
+      if(support == 'u') {
+        continue;
+      }
+
+      if (features.includes(feature)) {
+        return false;
+      }
+    }
+
+    return true;
+  })
+}
+
+
 // {"accessibility":[], "performance":[], ...
 let tags = {};
 
@@ -173,6 +190,7 @@ caniemail.data
               <th>Supported</th>
               <th>Partial</th>
               <th>Unsupported</th>
+              <th>Untested</th>
               <th>Total</th>
             </tr>
           </thead>
@@ -202,6 +220,13 @@ caniemail.data
                       features.n.length ? <span>(<a href={getCaniemailFeaturesURL(features.n)}>view</a>)</span> : ''
                     }
                   </td>
+                  <td>
+                    {findUntestedFeatures(tagName, features).length} 
+                    {
+                      findUntestedFeatures(tagName, features).length ? <span>(<a href={getCaniemailFeaturesURL(findUntestedFeatures(tagName, features))}>view</a>)</span> : ''
+                    }
+                  </td>
+                  
                   <td>
                     {tags[tagName].length}
                   </td>

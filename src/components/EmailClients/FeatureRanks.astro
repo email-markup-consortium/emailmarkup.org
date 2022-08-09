@@ -174,7 +174,9 @@ caniemail.data
 )) }
 
 
-{ Object.entries(emailClientFamilies.families).map(([emailClientFamily, emailClients]) => (
+{ Object.entries(emailClientFamilies.families)
+  .filter(([emailClientFamily, emailClients]) => Object.keys(emailClients.clients).length)
+  .map(([emailClientFamily, emailClients]) => (
   <Fragment>
     <h2>{emailClients.name}</h2>
 

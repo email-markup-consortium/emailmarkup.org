@@ -1,0 +1,14 @@
+---
+let posts = await Astro.glob('../pages/en/reports/accessibility/*.md');
+posts = posts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+---
+
+<ul>
+  {posts.map(post => (
+    <li>
+      <a href={post.url}>
+        {post.frontmatter.title}
+      </a>
+    </li>
+  ))}
+</ul>

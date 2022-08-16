@@ -15,12 +15,13 @@ const { content = {} } = Astro.props;
 const currentPage = new URL(Astro.request.url).pathname;
 const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
 const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + currentFile;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html dir={content.dir ?? 'ltr'} lang={content.lang ?? 'en-us'} class="initial">
 	<head>
 		<HeadCommon />
-		<HeadSEO {content} canonicalURL={Astro.canonicalURL} />
+		<HeadSEO {content} {canonicalURL} />
 		<style>
 			body {
 				width: 100%;

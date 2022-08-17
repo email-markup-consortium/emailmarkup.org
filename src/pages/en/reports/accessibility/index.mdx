@@ -2,14 +2,13 @@
 title: Accessibility Reports
 description:
 layout: "@layouts/MainLayout"
-
-setup: |
-  let posts = await Astro.glob('./*.md');
-  posts = posts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 ---
+import AccessibilityReportsList from '@components/AccessibilityReportsList'
+
 
 > **Sponsor**
-> <a href="https://parcel.io"><img class="dark-scheme-invert" src="/img/logo-parcel-light.png" alt="Parcel.io"></a>
+> <a href="https://parcel.io"><img class="dark-scheme-invert" src="/img/logo-parcel-light.png" alt="Parcel.io" /></a>
+
 
 ## Data
 
@@ -38,12 +37,4 @@ Email clients may also modify the HTML code that is eventually rendered on the p
 
 ## Reports
 
-<ul>
-{posts.map(post => (
-  <li>
-    <a href={post.url}>
-      {post.frontmatter.title}
-    </a>
-  </li>
-))}
-</ul>
+<AccessibilityReportsList />

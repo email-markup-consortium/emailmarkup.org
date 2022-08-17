@@ -1,6 +1,6 @@
 ---
-import { getLanguageFromURL } from '../../languages.ts';
-import { SIDEBAR } from '../../config.ts';
+import { getLanguageFromURL } from '../../languages';
+import { SIDEBAR } from '../../config';
 const { currentPage } = Astro.props;
 const currentPageMatch = currentPage.slice(1);
 const langCode = getLanguageFromURL(currentPage);
@@ -9,7 +9,7 @@ const sidebarSections = SIDEBAR[langCode].reduce((col, item, i) => {
 	// If the first item is not a section header, create a new container section.
 	if (i === 0) {
 		if (!item.header) {
-			const pesudoSection = { text: "" };
+			const pesudoSection = { text: '' };
 			col.push({ ...pesudoSection, children: [] });
 		}
 	}
@@ -31,7 +31,10 @@ const sidebarSections = SIDEBAR[langCode].reduce((col, item, i) => {
 					<ul>
 						{section.children.map((child) => (
 							<li class="nav-link">
-								<a href={child.link.startsWith('http') ? child.link : `${Astro.site.pathname}${child.link}`} aria-current={`${currentPageMatch === child.link ? 'page' : 'false'}`}>
+								<a
+									href={`${Astro.site.pathname}${child.link}`}
+									aria-current={`${currentPageMatch === child.link ? 'page' : 'false'}`}
+								>
 									{child.text}
 								</a>
 							</li>

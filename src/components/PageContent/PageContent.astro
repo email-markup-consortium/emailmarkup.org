@@ -1,17 +1,16 @@
 ---
 import MoreMenu from '../RightSidebar/MoreMenu.astro';
-import TableOfContents from '../RightSidebar/TableOfContents.tsx';
+import TableOfContents from '../RightSidebar/TableOfContents';
 
-const { content, githubEditUrl } = Astro.props;
-const title = content.title;
-const headers = content.astro.headers;
+const { frontmatter, headings, githubEditUrl } = Astro.props;
+const title = frontmatter.title;
 ---
 
 <article id="article" class="content">
 	<section class="main-section">
 		<h1 class="content-title" id="overview">{title}</h1>
 		<nav class="block sm:hidden">
-			<TableOfContents client:media="(max-width: 50em)" {headers} />
+			<TableOfContents client:media="(max-width: 50em)" {headings} />
 		</nav>
 		<slot />
 	</section>
@@ -29,9 +28,11 @@ const headers = content.astro.headers;
 		display: flex;
 		flex-direction: column;
 	}
+
 	.content > section {
 		margin-bottom: 4rem;
 	}
+
 	.block {
 		display: block;
 	}

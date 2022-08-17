@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.13.1",
-    "@astrojs/mdx": "^0.9.0",
+    "@astrojs/mdx": "^0.10.0",
     "@docsearch/css": "^3.1.0",
     "@docsearch/react": "^3.1.0",
     "@types/react": "^17.0.45",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@astrojs/preact": "^0.3.1",
     "@astrojs/react": "^0.2.0",
-    "@astrojs/sitemap": "^0.2.6",
-    "astro": "^1.0.0"
+    "@astrojs/sitemap": "^1.0.0",
+    "astro": "^1.0.6"
   }
 }

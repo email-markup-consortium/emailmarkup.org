@@ -69,7 +69,9 @@ Either use default :focus or suitable custom styling.
 
 ### 2.5 Allow for content manipulation
 
-A recipient should be able to manipulate the content to a point to make it readable.
+A recipient should be able to manipulate the content to a point to make it readable. This aligns with the W3C Technical Architecture Group (TAG)'s [Ethical Web Principles](https://w3ctag.github.io/ethical-web-principles/#render):
+
+> People must be able to change web pages according to their needs. For example, people should be able to install style sheets, assistive browser extensions, and blockers of unwanted content or scripts or auto-played videos.
 
 #### Example
 

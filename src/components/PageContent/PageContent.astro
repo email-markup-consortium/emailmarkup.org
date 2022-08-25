@@ -2,13 +2,19 @@
 import MoreMenu from '../RightSidebar/MoreMenu.astro';
 import TableOfContents from '../RightSidebar/TableOfContents';
 
-const { frontmatter, headings, githubEditUrl } = Astro.props;
+const { frontmatter, headings, githubEditUrl, lastModifiedDate } = Astro.props;
 const title = frontmatter.title;
+const formattedLastModifiedDate = `${lastModifiedDate.toLocaleString('default', { month: 'long' })} ${lastModifiedDate.getDate()}, ${lastModifiedDate.getFullYear()}`;
 ---
 
 <article id="article" class="content">
 	<section class="main-section">
 		<h1 class="content-title" id="overview">{title}</h1>
+		
+		<p>
+			<b>Last modified:</b> <time datetime={lastModifiedDate}>{formattedLastModifiedDate}</time>
+		</p>
+
 		<nav class="block sm:hidden">
 			<TableOfContents client:media="(max-width: 50em)" {headings} />
 		</nav>

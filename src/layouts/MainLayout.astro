@@ -13,7 +13,9 @@ import '../styles/index.css';
 const { frontmatter = {}, headings } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
-const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
+
+const filePath = frontmatter.file;
+const currentFile = filePath.slice(filePath.indexOf('src/pages/'));
 const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + currentFile;
 ---
 

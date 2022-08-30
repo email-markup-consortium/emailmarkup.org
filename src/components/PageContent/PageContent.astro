@@ -6,7 +6,7 @@ const { frontmatter, headings, githubEditUrl, lastModifiedDate } = Astro.props;
 const title = frontmatter.title;
 let formattedLastModifiedDate;
 if(lastModifiedDate) {
-	formattedLastModifiedDate = `${lastModifiedDate.toLocaleString('default', { month: 'long' })} ${lastModifiedDate.getDate()}, ${lastModifiedDate.getFullYear()}`;
+	formattedLastModifiedDate = `${lastModifiedDate.getDate()} ${lastModifiedDate.toLocaleString('default', { month: 'long' })} ${lastModifiedDate.getFullYear()}`;
 }
 ---
 

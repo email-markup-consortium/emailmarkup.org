@@ -16,7 +16,7 @@ if(lastModifiedDate) {
 		
 		{formattedLastModifiedDate && (
 			<p>
-				<b>Last modified:</b> <time datetime={lastModifiedDate}>{formattedLastModifiedDate}</time>
+				<b>Last modified:</b> <time datetime={lastModifiedDate.toISOString()}>{formattedLastModifiedDate}</time>
 			</p>
 		)}
 

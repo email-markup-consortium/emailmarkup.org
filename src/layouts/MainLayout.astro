@@ -17,6 +17,10 @@ const currentPage = Astro.url.pathname;
 const filePath = frontmatter.file;
 const currentFile = filePath.slice(filePath.indexOf('src/pages/'));
 const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + currentFile;
+
+const githubResponse = await fetch(`https://api.github.com/repos/${CONFIG.GITHUB_REPO}/commits?path=${encodeURIComponent(currentFile)}&page=1&per_page=1`);
+const githubData = await githubResponse.json();
+const lastModifiedDate = githubData.length ? new Date(githubData[0].commit.author.date) : null;
 ---
 
 <html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial">
@@ -114,7 +118,7 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 				<LeftSidebar {currentPage} />
 			</aside>
 			<div id="grid-main">
-				<PageContent {frontmatter} {headings} {githubEditUrl}>
+				<PageContent {frontmatter} {headings} {githubEditUrl} {lastModifiedDate}>
 					<slot />
 				</PageContent>
 			</div>

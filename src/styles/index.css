@@ -389,3 +389,13 @@ blockquote img {
 	max-width: 350px;
 	margin-top: 2rem;
 }
+
+body.has-overlay main {
+	filter: blur(4px);
+	pointer-events: none;
+}
+
+/* Alpine */
+[x-cloak] { 
+	display: none !important; 
+}

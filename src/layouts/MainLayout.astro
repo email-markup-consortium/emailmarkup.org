@@ -2,6 +2,7 @@
 import HeadCommon from '@components/HeadCommon';
 import HeadSEO from '@components/HeadSEO';
 import Header from '@components/Header/Header';
+import Body from '@components/Body';
 import PageContent from '@components/PageContent/PageContent';
 import LeftSidebar from '@components/LeftSidebar/LeftSidebar';
 import RightSidebar from '@components/RightSidebar/RightSidebar';
@@ -75,7 +76,7 @@ const lastModifiedDate = githubData.length ? new Date(githubData[0].commit.autho
 			}
 			:global(.mobile-sidebar-toggle) #grid-left {
 				display: block;
-				top: 2rem;
+				top: 3rem;
 			}
 			@media (min-width: 50em) {
 				.layout {
@@ -111,8 +112,9 @@ const lastModifiedDate = githubData.length ? new Date(githubData[0].commit.autho
 		</style>
 	</head>
 
-	<body>
-		<Header {currentPage} />
+	<Body>
+		<Header {currentPage} {frontmatter} />
+
 		<main class="layout">
 			<aside id="grid-left" class="grid-sidebar" title="Site Navigation">
 				<LeftSidebar {currentPage} />
@@ -126,5 +128,5 @@ const lastModifiedDate = githubData.length ? new Date(githubData[0].commit.autho
 				<RightSidebar {headings} {githubEditUrl} />
 			</aside>
 		</main>
-	</body>
+	</Body>
 </html>

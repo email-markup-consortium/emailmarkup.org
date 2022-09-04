@@ -1,139 +1,228 @@
 ---
 import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from '../../languages';
 import * as CONFIG from '../../config';
-import EmcLogo from './EmcLogo.astro';
-import SkipToContent from './SkipToContent.astro';
-import SidebarToggle from './SidebarToggle';
 import LanguageSelect from './LanguageSelect';
 import Search from './Search';
 
-const { currentPage } = Astro.props;
+import SkipToContent from './SkipToContent.astro';
+import EmcLogo from './EmcLogo.astro';
+import ThemeToggleButton from '../ThemeToggleButton/ThemeToggleButton';
+import LeftSidebarToggle from './LeftSidebarToggle.astro';
+
+
+const { currentPage, frontmatter } = Astro.props;
 const lang = currentPage && getLanguageFromURL(currentPage);
 ---
 
-<header>
-	<SkipToContent />
-	<nav class="nav-wrapper" title="Top Navigation">
-		<div class="menu-toggle">
-			<SidebarToggle client:idle />
-		</div>
-		<div class="logo flex">
-			<a href="/">
-				<EmcLogo width={120} />
-			</a>
-		</div>
-		<div style="flex-grow: 1;"></div>
-		{KNOWN_LANGUAGE_CODES.length > 1 && <LanguageSelect lang={lang} client:idle />}
-		{CONFIG.ALGOLIA && (
-			<div class="search-item">
-				<Search client:idle />
+<header
+	x-data="{
+		isMenuOpen: false,
+		isSidebarOpen: false
+	}"
+
+	x-init="
+		$watch('isMenuOpen', value => $dispatch('menu-toggle'))
+		$watch('isSidebarOpen', value => $dispatch('sidebar-toggle'))
+	"
+>
+	<div class="header-inner">
+		<SkipToContent />
+		<nav class="nav-wrapper" title="Top Navigation">
+			<div class="nav-start">
+				<div class="logo flex">
+					<a href="/">
+						<EmcLogo width={120} />
+					</a>
+				</div>
 			</div>
-		)}
-	</nav>
+			
+			
+			<button
+				type="button"
+				class="nav-toggle"
+				x-on:click="isMenuOpen = !isMenuOpen"
+			>
+				<span class="sr-only">Toggle menu</span>
+	
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="1em"
+					height="1em"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+	
+					x-show="!isMenuOpen"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h16M4 18h16"
+					/>
+				</svg>
+	
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 320 512"
+					width="1em"
+					height="1em"
+					fill="currentColor"
+					
+					x-show="isMenuOpen"
+					x-cloak
+				>
+					<path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+				</svg>
+			</button>
+	
+			<div
+				class="nav-end"
+				x-bind:class="isMenuOpen ? 'is-visible' : ''"
+			>
+				<ul class="nav-links">
+					<li><a href="/en/docs">Docs</a></li>
+					<li><a href="https://github.com/email-markup-consortium/email-markup-consortium/discussions">Forum</a></li>
+					<li><a href="https://dev.to/emailmarkup">Blog</a></li>
+				</ul>
+	
+				<div class="nav-options">
+					<!-- TODO: add lang select -->
+					<ThemeToggleButton client:visible />
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	{currentPage!='/' && ( <LeftSidebarToggle {frontmatter} /> )}
 </header>
+
 
 <style>
 	header {
+		position: sticky;
+		top: 0;
 		z-index: 11;
-		height: var(--theme-navbar-height);
-		width: 100%;
-		background-color: var(--theme-navbar-bg);
+		overflow: hidden;
+	}
+	.header-inner {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		overflow: hidden;
-		position: sticky;
-		top: 0;
-	}
 
-	.logo {
-		flex: 1;
-		display: flex;
-		overflow: hidden;
-		width: 30px;
-		font-size: 2rem;
-		flex-shrink: 0;
-		font-weight: 600;
-		line-height: 1;
-		color: hsla(var(--color-base-white), 100%, 1);
-		gap: 0.25em;
-		z-index: -1;
-	}
+		width: 100%;
+		min-height: var(--theme-navbar-height);
+		padding: 20px 0;
 
-	.logo a {
-		display: flex;
-		padding: 0.5em 0.25em;
-		margin: -0.5em -0.25em;
-		text-decoration: none;
-		font-weight: bold;
+		background-color: var(--theme-navbar-bg);
+		border-bottom: 1px solid var(--theme-text-lighter);
 	}
-
-	.logo a {
-		transition: color 100ms ease-out;
-		color: var(--theme-text);
-	}
-
-	.logo a:hover,
-	.logo a:focus {
-		color: var(--theme-text-accent);
-	}
-
-	.logo h1 {
-		display: none;
-		font: inherit;
-		color: inherit;
-		margin: 0;
+	@media (min-width: 50em) {
+		header {
+			position: static;
+		}
 	}
 
 	.nav-wrapper {
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
+		justify-content: space-between;
+		flex-wrap: wrap;
 		gap: 1em;
 		width: 100%;
 		max-width: 82em;
 		padding: 0 1rem;
 	}
 
-	@media (min-width: 50em) {
-		header {
-			position: static;
-			padding: 2rem 0rem;
-		}
-		.logo {
-			width: auto;
-			margin: 0;
-			z-index: 0;
-		}
-		.logo h1 {
-			display: initial;
-		}
-		.menu-toggle {
+	.nav-links {
+    list-style-type: none;
+	}
+	.nav-links a {
+		color: var(--theme-text-light);
+		text-decoration: none;
+	}
+	.nav-links a:is(:hover, :focus, :focus-visible) {
+		color: var(--theme-text-light);
+		text-decoration: underline;
+	}
+
+	.nav-toggle {
+		border-radius: 0;
+	}
+	.nav-toggle svg {
+		width: 25px;
+		height: auto;
+		color: var(--theme-text-light);
+	}
+
+	@media (max-width: 35em) {
+		.nav-end {
 			display: none;
 		}
-	}
+		.nav-end.is-visible {
+			width: 100%;
+			display: flex;
+			flex-direction: column-reverse;
+			gap: 20px;
+		}
 
-	/** Style Algolia */
-	:root {
-		--docsearch-primary-color: var(--theme-accent);
-		--docsearch-logo-color: var(--theme-text);
-	}
+		.nav-options {
+			align-self: flex-end;
+		}
 
-	.search-item {
-		display: none;
-		position: relative;
-		z-index: 10;
-		flex-grow: 1;
-		padding-right: 0.7rem;
-		display: flex;
-		max-width: 200px;
+		.nav-links a {
+			display: block;
+			padding: 10px 10px;
+		}
+
+		.nav-links li:not(:last-child) {
+			border-width: 0;
+			border-bottom-width: 1px;
+			border-style: solid;
+			border-image: linear-gradient(
+				to right, 
+				transparent,
+				var(--theme-text-lighter),
+				transparent
+			) 100% 1;
+		}
+		
 	}
-	:global(.search-item > *) {
-		flex-grow: 1;
-	}
-	@media (min-width: 50em) {
-		.search-item {
-			max-width: 400px;
+	
+	
+	@media (min-width: 35em) {
+		.nav-end {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+		.nav-links {
+			display: flex;
+			gap: 2em;
+			justify-content: center;
+			align-items: center;
+			padding-block: .4rem;
+			padding-inline: 1rem;
+			list-style-type: none;
+		}
+
+		.nav-toggle {
+			display: none;
+		}
+
+		.nav-options {
+			padding-inline-start: 1rem;
+
+			border-width: 0;
+			border-inline-start-width: 1px;
+			border-style: solid;
+			border-image: linear-gradient(
+				to bottom, 
+				transparent,
+				var(--theme-text-lighter),
+				transparent
+			) 1 100%;
+			
 		}
 	}
 </style>

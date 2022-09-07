@@ -45,7 +45,3 @@ Sharing resources and knowledge would lead to a better product.  Each email clie
 A number of competing email clients are already using a [shared render engine](https://amp.dev/documentation/guides-and-tutorials/contribute/email-viewer/?format=email) in the form of [AMP for Email](https://amp.dev/about/email/). 
 
 Like AMP for Email, this sanitizer could additionally be built into email tools to help senders create and test code more efficiently. 
-
-
-<!-- Prevent CSS fingerprinting
-Currently, it’s easy to track which email client a recipient is using by focusing on the quirks of the markup. Is this a privacy concern?  -->

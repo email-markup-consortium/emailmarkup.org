@@ -4,8 +4,6 @@ description: How supporting and partnering with the Email Markup Consortium bene
 layout: "@layouts/MainLayout"
 ---
 
-# Benefits to Email Clients
-
 Senders, recipients, and email clients share the common goals of better user experience, accessibility, performance, consistency, and reliability. However, currently there is a lack of cooperation in trying to achieve these goals, leading to inconsistent results. By working together on agreed approaches, we can save everyone time, effort and money while delivering a better experience to the recipients.
 
 Shared standards and collaboration across email clients has a number of benefits.

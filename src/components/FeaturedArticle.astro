@@ -1,0 +1,30 @@
+---
+const { link, title, desc } = Astro.props;
+---
+
+<article class="featured-article">
+  <h3 class="featured-article-heading">
+    <a href={link}>
+      {title}
+    </a>
+  </h3>
+  <p>{desc}</p>
+</article>
+
+<style>
+ .featured-article {
+  border-radius: 1em;
+  border: 1px solid var(--theme-text-light);
+  padding: 2em 1.5em;
+  background-color: rgb(233 234 247 / 31%);
+ }
+
+ .featured-article + .featured-article {
+  margin-top: 1em;
+ }
+
+ .featured-article-heading a {
+  font-size: 1.3rem;
+  text-decoration: none;
+ }
+</style>

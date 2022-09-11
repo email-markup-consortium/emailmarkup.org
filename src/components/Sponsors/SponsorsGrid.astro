@@ -1,0 +1,22 @@
+<div class="sponsors">
+  <slot />
+</div>
+
+<style>
+  .sponsors {
+    display: grid;
+    gap: .3em;
+  }
+
+  @media (min-width:640px) {
+    .sponsors {
+      grid-template-columns: repeat(2, 1fr);
+    } 
+  }
+
+  @media (min-width:1000px) {
+    .sponsors {
+      grid-template-columns: repeat(3, 1fr);
+    } 
+  }
+</style>

@@ -56,13 +56,14 @@
 	--color-yellow: var(--color-base-yellow), 59%;
 	
 	--color-brand: 185, 77%, 22%;
+	--color-brand-offset: 185, 77%, 25%;
 }
 
 :root {
 	color-scheme: light;
 	--theme-brand-primary: hsl(var(--color-brand));
-	--theme-accent: hsla(var(--color-blue), 1);
-	--theme-text-accent: hsla(var(--color-blue), 1);
+	--theme-accent: hsla(var(--color-brand-offset), 1);
+	--theme-text-accent: hsla(var(--color-brand-offset), 1);
 	--theme-accent-opacity: 0.15;
 	--theme-divider: hsla(var(--color-gray-95), 1);
 	--theme-text: hsla(var(--color-gray-10), 1);
@@ -72,7 +73,7 @@
 	--theme-bg: hsla(var(--color-base-white), 100%, 1);
 	--theme-bg-hover: hsla(var(--color-gray-95), 1);
 	--theme-bg-offset: hsla(var(--color-gray-90), 1);
-	--theme-bg-accent: hsla(var(--color-blue), var(--theme-accent-opacity));
+	--theme-bg-accent: hsla(var(--color-brand-offset), var(--theme-accent-opacity));
 	--theme-code-inline-bg: hsla(var(--color-gray-95), 1);
 	--theme-code-inline-text: var(--theme-text);
 	--theme-code-bg: hsla(217, 19%, 27%, 1);
@@ -90,7 +91,7 @@ body {
 
 :root.theme-dark {
 	color-scheme: dark;
-	--theme-brand-primary: hsl(0, 0%, 100%);
+	--theme-brand-primary: hsl(var(--color-brand));
 	--theme-accent-opacity: 0.15;
 	--theme-accent: hsla(var(--color-blue), 1);
 	--theme-text-accent: hsla(var(--color-blue), 1);

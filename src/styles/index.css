@@ -395,6 +395,17 @@ body.has-overlay main {
 	pointer-events: none;
 }
 
+.txt-brand {
+	color: var(--theme-brand-primary);
+}
+.txt-bold {
+	font-weight: 700;
+}
+
+.bg-brand {
+	background-color: var(--theme-brand-primary);
+}
+
 /* Alpine */
 [x-cloak] { 
 	display: none !important; 

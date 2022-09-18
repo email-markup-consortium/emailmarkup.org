@@ -1,9 +1,9 @@
 ---
-const { sponsor } = Astro.props;
+const { sponsor, small } = Astro.props;
 const {link, name, logo} = sponsor;
 ---
 
-<a href={link} class="sponsor">
+<a href={link} class:list={["sponsor", {"is-small": small}]}>
   <img src={logo} alt={name} >
 </a>
 
@@ -30,6 +30,13 @@ const {link, name, logo} = sponsor;
     max-width: 190px;
     height: auto;
     margin: 0 auto;
+  }
+
+  .sponsor.is-small {
+    min-height: 100px;
+  }
+  .sponsor.is-small img {
+    max-width: 150px;
   }
 
   :root.theme-dark .sponsor {

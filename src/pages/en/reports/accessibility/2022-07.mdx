@@ -5,14 +5,23 @@ description: Email Markup Consortium Accessibility Report - July 2022
 layout: "@layouts/MainLayout"
 ---
 
+import SponsorsGrid from '@components/Sponsors/SponsorsGrid';
+import Sponsor from '@components/Sponsors/Sponsor';
+import sponsors from '../../../../sponsors.json';
+
 This is our first accessibility report. We intend to publish one on a regular basis to report on the state of accessibility in the email industry. We hope this will help to encourage people to fix accessibility issues so we will see a trend in improvement over time. As you’ll see from the results we have a long way to go.
 
 > **Result**
 >
 > 99.9% out of 35,604 HTML emails tested contain accessibility issues categorized as “Serious” or “Critical”.
 
-> **Sponsor**
-> <a href="https://parcel.io"><img class="dark-scheme-invert" src="/img/logo-parcel-light.png" alt="Parcel.io"></a>
+
+**This report was created in collaboration with our partner, Parcel.io**
+
+<SponsorsGrid>
+  <Sponsor sponsor={sponsors.find(item => item.name=='Parcel')} />
+</SponsorsGrid>
+
 
 ## The data
 

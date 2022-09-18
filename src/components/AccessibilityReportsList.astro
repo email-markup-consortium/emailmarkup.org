@@ -1,6 +1,8 @@
 ---
-let posts = await Astro.glob('../pages/en/reports/accessibility/*.md');
-posts = posts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+let posts = await Astro.glob('../pages/en/reports/accessibility/*.(md|mdx)');
+posts = posts
+.filter(post => !post.file.endsWith('index.mdx'))
+.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 ---
 
 <ul>

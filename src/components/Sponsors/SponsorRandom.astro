@@ -1,0 +1,30 @@
+---
+const placeholder = {link:'', name:'', logo:''};
+import Sponsor from '@components/Sponsors/Sponsor';
+---
+
+<div id="rand-sponsor">
+  <h2 class="heading">EMC Sponsor</h2>
+  <Sponsor small sponsor={placeholder} />
+</div>
+
+<style>
+  #rand-sponsor {
+    padding-inline: 1em;
+    padding-top: var(--doc-padding);
+  }
+</style>
+
+<script>
+  import sponsorsData from '../../sponsors.json';
+  const sponsorRandom = sponsorsData[Math.floor(Math.random() * sponsorsData.length)];
+
+  const sponsorRandomWrapper = document.querySelector('#rand-sponsor');
+  
+  const sponsorRandomAnchor = sponsorRandomWrapper.querySelector('a');
+  sponsorRandomAnchor.href = sponsorRandom.link;
+
+  const sponsorRandomImg = sponsorRandomWrapper.querySelector('img');
+  sponsorRandomImg.alt = sponsorRandom.name;
+  sponsorRandomImg.src = sponsorRandom.logo;
+</script>

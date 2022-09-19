@@ -12,26 +12,27 @@ const { link, title, desc } = Astro.props;
 </article>
 
 <style>
- .featured-article {
-  border-radius: 1em;
-  border: 1px solid var(--theme-text-light);
-  padding: 2em 1.5em;
-  background-color: rgb(248 249 252);
- }
+  .featured-article {
+    border-radius: 1em;
+    border: 1px solid var(--theme-text-light);
+    padding: 2em 1.5em;
+    background-color: rgb(248 249 252);
+  }
 
- .featured-article + .featured-article {
-  margin-top: 1em;
- }
+  .featured-article+.featured-article {
+    margin-top: 1em;
+  }
 
- .featured-article-heading a {
-  font-size: 1.3rem;
-  text-decoration: none;
- }
- 
+  .featured-article-heading a {
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+
 
   :root.theme-dark .featured-article {
     background-color: var(--theme-bg-alt);
   }
+
   :root.theme-dark .featured-article-heading a {
     color: #fff;
   }

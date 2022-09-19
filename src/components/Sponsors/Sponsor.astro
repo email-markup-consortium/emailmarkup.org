@@ -40,12 +40,17 @@ const {link, name, logo} = sponsor;
   }
 
   :root.theme-dark .company {
-	  background-color: var(--theme-text-light);
+	  background-color: #1c1c1c;
+    transition: background-color .4s;
   }
 
   :root.theme-dark .company img {
-	  filter: grayscale(1);
+	  filter: grayscale(1) invert(1);
     transition: filter .4s;
+  }
+  
+  :root.theme-dark .company:hover {
+	  background-color: var(--theme-text-light);
   }
   :root.theme-dark .company:hover img {
 	  filter: grayscale(0);

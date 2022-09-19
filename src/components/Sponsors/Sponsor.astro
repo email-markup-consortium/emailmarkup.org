@@ -3,12 +3,12 @@ const { sponsor, small } = Astro.props;
 const {link, name, logo} = sponsor;
 ---
 
-<a href={link} class:list={["sponsor", {"is-small": small}]}>
+<a href={link} class:list={["company", {"is-small": small}]}>
   <img src={logo} alt={name} >
 </a>
 
 <style>
-  .sponsor {
+  .company {
     display: flex;
     align-items: center;
     justify-items: center;
@@ -21,33 +21,33 @@ const {link, name, logo} = sponsor;
     transition: .3s background;
   }
 
-  .sponsor:hover, .sponsor:focus {
+  .company:hover, .company:focus {
     background-color: var(--theme-text-lighter);
   }
 
-  .sponsor img {
+  .company img {
     width: 100%;
     max-width: 190px;
     height: auto;
     margin: 0 auto;
   }
 
-  .sponsor.is-small {
+  .company.is-small {
     min-height: 100px;
   }
-  .sponsor.is-small img {
+  .company.is-small img {
     max-width: 150px;
   }
 
-  :root.theme-dark .sponsor {
+  :root.theme-dark .company {
 	  background-color: var(--theme-text-light);
   }
 
-  :root.theme-dark .sponsor img {
+  :root.theme-dark .company img {
 	  filter: grayscale(1);
     transition: filter .4s;
   }
-  :root.theme-dark .sponsor:hover img {
+  :root.theme-dark .company:hover img {
 	  filter: grayscale(0);
   }
 </style>

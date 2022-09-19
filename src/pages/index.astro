@@ -32,6 +32,15 @@ const currentPage = Astro.url.pathname;
       margin: 0 auto;
     }
   
+    .hero {
+      background-color: var(--theme-bg-alt);
+      padding: 4rem 0;
+      color: var(--theme-brand-primary);
+    }
+    :root.theme-dark .hero {
+      color: hsl(236, 47%, 94%);
+    }
+
     .hero-heading {
       font-weight: 700;
       line-height: 1.5;
@@ -47,7 +56,9 @@ const currentPage = Astro.url.pathname;
       font-size: 1.5rem;
     }
   
-  
+    :root.theme-dark .supporters {
+      background-color: hsl(215deg 27% 26%);
+    }
     .supporters * {
       color: #fff;
     }
@@ -75,21 +86,21 @@ const currentPage = Astro.url.pathname;
 
   
   <main>
-    <section style="background-color:#E9EAF7; padding:4rem 0;">
+    <section class="hero">
       <div class="container">
-        <h1 class="hero-heading txt-brand" style="margin:0;">
+        <h1 class="hero-heading" style="margin:0;">
           Email Markup Consortium
         </h1>
-        <p class="hero-caption txt-brand">
+        <p class="hero-caption">
           A comunity group working to improve the user experience, accessibility, performance, consistency, and reliability of email markup
         </p>
 
-        <p class="txt-brand">
+        <p>
           Senders, recipients, and email clients share common goals. We collaborate with relevant parties to work towards these goals and establish a better path for HTML email. Read <a href="/en/docs/mission" class="txt-bold">our misson</a>.
         </p>
 
         <br>
-        <p class="txt-brand">
+        <p>
           <strong>Looking to help us?</strong> There are different ways for individuals and companies. Read our <a href="/en/how-to-help" class="txt-bold">Contribution Guide</a>.
         </p>
       </div>

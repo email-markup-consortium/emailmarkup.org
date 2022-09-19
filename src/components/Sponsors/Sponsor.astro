@@ -44,6 +44,10 @@ const {link, name, logo} = sponsor;
   }
 
   :root.theme-dark .sponsor img {
-	  filter: grayscale(1) invert(1);
+	  filter: grayscale(1);
+    transition: filter .4s;
+  }
+  :root.theme-dark .sponsor:hover img {
+	  filter: grayscale(0);
   }
 </style>

@@ -32,7 +32,7 @@ const currentPage = Astro.url.pathname;
       margin: 0 auto;
     }
     
-  .hero-tagline {
+  .hero-heading {
     font-weight: 700;
     line-height: 1.5;
     font-size: clamp(1.8rem, 3.6vw, 2rem);
@@ -46,7 +46,17 @@ const currentPage = Astro.url.pathname;
     font-size: 1.5rem;
   } 
 
-  .heading-supporters {
+
+  .supporters * {
+    color: #fff;
+  }
+  .supporters a {
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dotted #fff;
+  }
+  .supporters-heading {
     font-size: 1.4rem;
     font-size: clamp(1.1rem, 3vw, 1.4rem);
     background-color: #fff;
@@ -64,7 +74,7 @@ const currentPage = Astro.url.pathname;
   <main>
     <section style="background-color:#E9EAF7; padding:4rem 0;">
       <div class="container">
-        <h1 class="hero-tagline txt-brand" style="margin:0;">
+        <h1 class="hero-heading txt-brand" style="margin:0;">
           Email Markup Consortium
         </h1>
         <p class="hero-caption txt-brand">
@@ -107,19 +117,24 @@ const currentPage = Astro.url.pathname;
       </div>
     </section>
 
-    <section class="bg-brand">
+    <section class="bg-brand supporters">
       <div class="container">
 
-        <h2 class="heading-supporters">
+        <h2 class="supporters-heading">
           ❤️ Made Possible By Many
         </h2>
 
-        <p style="color:#fff;">
+        <p>
           The Email Markup Consortium is an independent not-for-profit community group. Our Sponsors and Partners ensure we can continue working towards our goals.
           And the hard work of many individuals moves us forward.
         </p>
+        <p style="margin-top:1rem;">
+          Anyone can <a href="https://opencollective.com/email-markup-consortium">Donate on OpenCollective</a>
+          <br>
+          Businesses have the option to <a href="/en/sponsors">Sponsor the EMC</a>
+        </p>
 
-        <h3 style="color:#fff;">Sponsors</h3>
+        <h3>Sponsors</h3>
         <SponsorsGrid>
           {sponsors
             .filter(item => item.sponsor)
@@ -127,7 +142,7 @@ const currentPage = Astro.url.pathname;
           }
         </SponsorsGrid>
 
-        <h3 style="color:#fff;">Partners</h3>
+        <h3>Partners</h3>
         <SponsorsGrid>
           {sponsors
             .filter(item => item.partner)

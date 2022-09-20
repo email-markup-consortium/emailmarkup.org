@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Mailjet",
+    "link": "https://www.mailjet.com",
+    "logo": "/img/logo-mailjet.png",
+
+    "sponsor": true,
+    "partner": false
+  },
+  {
+    "name": "Parcel",
+    "link": "https://parcel.io",
+    "logo": "/img/logo-parcel.png",
+
+    "sponsor": true,
+    "partner": true
+  },
+  {
+    "name": "Customer.io",
+    "link": "https://customer.io",
+    "logo": "/img/logo-customer-io.png",
+
+    "sponsor": true,
+    "partner": false
+  }
+]

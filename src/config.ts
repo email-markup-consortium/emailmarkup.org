@@ -34,13 +34,16 @@ export const GITHUB_EDIT_URL = `https://github.com/${GITHUB_REPO}/blob/main/`;
 export const SIDEBAR = {
 	en: [
 		{ text: '', header: true },
-		{ text: 'Home', link: '' },
-		{ text: 'Code of Conduct', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md' },
-		{ text: 'Projects', link: 'en/projects' },
-		{ text: 'Sponsors', link: 'en/sponsors' },
-
-		{ text: 'Pages', header: true },
 		{ text: 'Mission', link: 'en/docs/mission' },
+		{ text: 'Projects', link: 'en/projects' },
+		{ text: 'Roles', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/roles-and-responsibilities.md' },
+		{ text: 'Code of Conduct', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md' },
+		
+		{ text: 'Help', header: true },
+		{ text: 'Contribute', link: 'en/how-to-help' },
+		{ text: 'Sponsor', link: 'en/sponsors' },
+
+		{ text: 'Docs', header: true },
 		{ text: 'Glossary', link: 'en/docs/glossary' },
 		{ text: 'Benefits', link: 'en/docs/benefits' },
 		{ text: 'Compliant Standards', link: 'en/docs/compliant-standards' },

@@ -2,6 +2,8 @@
 import HeadCommon from '@components/HeadCommon';
 import HeadSEO from '@components/HeadSEO';
 import Header from '@components/Header/Header';
+import Body from '@components/Body';
+import Footer from '@components/Footer/Footer';
 import PageContent from '@components/PageContent/PageContent';
 import LeftSidebar from '@components/LeftSidebar/LeftSidebar';
 import RightSidebar from '@components/RightSidebar/RightSidebar';
@@ -21,6 +23,8 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 const githubResponse = await fetch(`https://api.github.com/repos/${CONFIG.GITHUB_REPO}/commits?path=${encodeURIComponent(currentFile)}&page=1&per_page=1`);
 const githubData = await githubResponse.json();
 const lastModifiedDate = githubData.length ? new Date(githubData[0].commit.author.date) : null;
+
+import SponsorRandom from '@components/Sponsors/SponsorRandom';
 ---
 
 <html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial">
@@ -31,7 +35,7 @@ const lastModifiedDate = githubData.length ? new Date(githubData[0].commit.autho
 			body {
 				width: 100%;
 				display: grid;
-				grid-template-rows: var(--theme-navbar-height) 1fr;
+				grid-template-rows: minmax(var(--theme-navbar-height), auto) 1fr;
 				--gutter: 0.5rem;
 				--doc-padding: 2rem;
 			}
@@ -75,7 +79,7 @@ const lastModifiedDate = githubData.length ? new Date(githubData[0].commit.autho
 			}
 			:global(.mobile-sidebar-toggle) #grid-left {
 				display: block;
-				top: 2rem;
+				top: 3rem;
 			}
 			@media (min-width: 50em) {
 				.layout {
@@ -105,14 +109,15 @@ const lastModifiedDate = githubData.length ? new Date(githubData[0].commit.autho
 				}
 				#grid-right {
 					grid-column: 3;
-					display: flex;
+					display: block;
 				}
 			}
 		</style>
 	</head>
 
-	<body>
-		<Header {currentPage} />
+	<Body>
+		<Header {currentPage} {frontmatter} />
+
 		<main class="layout">
 			<aside id="grid-left" class="grid-sidebar" title="Site Navigation">
 				<LeftSidebar {currentPage} />
@@ -123,8 +128,11 @@ const lastModifiedDate = githubData.length ? new Date(githubData[0].commit.autho
 				</PageContent>
 			</div>
 			<aside id="grid-right" class="grid-sidebar" title="Table of Contents">
+				<SponsorRandom />
 				<RightSidebar {headings} {githubEditUrl} />
 			</aside>
 		</main>
-	</body>
+
+		<Footer />
+	</Body>
 </html>

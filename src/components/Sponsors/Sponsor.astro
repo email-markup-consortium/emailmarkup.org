@@ -1,0 +1,41 @@
+---
+const { sponsor, small } = Astro.props;
+const {link, name, logo} = sponsor;
+---
+
+<a href={link} class:list={["company", {"is-small": small}]}>
+  <img src={logo} alt={name} >
+</a>
+
+<style>
+  .company {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    min-height: 8.7em;
+    padding: 1.5em 3em;
+    border-radius: .35em;
+
+    background-color: hsla(var(--color-gray-90), 1);
+    transition: .3s background;
+  }
+
+  .company:hover, .company:focus {
+    background-color: hsla(var(--color-gray-80), 1);
+  }
+
+  .company img {
+    width: 100%;
+    max-width: 11.8em;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .company.is-small {
+    min-height: 6.25em;
+  }
+  .company.is-small img {
+    max-width: 9.25em;
+  }
+</style>

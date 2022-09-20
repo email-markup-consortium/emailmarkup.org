@@ -1,0 +1,105 @@
+---
+title: Sponsors and Partners
+description: Partner with or sponsor the Email Markup Consortium
+layout: "@layouts/MainLayout"
+---
+
+import SponsorsGrid from '@components/Sponsors/SponsorsGrid';
+import Sponsor from '@components/Sponsors/Sponsor';
+import sponsors from '../../sponsors.json';
+
+## Partnerships
+
+In our [mission statement](/en/docs/mission), we state that we aim to collaborate with relevant parties and we mean it. If you are interested in working with us on one of [our projects](/en/projects) (or on something new), we would love to hear from you.
+
+We are particularly looking to working with email clients and ESPs. Having said that, you do not need to fall under either category to partner with us.
+
+If you are interested, please get in touch via [this form](https://forms.gle/fQ7eC6YwABDGTrYQ9) or email us at [consortium@emailmarkup.org](mailto:consortium@emailmarkup.org).
+
+- You can commit a set amount of hours to work on projects within the Email Markup Consortium.
+
+### What you get
+
+During the duration of our partnership:
+
+- Prominent logo placement on the front page of EmailMarkup.org
+- Prominent logo placement in sidebar of all pages in the [docs section of the site](https://emailmarkup.org/en/docs/). Only one random sponsor/partner is displayed at a time.
+
+As long as appropriate:
+
+- Any documentation, tools or services created in collaboration between your brand and the EMC will also be fully credited.
+
+
+### Current partners
+
+<SponsorsGrid>
+  {sponsors
+    .filter(item => item.partner)
+    .map(item => <Sponsor sponsor={item} />)
+  }
+</SponsorsGrid>
+
+
+
+## Sponsorship
+
+The Email Markup Consortium is an independently run community project. To keep the project sustainable and to keep ourselves independent, we rely on donations and sponsorship to keep running.
+
+### Donate as an individual
+
+Anyone can choose to make a one-off or a recurring donation via our OpenCollective page. Your donations are much appreciated and we may list your name/avatar (as displayed on your OpenCollective account) on our website.
+
+You can also speak to your employer to sponsor the Email Markup Consortium as a business.
+
+### Sponsor as a business
+
+Sponsoring the EMC not only gives you great exposure to all our members and follows but also helps drive the email industry forward with a goal of making things better for email senders, email clients, recipients and anyone else involved.
+
+#### What you get
+
+During the duration of your sponsorship:
+
+- Prominent logo placement on the front page of EmailMarkup.org
+- Prominent logo placement in sidebar of all pages in the [docs section of the site](https://emailmarkup.org/en/docs/). Only one random sponsor/partner is displayed at a time.
+- Prominent logo placement in our email newsletter when appropriate
+
+As long as appropriate:
+
+- Any documentation, tools or services funded by you will also be fully credited.
+
+Note that the Email Markup Consortium reserves the right to not display or remove the logo of any organisation from its platforms at any time. This is to ensure we do not promote any entity with values that does not align with ours.
+
+### How to sponsor us
+
+We have multiple options for sponsorship
+
+#### 1. Contribute financially
+
+You can donate at the "sponsor" tier via [our Open Collective page](https://opencollective.com/email-markup-consortium/contribute/sponsor-42999/checkout), where you will be able to see how your money is spent.
+
+##### Where your money goes
+
+Money we receive via OpenCollective will be help by our Fiscal Host, [Open Source Collective](https://opencollective.com/opensource) until it is [expensed](https://docs.opencollective.com/help/expenses-and-getting-paid/expenses). A [Fiscal Host](https://opencollective.com/fiscal-hosting) is:
+
+> an entity that holds the money on behalf of a Collective, and takes care of accounting, taxes, and invoices.
+
+If you’d like to know more about how the money will be held and processed, you can find out more on the websites of our money management platform [OpenCollective.com](https://opencollective.com/) and our fiscal host [Open Source Collective](https://www.oscollective.org/).
+
+##### How we plan to spend the money
+
+All expenses will be listed on our [Open Collective expenses page](https://opencollective.com/email-markup-consortium/expenses). These expenses will include tools, software and services used by the EMC to maintain our website and marketing presence, create and run reports, build tools and services to be used by the community.
+
+
+#### 2. Provide resources
+
+Providing needed resources used in the running of the Email Markup Consortium will also count as sponsorship.
+
+
+### Current sponsors
+
+<SponsorsGrid>
+  {sponsors
+    .filter(item => item.sponsor)
+    .map(item => <Sponsor sponsor={item} />)
+  }
+</SponsorsGrid>

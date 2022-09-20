@@ -4,10 +4,15 @@ description:
 layout: "@layouts/MainLayout"
 ---
 import AccessibilityReportsList from '@components/AccessibilityReportsList'
+import SponsorsGrid from '@components/Sponsors/SponsorsGrid';
+import Sponsor from '@components/Sponsors/Sponsor';
+import sponsors from '../../../../sponsors.json';
 
+**Our accessibility reports are created in collaboration with our partner, Parcel.io**
 
-> **Sponsor**
-> <a href="https://parcel.io"><img class="dark-scheme-invert" src="/img/logo-parcel-light.png" alt="Parcel.io" /></a>
+<SponsorsGrid>
+  <Sponsor small sponsor={sponsors.find(item => item.name=='Parcel')} />
+</SponsorsGrid>
 
 
 ## Data

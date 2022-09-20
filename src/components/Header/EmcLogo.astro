@@ -1,12 +1,8 @@
 ---
-const { width } = Astro.props;
+const { width='auto', height='auto', global=false } = Astro.props;
 ---
 
-<style>
-  
-</style>
-
-<svg role="img" width={width} viewBox="0 0 999 281">
+<svg class:list={[{"global-logo": global}]} role="img" width={width} height={height} viewBox="0 0 999 281">
   <title>Email Markup Consortium</title>
   <defs>
     <style>

@@ -406,6 +406,13 @@ body.has-overlay main {
 	background-color: var(--theme-brand-primary);
 }
 
+@media (max-width: 36em) {
+	svg.global-logo {
+		height: 36px;
+		width: auto;
+	}
+}
+
 /* Alpine */
 [x-cloak] { 
 	display: none !important; 

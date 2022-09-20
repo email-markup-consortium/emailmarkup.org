@@ -8,8 +8,8 @@ const themes = ['light', 'dark'];
 const icons = [
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="20"
-		height="20"
+		width="1.25em"
+		height="1.25em"
 		viewBox="0 0 20 20"
 		fill="currentColor"
 	>
@@ -21,8 +21,8 @@ const icons = [
 	</svg>,
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="20"
-		height="20"
+		width="1.25em"
+		height="1.25em"
 		viewBox="0 0 20 20"
 		fill="currentColor"
 	>

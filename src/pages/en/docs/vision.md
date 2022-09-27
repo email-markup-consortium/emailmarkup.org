@@ -39,7 +39,7 @@ Consider this snippet using the `rgb()` functional notation:
 </h1>
 ```
 
-Yahoo removes the `color` property and its value because it does not support the `rgb()` functional notation in the whitespace syntax. It keeps everything as it.
+Yahoo removes the `color` property and its value because it does not support the `rgb()` functional notation in the whitespace syntax. It keeps everything else as it is.
 
 ```html
 <h1 style="text-transform:uppercase; font-size:1.3em;">

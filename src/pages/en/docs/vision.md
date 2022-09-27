@@ -42,31 +42,32 @@ Consider this snippet using the `rgb()` functional notation:
 Yahoo removes the `color` property and its value because it does not support the `rgb()` functional notation in the whitespace syntax. It keeps everything as it.
 
 ```html
-<h1 style="text-transform:uppercase; font-size:1.3em;">Heading</h1>
+<h1 style="text-transform:uppercase; font-size:1.3em;">
+  Heading
+</h1>
 ```
 
 On the other hand, Gmail removes the entire `style` attribute:
 
 ```html
-<h1>Heading</h1>
+<h1>
+  Heading
+</h1>
 ```
 
 Consider this example using the `<picture>` element:
 
 ```html
 <picture>
-  <source
-    srcset="https://example.com/image-400x400.jpg"
-    media="(min-width: 800px)"
-  />
-  <img src="https://example.com/image-150x150.jpg" alt="" />
+  <source srcset="https://example.com/image-400x400.jpg" media="(min-width: 800px)">
+  <img src="https://example.com/image-150x150.jpg" alt="">
 </picture>
 ```
 
 Yahoo removes the `<picture>` and `<source>` tags, but keeps the `<img>` tag:
 
 ```html
-<img src="https://example.com/image-150x150.jpg" alt="" />
+<img src="https://example.com/image-150x150.jpg" alt="">
 ```
 
 Whereas Gmail replace the `<picture>` and `<source>` tags with empty `<u>` tags:
@@ -74,7 +75,7 @@ Whereas Gmail replace the `<picture>` and `<source>` tags with empty `<u>` tags:
 ```html
 <u></u>
 <u></u>
-<img src="https://example.com/image-150x150.jpg" alt="" />
+<img src="https://example.com/image-150x150.jpg" alt="">
 ```
 
 As illustrated above from real-world examples, identical level of support is not adequate for consistent rendering nor it enables developers to progressively enhance their HTML emails in a simple manner.

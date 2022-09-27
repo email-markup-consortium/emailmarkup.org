@@ -6,7 +6,7 @@ layout: "@layouts/MainLayout"
 
 ## Background
 
-Email clients have the challenge of dealing with third-party code: HTML email messages. For an email client to safely embed a HTML message, at they need to:
+Email clients have the challenge of dealing with third-party code: HTML email messages. For an email client to safely embed a HTML message, they need to:
 
 1. Sanitize the HTML message
 2. Embed the HTML message

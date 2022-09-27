@@ -91,7 +91,7 @@ Email clients need to take the embedding context into account as it can affect h
 
 ## Vision
 
-## No feature list
+### No feature list
 
 The Email Markup Consortium is not encouraging all email clients to agree on and adopt a single list of supported HTML/CSS features. In addition to this being an unfeasible goal, we think there genuinely can be good reasons for some email clients not to support some features (e.g. because of the embedding context of the HTML message).
 
@@ -99,7 +99,7 @@ We also do not think this alone would be enough to reach our goal of consistent 
 
 Having said that, we may recommend for some features to be supported.
 
-## Solution
+### Solution
 
 The Email Markup Consortium is aiming to standardize the sanitization approach for third-party code in email clients. We are working on documenting a specification that details how supported and unsupported features should be handled.
 

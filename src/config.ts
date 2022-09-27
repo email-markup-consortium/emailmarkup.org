@@ -45,6 +45,7 @@ export const SIDEBAR = {
 
 		{ text: 'Docs', header: true },
 		{ text: 'Glossary', link: 'en/docs/glossary' },
+		{ text: 'Vision', link: 'en/docs/vision' },
 		{ text: 'Benefits', link: 'en/docs/benefits' },
 		{ text: 'Compliant Standards', link: 'en/docs/compliant-standards' },
 

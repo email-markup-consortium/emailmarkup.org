@@ -104,4 +104,4 @@ Having said that, we may recommend for some features to be supported.
 
 The Email Markup Consortium is aiming to standardize the sanitization approach for third-party code in email clients. We are working on documenting a specification that details how supported and unsupported features should be handled.
 
-In addition, we are working on building an open-source email-specific sanitizer. Email clients can choose to use this sanitizer, but they are also free to build their own spec-compliant version.
+In addition, we are working on building an open source, email-specific sanitizer. Email clients can choose to use this sanitizer, but they are also free to build their own spec-compliant version.

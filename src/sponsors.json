@@ -1,5 +1,13 @@
 [
   {
+    "name": "Stensul",
+    "link": "https://stensul.com",
+    "logo": "/img/logo-stensul.png",
+
+    "sponsor": true,
+    "partner": false
+  },
+  {
     "name": "Mailjet",
     "link": "https://www.mailjet.com",
     "logo": "/img/logo-mailjet.png",

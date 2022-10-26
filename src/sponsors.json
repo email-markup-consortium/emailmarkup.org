@@ -1,5 +1,13 @@
 [
   {
+    "name": "Email Loot",
+    "link": "https://www.emailloot.com/",
+    "logo": "/img/logo-email-loot.png",
+
+    "sponsor": true,
+    "partner": false
+  },
+  {
     "name": "Stensul",
     "link": "https://stensul.com",
     "logo": "/img/logo-stensul.png",

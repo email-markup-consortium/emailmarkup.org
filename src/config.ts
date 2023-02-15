@@ -17,7 +17,8 @@ export const KNOWN_LANGUAGES = {
 };
 
 // Uncomment this to add an "Edit this page" button to every page of documentation.
-// export const GITHUB_EDIT_URL = `https://github.com/withastro/astro/blob/main/docs/`;
+export const GITHUB_REPO = 'email-markup-consortium/emailmarkup.org';
+export const GITHUB_EDIT_URL = `https://github.com/${GITHUB_REPO}/blob/main/`;
 
 // Uncomment this to add an "Join our Community" button to every page of documentation.
 // export const COMMUNITY_INVITE_URL = `https://astro.build/chat`;
@@ -33,14 +34,19 @@ export const KNOWN_LANGUAGES = {
 export const SIDEBAR = {
 	en: [
 		{ text: '', header: true },
-		{ text: 'Home', link: '' },
-		{ text: 'Code of Conduct', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md' },
-		{ text: 'Projects', link: 'en/projects' },
-		{ text: 'Sponsors', link: 'en/sponsors' },
-
-		{ text: 'Pages', header: true },
 		{ text: 'Mission', link: 'en/docs/mission' },
+		{ text: 'Projects', link: 'en/projects' },
+		{ text: 'Roles', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/roles-and-responsibilities.md' },
+		{ text: 'Code of Conduct', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md' },
+		
+		{ text: 'Help', header: true },
+		{ text: 'Contribute', link: 'en/how-to-help' },
+		{ text: 'Sponsor', link: 'en/sponsors' },
+
+		{ text: 'Docs', header: true },
 		{ text: 'Glossary', link: 'en/docs/glossary' },
+		{ text: 'Vision', link: 'en/docs/vision' },
+		{ text: 'Benefits', link: 'en/docs/benefits' },
 		{ text: 'Compliant Standards', link: 'en/docs/compliant-standards' },
 
 		{ text: 'Reports', header: true },

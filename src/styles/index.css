@@ -93,12 +93,14 @@ p {
 	line-height: 1.65em;
 }
 
-.content ul {
+.content ul,
+.content ol {
 	line-height: 1.1em;
 }
 
 p,
-.content ul {
+.content ul,
+.content ol {
 	color: var(--theme-text-light);
 }
 
@@ -388,4 +390,32 @@ blockquote img {
 	display: block;
 	max-width: 350px;
 	margin-top: 2rem;
+}
+
+body.has-overlay main {
+	filter: blur(4px);
+	pointer-events: none;
+}
+
+.txt-brand {
+	color: var(--theme-brand-primary);
+}
+.txt-bold {
+	font-weight: 700;
+}
+
+.bg-brand {
+	background-color: var(--theme-brand-primary);
+}
+
+@media (max-width: 36em) {
+	svg.global-logo {
+		height: 36px;
+		width: auto;
+	}
+}
+
+/* Alpine */
+[x-cloak] { 
+	display: none !important; 
 }

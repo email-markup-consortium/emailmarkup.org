@@ -4,11 +4,19 @@ description:
 layout: "@layouts/MainLayout"
 ---
 import AccessibilityReportsList from '@components/AccessibilityReportsList'
+import SponsorsGrid from '@components/Sponsors/SponsorsGrid';
+import Sponsor from '@components/Sponsors/Sponsor';
+import sponsors from '../../../../sponsors.json';
 
+**Our accessibility reports are created in collaboration with our partner, Parcel.io**
 
-> **Sponsor**
-> <a href="https://parcel.io"><img class="dark-scheme-invert" src="/img/logo-parcel-light.png" alt="Parcel.io" /></a>
+<SponsorsGrid>
+  <Sponsor small sponsor={sponsors.find(item => item.name=='Parcel')} />
+</SponsorsGrid>
 
+## Reports
+
+<AccessibilityReportsList />
 
 ## Data
 
@@ -35,6 +43,3 @@ The HTML that gets sent does not always reflect the efforts made by the HTML ema
 
 Email clients may also modify the HTML code that is eventually rendered on the page. This could introduce accessibility issues that the unmodified HTML email addresses. Issues introduced by email clients in the browser may not be covered in these reports.
 
-## Reports
-
-<AccessibilityReportsList />

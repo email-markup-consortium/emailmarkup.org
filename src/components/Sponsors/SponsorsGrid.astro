@@ -1,0 +1,16 @@
+<div class="companies">
+  <slot />
+</div>
+
+<style>
+  .companies {
+    display: grid;
+    gap: .3em;
+  }
+
+  @media (min-width:640px) {
+    .companies {
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    } 
+  }
+</style>

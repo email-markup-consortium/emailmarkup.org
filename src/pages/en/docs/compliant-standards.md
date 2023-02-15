@@ -14,7 +14,7 @@ This document is aimed at top level ideas of what the email markup should do, no
 
 ### 1.2 Who is this document for?
 
-This document is for anyone creating [email markup](https://github.com/email-markup-consortium/email-markup-consortium/blob/main/glossary.md#:~:text=Email%20markup), processing email markup, or displaying email markup. This includes (but isn’t limited to) [email developers](https://github.com/email-markup-consortium/email-markup-consortium/blob/main/glossary.md#:~:text=Email%20developer), email creation tools, email sending tools, and [email clients](https://github.com/email-markup-consortium/email-markup-consortium/blob/main/glossary.md#:~:text=Email%20client).
+This document is for anyone creating [email markup](https://emailmarkup.org/en/docs/glossary/), processing email markup, or displaying email markup. This includes (but isn’t limited to) [email developers](https://emailmarkup.org/en/docs/glossary/), email creation tools, email sending tools, and [email clients](https://emailmarkup.org/en/docs/glossary/).
 
 For this to work it will require developers to make improvements to the markup at the point of creation. As long as that markup is valid it should remain in a recognisable state with minimal changes through to the point the recipient opens the email. This means any processing of that markup by an ESP, mail server, email client or any other technology that touches it, should also follow the guidelines to preserve the standard.
 
@@ -69,7 +69,9 @@ Either use default :focus or suitable custom styling.
 
 ### 2.5 Allow for content manipulation
 
-A recipient should be able to manipulate the content to a point to make it readable.
+A recipient should be able to manipulate the content to a point to make it readable. This aligns with the W3C Technical Architecture Group (TAG)'s [Ethical Web Principles](https://w3ctag.github.io/ethical-web-principles/#render):
+
+> People must be able to change web pages according to their needs. For example, people should be able to install style sheets, assistive browser extensions, and blockers of unwanted content or scripts or auto-played videos.
 
 #### Example
 

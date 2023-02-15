@@ -4,7 +4,7 @@ Built with [Astro🚀](https://astro.build/). Uses [Astro Starter Kit: Docs Site
 
 ## Commands Cheatsheet
 
-All commands are run from the root of the project, from a terminal:
+All commands are run from the root of the project, from the command line:
 
 | Command           | Action                                       |
 | :---------------- | :------------------------------------------- |

@@ -1,0 +1,14 @@
+<body
+	x-data="{
+		isMenuOpen: false,
+		isSidebarOpen: false
+	}"
+	x-on:menu-toggle.window="isMenuOpen = !isMenuOpen"
+	x-on:sidebar-toggle.window="isSidebarOpen = !isSidebarOpen"
+	x-bind:class="{
+		'has-overlay': isMenuOpen,
+		'mobile-sidebar-toggle': isSidebarOpen
+	}"
+>
+	<slot />
+</body>

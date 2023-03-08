@@ -27,6 +27,31 @@ function findUntestedFeatures(tagName, testedFeatures) {
   })
 }
 
+function unslugify(str) {
+  let val = str.replaceAll('-', ' ');
+
+  switch(val) {
+    case 'ios':
+      return 'iOS';
+      break;
+
+    case 'macos':
+      return "MacOS";
+      break;
+
+    case 'outlook com':
+      return 'outlook.com';
+      break;
+
+    case 'i18n':
+      return 'i18n';
+      break;
+    
+    default:
+      return val.charAt(0).toUpperCase() + val.slice(1);
+  }
+}
+
 
 // {"accessibility":[], "performance":[], ...
 let tags = {};
@@ -161,11 +186,11 @@ caniemail.data
 ---
 
 
-<h2>Feature Categories</h2>
+<h2>Features by Category</h2>
 { Object.entries(tags).map(([tagName, tagFeatures]) => (
   <details>
       <summary>
-        <h3>{tagName}</h3>
+        <h3>{unslugify(tagName)}</h3>
       </summary>
       <ul class="mulit-cols">
         {tagFeatures.map(featureName => <li>{getCaniemailFeatureName(featureName)}</li>)}
@@ -183,7 +208,7 @@ caniemail.data
 
     { Object.entries(emailClients.clients).map(([emailClientName, emailClientData]) => (
       <Fragment>
-        <h3>{emailClientName}</h3>
+        <h3>{unslugify(emailClientName)}</h3>
       
         <table>
           <thead>

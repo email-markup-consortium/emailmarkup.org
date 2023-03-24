@@ -21,13 +21,15 @@ Any live documentation on this website can be considered "in progress". In addit
 
 ## Shared Sanitizer
 
-- Project leader: none assigned
-- Status: Not yet started
+- Project leader: Hussein Al Hammad
+- Status: In Progress
 - [Discussion thread](https://github.com/email-markup-consortium/email-markup-consortium/discussions/51)
 
 Email Markup Consortium plans to build a configurable open-source HTML sanitizer that can be used by email clients, documenting findings along the way.
 
 The goal is to have a consistent and safe way for email clients to sanitize third-party HTML (i.e. HTML email messages). This does not necessarily mean all email clients must have identical support, but they should all handle supported/unsupported features in consistent manner.
+
+Read more about [our vision](/en/docs/vision) for how HTML email can be standardized and what problems this solution intends to solve.
 
 ---
 
@@ -68,11 +70,21 @@ Reports based on accessibility analysis performed on emails collected by the Dat
 
 ---
 
+## Email reader view
+
+- Project leader: Mark Robbins
+- [Project home](https://github.com/email-markup-consortium/email-reader-view)
+- Status: In Progress
+
+A browser extension that enables a reader view inside email clients with accessibility-focused goals. The extension declutters the email message and simplifies the styling for easier reading.
+
+---
+
 ## Default email styles
 
 - Project leader: Mark Robbins
 - [Project home](https://github.com/email-markup-consortium/default-email-styles)
-- Status: In Progress
+- Status: On hold
 
 Documenting the default CSS styles added by email clients.
 
@@ -87,7 +99,7 @@ Documenting the default CSS styles added by email clients.
 
 ## Contributing to Can I Email?
 
-- Project leader: Rémi Parmentier
+- Project leader: Jay Oram, Rémi Parmentier
 - Project home: [Repository](https://github.com/HTeuMeuLeu/caniemail), [Discussions](https://github.com/email-markup-consortium/email-markup-consortium/discussions?discussions_q=label%3A%22project%3A+Can+I+Email%3F%22)
 - Status: In Progress
 
@@ -103,7 +115,7 @@ Email Markup Consortium is to help with:
 ## Contributing to Email Platform Status
 
 - Project leader: Rémi Parmentier
-- Status: In Progress
+- Status: On hold
 
 Contributing to an existing community project: **Email Platform Status**
 

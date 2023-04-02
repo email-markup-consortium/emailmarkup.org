@@ -248,11 +248,13 @@ caniemail.data
               </td>
 
               <td>
-                {emailClientFamilies.getFlatClients(tagName)
-                  .filter((el) => el.tags[tagName].y.length == item.tags[tagName].y.length)
-                  .map((el, index, arr) => (
-                  <span>{el.name}{(index==arr.length-1 ? '' : ', ')}</span>
-                ))}
+                <ul class="mulit-cols">
+                  {emailClientFamilies.getFlatClients(tagName)
+                    .filter((el) => el.tags[tagName].y.length == item.tags[tagName].y.length)
+                    .map((el) => (
+                      <li>{el.name}</li>
+                  ))}
+                </ul>
               </td>
             </tr>
         ))}
@@ -338,6 +340,10 @@ caniemail.data
 <style>
   details h3 {
     display: inline-block;
+  }
+
+  td:has(.mulit-cols) {
+    padding-block: 1.5rem;
   }
 
   @media screen and (min-width:450px) {

@@ -116,7 +116,7 @@ let emailClientFamilies = {
   },
 
 
-  getFlatClients() {
+  getFlatClients(sortByTag=false) {
     let clients = [];
     
     Object.entries(this.families).map(([id, item]) => {
@@ -127,6 +127,10 @@ let emailClientFamilies = {
           })
         })
     })
+
+    if(sortByTag) {
+      clients = clients.sort((a, b) => b.tags[sortByTag].y.length - a.tags[sortByTag].y.length);
+    }
 
     return clients;
   }
@@ -222,10 +226,19 @@ caniemail.data
     <h3>{unslugify(tagName)}</h3>
     
     <ol>
-      {emailClientFamilies.getFlatClients()
-        .sort((a, b) => b.tags[tagName].y.length - a.tags[tagName].y.length)
-        .map((item) => (
-          <li>{item.name} ({item.tags[tagName].y.length} features)</li>
+      {emailClientFamilies.getFlatClients(tagName)
+        .map((item, index, arr) => (
+          (index==0 || item.tags[tagName].y.length !== arr[index-1].tags[tagName].y.length) &&
+          <li>
+            {item.tags[tagName].y.length}/{tagFeatures.length} features
+            <ul>
+              {emailClientFamilies.getFlatClients(tagName)
+                .filter((el) => el.tags[tagName].y.length == item.tags[tagName].y.length)
+                .map((el) => (
+                <li>{el.name}</li>
+              ))}
+            </ul>
+          </li>
       ))}
     </ol>
   </Fragment>

@@ -223,7 +223,7 @@ caniemail.data
 <h2>Email client ranks</h2>
 { Object.entries(tags).map(([tagName, tagFeatures]) => (
   <Fragment>
-    <h3>{unslugify(tagName)}</h3>
+    <h3>{unslugify(tagName)} ({tagFeatures.length} tested features)</h3>
     
     <ol>
       {emailClientFamilies.getFlatClients(tagName)

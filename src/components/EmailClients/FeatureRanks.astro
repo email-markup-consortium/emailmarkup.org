@@ -246,17 +246,17 @@ caniemail.data
 )) }
 
 
-
+<h2>Tested features per email client</h2>
 { Object.entries(emailClientFamilies.families)
   .filter(([emailClientFamily, emailClients]) => Object.keys(emailClients.clients).length)
   .map(([emailClientFamily, emailClients]) => (
   <Fragment>
-    <h2>{emailClients.name}</h2>
+    <h3>{emailClients.name}</h3>
 
 
     { Object.entries(emailClients.clients).map(([emailClientName, emailClientData]) => (
       <Fragment>
-        <h3>{unslugify(emailClientName)}</h3>
+        <h4>{unslugify(emailClientName)}</h4>
       
         <table>
           <thead>

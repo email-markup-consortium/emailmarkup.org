@@ -204,6 +204,7 @@ caniemail.data
     }
   })
 ---
+<Fragment>
 
 
 <h2>Tested features by category</h2>
@@ -225,22 +226,38 @@ caniemail.data
   <Fragment>
     <h3>{unslugify(tagName)} ({tagFeatures.length} tested features)</h3>
     
-    <ol>
-      {emailClientFamilies.getFlatClients(tagName)
-        .map((item, index, arr) => (
-          (index==0 || item.tags[tagName].y.length !== arr[index-1].tags[tagName].y.length) &&
-          <li>
-            {item.tags[tagName].y.length}/{tagFeatures.length} features
-            <ul>
-              {emailClientFamilies.getFlatClients(tagName)
-                .filter((el) => el.tags[tagName].y.length == item.tags[tagName].y.length)
-                .map((el) => (
-                <li>{el.name}</li>
-              ))}
-            </ul>
-          </li>
-      ))}
-    </ol>
+    <table>
+      <thead>
+        <tr>
+          <td>
+            Number of features
+          </td>
+          <td>
+            Email Clients
+          </td>
+        </tr>
+      </thead>
+
+      <tbody>
+        {emailClientFamilies.getFlatClients(tagName)
+          .map((item, index, arr) => (
+            (index==0 || item.tags[tagName].y.length !== arr[index-1].tags[tagName].y.length) &&
+            <tr>
+              <td>
+                {item.tags[tagName].y.length}/{tagFeatures.length}
+              </td>
+
+              <td>
+                {emailClientFamilies.getFlatClients(tagName)
+                  .filter((el) => el.tags[tagName].y.length == item.tags[tagName].y.length)
+                  .map((el, index, arr) => (
+                  <span>{el.name}{(index==arr.length-1 ? '' : ', ')}</span>
+                ))}
+              </td>
+            </tr>
+        ))}
+      </tbody>
+    </table>
   </Fragment>
 
 )) }
@@ -329,3 +346,5 @@ caniemail.data
     }
   }
 </style>
+
+</Fragment>

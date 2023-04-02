@@ -206,144 +206,158 @@ caniemail.data
 ---
 <Fragment>
 
+<section>
+  <h2>Tested features by category</h2>
 
-<h2>Tested features by category</h2>
-{ Object.entries(tags).map(([tagName, tagFeatures]) => (
-  <details>
-      <summary>
-        <h3>{unslugify(tagName)}</h3>
-      </summary>
-      <ul class="mulit-cols">
-        {tagFeatures.map(featureName => <li>{getCaniemailFeatureName(featureName)}</li>)}
-      </ul>
-  </details>
-)) }
-
-
-
-<h2>Email client ranks by category</h2>
-{ Object.entries(tags).map(([tagName, tagFeatures]) => (
-  <Fragment>
-    <h3>{unslugify(tagName)} ({tagFeatures.length} tested features)</h3>
-    
-    <table>
-      <thead>
-        <tr>
-          <td>
-            Number of features
-          </td>
-          <td>
-            Email Clients
-          </td>
-        </tr>
-      </thead>
-
-      <tbody>
-        {emailClientFamilies.getFlatClients(tagName)
-          .map((item, index, arr) => (
-            (index==0 || item.tags[tagName].y.length !== arr[index-1].tags[tagName].y.length) &&
-            <tr>
-              <td>
-                {item.tags[tagName].y.length}/{tagFeatures.length}
-              </td>
-
-              <td>
-                <ul class="mulit-cols">
-                  {emailClientFamilies.getFlatClients(tagName)
-                    .filter((el) => el.tags[tagName].y.length == item.tags[tagName].y.length)
-                    .map((el) => (
-                      <li>{el.name}</li>
-                  ))}
-                </ul>
-              </td>
-            </tr>
-        ))}
-      </tbody>
-    </table>
-  </Fragment>
-
-)) }
+  { Object.entries(tags).map(([tagName, tagFeatures]) => (
+    <details>
+        <summary>
+          <h3>{unslugify(tagName)}</h3>
+        </summary>
+        <ul class="mulit-cols">
+          {tagFeatures.map(featureName => <li>{getCaniemailFeatureName(featureName)}</li>)}
+        </ul>
+    </details>
+  )) }
+</section>
 
 
-<h2>Tested features per email client</h2>
-{ Object.entries(emailClientFamilies.families)
-  .filter(([emailClientFamily, emailClients]) => Object.keys(emailClients.clients).length)
-  .map(([emailClientFamily, emailClients]) => (
-  <Fragment>
-    <h3>{emailClients.name}</h3>
+<section>
+  <h2>Email client ranks by category</h2>
 
-
-    { Object.entries(emailClients.clients).map(([emailClientName, emailClientData]) => (
-      <Fragment>
-        <h4>{unslugify(emailClientName)}</h4>
+  { Object.entries(tags).map(([tagName, tagFeatures]) => (
+    <Fragment>
+      <h3>{unslugify(tagName)} ({tagFeatures.length} tested features)</h3>
       
-        <table>
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Supported</th>
-              <th>Partial</th>
-              <th>Unsupported</th>
-              <th>Untested</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          
-          <tbody>
-            { Object.entries(emailClientData.tags).sort().map(([tagName, features]) => (
-              <Fragment>
-                <tr>
-                  <td>
-                    {tagName}
-                  </td>
-                  <td>
-                    {features.y.length}
-                    {
-                      features.y.length ? <span>(<a href={getCaniemailFeaturesURL(features.y)}>view</a>)</span> : ''
-                    }
-                  </td>
-                  <td>
-                    {features.a.length} 
-                    {
-                      features.a.length ? <span>(<a href={getCaniemailFeaturesURL(features.a)}>view</a>)</span> : ''
-                    }
-                  </td>
-                  <td>
-                    {features.n.length} 
-                    {
-                      features.n.length ? <span>(<a href={getCaniemailFeaturesURL(features.n)}>view</a>)</span> : ''
-                    }
-                  </td>
-                  <td>
-                    {findUntestedFeatures(tagName, features).length} 
-                    {
-                      findUntestedFeatures(tagName, features).length ? <span>(<a href={getCaniemailFeaturesURL(findUntestedFeatures(tagName, features))}>view</a>)</span> : ''
-                    }
-                  </td>
-                  
-                  <td>
-                    {tags[tagName].length}
-                  </td>
-                </tr>
-              </Fragment>
-            )) }
-          </tbody>
-        </table>
-      </Fragment>
-    )) }
-  </Fragment>
-)) }
+      <table>
+        <thead>
+          <tr>
+            <td>
+              Number of features
+            </td>
+            <td>
+              Email Clients
+            </td>
+          </tr>
+        </thead>
+
+        <tbody>
+          {emailClientFamilies.getFlatClients(tagName)
+            .map((item, index, arr) => (
+              (index==0 || item.tags[tagName].y.length !== arr[index-1].tags[tagName].y.length) &&
+              <tr>
+                <td>
+                  {item.tags[tagName].y.length}/{tagFeatures.length}
+                </td>
+
+                <td>
+                  <ul class="mulit-cols">
+                    {emailClientFamilies.getFlatClients(tagName)
+                      .filter((el) => el.tags[tagName].y.length == item.tags[tagName].y.length)
+                      .map((el) => (
+                        <li>{el.name}</li>
+                    ))}
+                  </ul>
+                </td>
+              </tr>
+          ))}
+        </tbody>
+      </table>
+    </Fragment>
+
+  )) }
+</section>
+
+
+<section>
+  <h2>Features per email client</h2>
+
+  { Object.entries(emailClientFamilies.families)
+    .filter(([emailClientFamily, emailClients]) => Object.keys(emailClients.clients).length)
+    .map(([emailClientFamily, emailClients]) => (
+    <Fragment>
+      { Object.entries(emailClients.clients).map(([emailClientName, emailClientData]) => (
+        <Fragment>
+          <h3>{emailClients.name} ({unslugify(emailClientName)})</h3>
+        
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Supported</th>
+                <th>Partial</th>
+                <th>Unsupported</th>
+                <th>Untested</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              { Object.entries(emailClientData.tags).sort().map(([tagName, features]) => (
+                <Fragment>
+                  <tr>
+                    <td>
+                      {tagName}
+                    </td>
+                    <td>
+                      {features.y.length}
+                      {
+                        features.y.length ? <span>(<a href={getCaniemailFeaturesURL(features.y)}>view</a>)</span> : ''
+                      }
+                    </td>
+                    <td>
+                      {features.a.length} 
+                      {
+                        features.a.length ? <span>(<a href={getCaniemailFeaturesURL(features.a)}>view</a>)</span> : ''
+                      }
+                    </td>
+                    <td>
+                      {features.n.length} 
+                      {
+                        features.n.length ? <span>(<a href={getCaniemailFeaturesURL(features.n)}>view</a>)</span> : ''
+                      }
+                    </td>
+                    <td>
+                      {findUntestedFeatures(tagName, features).length} 
+                      {
+                        findUntestedFeatures(tagName, features).length ? <span>(<a href={getCaniemailFeaturesURL(findUntestedFeatures(tagName, features))}>view</a>)</span> : ''
+                      }
+                    </td>
+                    
+                    <td>
+                      {tags[tagName].length}
+                    </td>
+                  </tr>
+                </Fragment>
+              )) }
+            </tbody>
+          </table>
+        </Fragment>
+      )) }
+    </Fragment>
+  )) }
+</section>
 
 
 
 
 <style>
+  section {
+    padding-block: 1.5rem;
+  }
+
+  details {
+    margin-top: 1.25rem
+  }
   details h3 {
     display: inline-block;
   }
 
   td:has(.mulit-cols) {
     padding-block: 1.5rem;
+  }
+  td {
+    padding-inline: 1rem;
   }
 
   @media screen and (min-width:450px) {

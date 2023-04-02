@@ -113,6 +113,22 @@ let emailClientFamilies = {
     return this.families[emailClientFamily]
               .clients[emailClient]
               .tags.hasOwnProperty(tag);
+  },
+
+
+  getFlatClients() {
+    let clients = [];
+    
+    Object.entries(this.families).map(([id, item]) => {
+        Object.entries(item.clients).forEach(([platform, data]) => {
+          clients.push({
+            name: `${item.name} (${unslugify(platform)})`,
+            ...data
+          })
+        })
+    })
+
+    return clients;
   }
 };
 
@@ -135,7 +151,7 @@ for (const [key, value] of Object.entries(caniemail.nicenames.family)) {
 // populate emailClientFamilies with email clients and tagged features
 caniemail.data
   .filter(feature => feature.tags.length)
-  // add all email clients to email client families
+  // add all email clients to eemailClientFamilies
   .map(feature => {
     for (const [emailClientFamily, emailClients] of Object.entries(feature.stats)) {
       Object.keys(emailClients).forEach(client => emailClientFamilies.addClientToFamily(emailClientFamily, client));
@@ -197,6 +213,25 @@ caniemail.data
       </ul>
   </details>
 )) }
+
+
+
+<h2>Email client ranks</h2>
+{ Object.entries(tags).map(([tagName, tagFeatures]) => (
+  <Fragment>
+    <h3>{unslugify(tagName)}</h3>
+    
+    <ol>
+      {emailClientFamilies.getFlatClients()
+        .sort((a, b) => b.tags[tagName].y.length - a.tags[tagName].y.length)
+        .map((item) => (
+          <li>{item.name} ({item.tags[tagName].y.length} features)</li>
+      ))}
+    </ol>
+  </Fragment>
+
+)) }
+
 
 
 { Object.entries(emailClientFamilies.families)

@@ -207,27 +207,20 @@ caniemail.data
 <Fragment>
 
 <section>
-  <h2>Tested features by category</h2>
-
-  { Object.entries(tags).map(([tagName, tagFeatures]) => (
-    <details>
-        <summary>
-          <h3>{unslugify(tagName)}</h3>
-        </summary>
-        <ul class="mulit-cols">
-          {tagFeatures.map(featureName => <li>{getCaniemailFeatureName(featureName)}</li>)}
-        </ul>
-    </details>
-  )) }
-</section>
-
-
-<section>
   <h2>Email client ranks by category</h2>
 
   { Object.entries(tags).map(([tagName, tagFeatures]) => (
     <Fragment>
       <h3>{unslugify(tagName)} ({tagFeatures.length} tested features)</h3>
+
+      <details>
+        <summary>
+          <h4 class="summary-title">Tested features</h4>
+        </summary>
+        <ul class="mulit-cols">
+          {tagFeatures.map(featureName => <li>{getCaniemailFeatureName(featureName)}</li>)}
+        </ul>
+    </details>
       
       <table>
         <thead>
@@ -347,9 +340,10 @@ caniemail.data
   }
 
   details {
-    margin-top: 1.25rem
+    margin-block: 1.25rem;
+    cursor: pointer;
   }
-  details h3 {
+  details .summary-title {
     display: inline-block;
   }
 

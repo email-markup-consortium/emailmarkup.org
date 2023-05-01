@@ -213,14 +213,16 @@ caniemail.data
 <Fragment>
 
 <section>
-  <h2>Email client ranks by category</h2>
+  <h2 id="email-client-ranks-by-category">Email client ranks by category</h2>
   <p>
     The below outlines the three categories of accessibility, performance, and internationalization with the respective email clients that support them.
   </p>
 
   { Object.entries(tags).map(([tagName, tagFeatures]) => (
     <Fragment>
-      <h3>{unslugify(tagName)} ({tagFeatures.length} tested features)</h3>
+      <h3 id={tagName}>
+        {unslugify(tagName)} ({tagFeatures.length} tested features)
+      </h3>
 
       <p>
         {tagDescriptions[tagName] ?? ''}
@@ -276,7 +278,7 @@ caniemail.data
 
 
 <section>
-  <h2>Features per email client</h2>
+  <h2 id="features-per-email-client">Features per email client</h2>
 
   { Object.entries(emailClientFamilies.families)
     .filter(([emailClientFamily, emailClients]) => Object.keys(emailClients.clients).length)

@@ -2,6 +2,12 @@
 const response = await fetch('https://www.caniemail.com/api/data.json');
 const caniemail = await response.json();
 
+const tagDescriptions = {
+  performance: `These features are key to the success of email rendering and loading. `,
+  accessibility: `These features are key to enabling assistive technology such as screen readers to be able to ingest email content. Email clients that support a majority of these features give email creators all opportunities to create accessible emails for their subscribers.`,
+  i18n: `Certain aspects of HTML and CSS are limited in their ability to translate across many languages. This category of features outlines those that are beneficial to internationalization (I18n) which would allow for developers the freedom to create semantic HTML in languages aside from English.`,
+}
+
 function getCaniemailFeatureName(slug) {
   return caniemail.data.find(feature => feature.slug == slug).title
 }
@@ -212,6 +218,10 @@ caniemail.data
   { Object.entries(tags).map(([tagName, tagFeatures]) => (
     <Fragment>
       <h3>{unslugify(tagName)} ({tagFeatures.length} tested features)</h3>
+
+      <p>
+        {tagDescriptions[tagName] ?? ''}
+      </p>
 
       <details>
         <summary>

@@ -44,7 +44,7 @@ function unslugify(str) {
       break;
 
     case 'i18n':
-      return 'i18n';
+      return 'Internationalization';
       break;
     
     default:
@@ -290,7 +290,7 @@ caniemail.data
                 <Fragment>
                   <tr>
                     <td>
-                      {tagName}
+                      {unslugify(tagName)}
                     </td>
                     <td>
                       {features.y.length}

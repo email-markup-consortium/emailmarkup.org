@@ -1,0 +1,19 @@
+---
+const { pathIncludes='' } = Astro.props;
+let posts = await Astro.glob('../pages/en/docs/sanitizer/**/*.(md|mdx)');
+
+posts = posts
+  .filter(post => !post.file.endsWith('index.mdx'))
+  .filter(post => post.file.includes(pathIncludes))
+  .sort()
+---
+
+<ul>
+  {posts.map(post => (
+    <li>
+      <a href={post.url}>
+        {post.frontmatter.title}
+      </a>
+    </li>
+  ))}
+</ul>

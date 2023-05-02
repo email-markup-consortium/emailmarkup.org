@@ -120,7 +120,7 @@ import SponsorRandom from '@components/Sponsors/SponsorRandom';
 
 		<main class="layout">
 			<aside id="grid-left" class="grid-sidebar" title="Site Navigation">
-				<LeftSidebar {currentPage} />
+				<LeftSidebar {currentPage} {frontmatter} />
 			</aside>
 			<div id="grid-main">
 				<PageContent {frontmatter} {headings} {githubEditUrl} {lastModifiedDate}>

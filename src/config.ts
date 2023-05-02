@@ -31,25 +31,40 @@ export const GITHUB_EDIT_URL = `https://github.com/${GITHUB_REPO}/blob/main/`;
 //   apiKey: 'XXXXXXXXXX',
 // }
 
-export const SIDEBAR = {
-	en: [
-		{ text: '', header: true },
-		{ text: 'Mission', link: 'en/docs/mission' },
-		{ text: 'Projects', link: 'en/projects' },
-		{ text: 'Roles', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/roles-and-responsibilities.md' },
-		{ text: 'Code of Conduct', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md' },
-		
-		{ text: 'Help', header: true },
-		{ text: 'Contribute', link: 'en/how-to-help' },
-		{ text: 'Sponsor', link: 'en/sponsors' },
+export const SIDEBARS = {
+	default: {
+		en: [
+			{ text: '', header: true },
+			{ text: 'Mission', link: 'en/docs/mission' },
+			{ text: 'Projects', link: 'en/projects' },
+			{ text: 'Roles', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/roles-and-responsibilities.md' },
+			{ text: 'Code of Conduct', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md' },
+			
+			{ text: 'Help', header: true },
+			{ text: 'Contribute', link: 'en/how-to-help' },
+			{ text: 'Sponsor', link: 'en/sponsors' },
+	
+			{ text: 'Docs', header: true },
+			{ text: 'Glossary', link: 'en/docs/glossary' },
+			{ text: 'Vision', link: 'en/docs/vision' },
+			{ text: 'Benefits', link: 'en/docs/benefits' },
+			{ text: 'Compliant Standards', link: 'en/docs/compliant-standards' },
+			{ text: 'Sanitizer', link: 'en/docs/sanitizer' },
+	
+			{ text: 'Reports', header: true },
+			{ text: 'Accessibility', link: 'en/reports/accessibility' },
+		],
+	},
 
-		{ text: 'Docs', header: true },
-		{ text: 'Glossary', link: 'en/docs/glossary' },
-		{ text: 'Vision', link: 'en/docs/vision' },
-		{ text: 'Benefits', link: 'en/docs/benefits' },
-		{ text: 'Compliant Standards', link: 'en/docs/compliant-standards' },
+	sanitizer: {
+		en: [
+			{ text: '', header: true },
+			{ text: 'Back', link: 'en/docs/' },
 
-		{ text: 'Reports', header: true },
-		{ text: 'Accessibility', link: 'en/reports/accessibility' },
-	],
+			{ text: 'Sanitizer', header: true },
+			{ text: 'Intro', link: 'en/docs/sanitizer' },
+			{ text: 'Handling', link: 'en/docs/sanitizer/handling' },
+			{ text: 'Safe/Unsafe', link: 'en/docs/sanitizer/safe' },
+		],
+	}
 };

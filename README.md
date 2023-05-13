@@ -13,3 +13,9 @@ All commands are run from the root of the project, from the command line:
 | `npm run build`   | Build your production site to `./dist/`      |
 | `npm run preview` | Preview your build locally, before deploying |
 
+
+## Automated deploys
+
+The site is set to build and deploy once a week. This is triggered by posting to a Netlify webhook from an IFTTT applet.
+
+Similar setup: https://flaviocopes.com/netlify-auto-deploy/ 

@@ -13,6 +13,8 @@ import '../styles/theme.css';
 import '../styles/index.css';
 
 const { frontmatter = {}, headings } = Astro.props;
+const onThisPageHeadings = frontmatter.customHeadings ?? headings;
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
 
@@ -123,13 +125,13 @@ import SponsorRandom from '@components/Sponsors/SponsorRandom';
 				<LeftSidebar {currentPage} />
 			</aside>
 			<div id="grid-main">
-				<PageContent {frontmatter} {headings} {githubEditUrl} {lastModifiedDate}>
+				<PageContent {frontmatter} headings={onThisPageHeadings} {githubEditUrl} {lastModifiedDate}>
 					<slot />
 				</PageContent>
 			</div>
 			<aside id="grid-right" class="grid-sidebar" title="Table of Contents">
 				<SponsorRandom />
-				<RightSidebar {headings} {githubEditUrl} />
+				<RightSidebar headings={onThisPageHeadings} {githubEditUrl} />
 			</aside>
 		</main>
 

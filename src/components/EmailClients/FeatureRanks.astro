@@ -233,7 +233,13 @@ caniemail.data
           <h4 class="summary-title">Tested features</h4>
         </summary>
         <ul class="mulit-cols">
-          {tagFeatures.map(featureName => <li>{getCaniemailFeatureName(featureName)}</li>)}
+          {tagFeatures.map(featureName => 
+            <li>
+              <a href={getCaniemailFeaturesURL([featureName])}>
+                {getCaniemailFeatureName(featureName)}
+              </a>
+            </li>
+          )}
         </ul>
     </details>
       
@@ -361,7 +367,7 @@ caniemail.data
   details .summary-title {
     display: inline-block;
   }
-  details :not(summary, summary *) {
+  details :not(summary, summary *, a) {
     cursor: auto;
   }
 

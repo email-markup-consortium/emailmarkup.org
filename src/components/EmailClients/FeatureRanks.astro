@@ -361,6 +361,9 @@ caniemail.data
   details .summary-title {
     display: inline-block;
   }
+  details :not(summary, summary *) {
+    cursor: auto;
+  }
 
   td:has(.mulit-cols) {
     padding-block: 1.5rem;

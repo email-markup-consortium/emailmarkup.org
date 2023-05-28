@@ -1,7 +1,7 @@
 ---
 title: Collecting Data
 description: Why is the Email Markup Consortium is collecting HTMl emails, and how is this data used?
-author: Mark Robbins
+author: mark-robbins
 pubDate: 2022-06-08
 published: true
 layout: "@layouts/BlogLayout"

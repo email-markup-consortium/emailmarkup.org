@@ -1,7 +1,7 @@
 ---
 title: Introducing the Email Markup Consortium (EMC)
 description: What is the Email Markup Consortium, and why has it been founded
-author: Hussein Al Hammad
+author: hussein-alhammad
 pubDate: 2022-05-25
 published: true
 layout: "@layouts/BlogLayout"

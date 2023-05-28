@@ -3,6 +3,8 @@ import MoreMenu from '../RightSidebar/MoreMenu.astro';
 import TableOfContents from '../RightSidebar/TableOfContents';
 
 import FormattedDate from '@components/FormattedDate';
+import Author from '@components/Author';
+
 const { frontmatter, headings, githubEditUrl } = Astro.props;
 const { title, author, pubDate } = frontmatter;
 const publishedDate = new Date( frontmatter.pubDate );
@@ -16,10 +18,17 @@ const publishedDate = new Date( frontmatter.pubDate );
 <article id="article" class="content">
 	<section class="main-section">
 		<h1 class="content-title" id="overview">{title}</h1>
+		
+		<div class="article-meta">
+			
+			<p class="article-meta-date">
+				<b>Published:</b> <FormattedDate date={publishedDate} />
+			</p>
 
-		<p>
-			<FormattedDate date={publishedDate} /> &#8211; by {author}
-		</p>
+			
+			<Author name={author} />
+		</div>
+
 
 		<nav class="block sm:hidden">
 			<TableOfContents client:media="(max-width: 50em)" {headings} />
@@ -37,6 +46,15 @@ const publishedDate = new Date( frontmatter.pubDate );
 	}
 	.top-nav a {
 		text-decoration: none;
+	}
+
+	.article-meta {
+		margin-bottom: 4rem;
+	}
+
+	.article-meta-date {
+		margin-top: 1rem;
+		margin-bottom: .5rem;
 	}
 
 	.content {

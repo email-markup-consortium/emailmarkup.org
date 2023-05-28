@@ -1,8 +1,8 @@
 ---
 title: The new Outlook for Windows
-description: 
+description: On May 2022, Microsoft announced the new Outlook for Windows, a version that will have a huge positive impact in the email space. Learn how this version is expected to impact the industry.
 author: Hussein Al Hammad
-date: 2023-03-13
+pubDate: 2023-03-13
 published: true
 layout: "@layouts/MainLayout"
 ---

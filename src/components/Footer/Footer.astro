@@ -1,5 +1,6 @@
 ---
 import EmcLogo from '@components/Header/EmcLogo';
+import Analytics from '@components/Analytics/Analytics';
 ---
 
 
@@ -93,3 +94,5 @@ import EmcLogo from '@components/Header/EmcLogo';
     }
   }
 </style>
+
+{import.meta.env.PROD && <Analytics />}

@@ -7,7 +7,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://emailmarkup.org',
+	site: 'https://emailmarkup.org/',
 	integrations: [
 		// Enable Preact to support Preact JSX components.
 		preact(),

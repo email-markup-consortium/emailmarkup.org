@@ -51,5 +51,6 @@ export const SIDEBAR = {
 
 		{ text: 'Reports', header: true },
 		{ text: 'Accessibility', link: 'en/reports/accessibility' },
+		{ text: 'Email Clients', link: 'en/reports/email-clients' },
 	],
 };

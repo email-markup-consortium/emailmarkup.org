@@ -1,0 +1,40 @@
+---
+import BlogLayout from '@layouts/BlogLayout';
+import { getCollection } from 'astro:content';
+import FeaturedArticle from '@components/FeaturedArticle';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BlogLayout>
+	<style>
+		.intro {
+			margin-bottom: 2rem;
+		}
+
+	</style>
+	<div class="intro">
+		<h1>
+			The EMC Blog
+		</h1>
+	
+		<p>
+			News and updates from the Email Markup Consortium team
+		</p>
+	</div>
+
+	<section>
+		{
+			posts.map((post) => (
+				<FeaturedArticle 
+					title={post.data.title}
+					publishedDate={post.data.pubDate}
+					desc={post.data.description}
+					link={`/en/blog/${post.slug}`}
+				/>
+			))
+		}
+	</section>
+</BlogLayout>

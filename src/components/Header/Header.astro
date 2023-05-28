@@ -10,7 +10,7 @@ import ThemeToggleButton from '../ThemeToggleButton/ThemeToggleButton';
 import LeftSidebarToggle from './LeftSidebarToggle.astro';
 
 
-const { currentPage, frontmatter } = Astro.props;
+const { currentPage, frontmatter, includeSidebarToggle = false } = Astro.props;
 const lang = currentPage && getLanguageFromURL(currentPage);
 ---
 
@@ -97,7 +97,7 @@ const lang = currentPage && getLanguageFromURL(currentPage);
 		</nav>
 	</div>
 
-	{currentPage!='/' && ( <LeftSidebarToggle {frontmatter} /> )}
+	{ includeSidebarToggle && ( <LeftSidebarToggle {frontmatter} /> )}
 </header>
 
 

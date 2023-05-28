@@ -4,7 +4,7 @@ description: On May 2022, Microsoft announced the new Outlook for Windows, a ver
 author: Hussein Al Hammad
 pubDate: 2023-03-13
 published: true
-layout: "@layouts/MainLayout"
+layout: "@layouts/BlogLayout"
 ---
 
 On 17 May 2022, Microsoft [announced the new Outlook for Windows](https://insider.office.com/en-us/blog/the-new-outlook-for-windows-helps-you-be-more-productive-and-in-control-of-your-inbox), a version that will have a huge positive impact in the email space.

@@ -8,7 +8,7 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<BlogLayout>
+<BlogLayout isList=true>
 	<style>
 		.intro {
 			margin-bottom: 2rem;

@@ -4,7 +4,7 @@ description: What is the Email Markup Consortium, and why has it been founded
 author: Hussein Al Hammad
 pubDate: 2022-05-25
 published: true
-layout: "@layouts/MainLayout"
+layout: "@layouts/BlogLayout"
 ---
 
 ## What is the Email Markup Consortium?

@@ -4,7 +4,7 @@ description: Why is the Email Markup Consortium is collecting HTMl emails, and h
 author: Mark Robbins
 pubDate: 2022-06-08
 published: true
-layout: "@layouts/MainLayout"
+layout: "@layouts/BlogLayout"
 ---
 
 A number of projects we are working on require us to analyze real emails being sent on an on-going basis. We could not find a single data source that meets our criteria. That’s why we have recently started a new project to collect email data with the help of our good friends and sponsors at [Parcel](http://parcel.io/).

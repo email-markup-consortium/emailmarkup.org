@@ -5,11 +5,14 @@ import Header from '@components/Header/Header';
 import Body from '@components/Body';
 import SponsorRandom from '@components/Sponsors/SponsorRandom';
 import Footer from '@components/Footer/Footer';
+import BlogContent from '@components/PageContent/BlogContent';
+import RightSidebar from '@components/RightSidebar/RightSidebar';
 
 import '../styles/theme.css';
 import '../styles/index.css';
 
-const { frontmatter = {} } = Astro.props;
+const { frontmatter = {}, isList, headings } = Astro.props;
+const onThisPageHeadings = frontmatter.customHeadings ?? headings;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
@@ -91,10 +94,21 @@ const currentPage = Astro.url.pathname;
 
 		<main class="layout">
 			<div id="grid-main">
-				<slot />
+				{isList 
+					?
+					<slot />
+					:
+					<BlogContent {frontmatter} headings={onThisPageHeadings}>
+						<slot />
+					</BlogContent>
+				}
 			</div>
 			<aside id="grid-right" class="grid-sidebar" title="Table of Contents">
 				<SponsorRandom />
+				
+				{!isList &&
+					<RightSidebar headings={onThisPageHeadings} />
+				}
 			</aside>
 		</main>
 

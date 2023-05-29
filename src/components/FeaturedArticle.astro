@@ -1,14 +1,14 @@
 ---
 import FormattedDate from '@components/FormattedDate';
-const { link, title, desc, publishedDate } = Astro.props;
+const { link, title, desc, publishedDate, Heading = 'h3'} = Astro.props;
 ---
 
 <article class="featured-article">
-  <h3 class="featured-article-heading">
+  <Heading class="featured-article-heading">
     <a href={link}>
       {title}
     </a>
-  </h3>
+  </Heading>
 
   {(publishedDate) &&
     <div class="article-meta">

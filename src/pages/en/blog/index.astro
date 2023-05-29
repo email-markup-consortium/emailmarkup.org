@@ -33,6 +33,7 @@ const posts = (await getCollection('blog')).sort(
 					publishedDate={post.data.pubDate}
 					desc={post.data.description}
 					link={`/en/blog/${post.slug}`}
+					Heading="h2"
 				/>
 			))
 		}

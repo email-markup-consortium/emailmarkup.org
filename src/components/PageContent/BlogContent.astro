@@ -19,15 +19,14 @@ const publishedDate = new Date( frontmatter.pubDate );
 	<section class="main-section">
 		<h1 class="content-title" id="overview">{title}</h1>
 		
-		<div class="article-meta">
-			
+		<header class="article-meta">
 			<p class="article-meta-date">
 				<b>Published:</b> <FormattedDate date={publishedDate} />
 			</p>
 
 			
 			<Author name={author} />
-		</div>
+		</header>
 
 
 		<nav class="block sm:hidden">

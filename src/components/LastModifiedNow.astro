@@ -1,0 +1,8 @@
+---
+const lastModifiedDate = new Date();
+const formattedLastModifiedDate = `${lastModifiedDate.getDate()} ${lastModifiedDate.toLocaleString('default', { month: 'long' })} ${lastModifiedDate.getFullYear()}`;
+---
+
+<p>
+  <b>Last modified:</b> <time datetime={lastModifiedDate.toISOString()}>{formattedLastModifiedDate}</time>
+</p>

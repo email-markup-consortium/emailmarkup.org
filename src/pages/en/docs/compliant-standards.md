@@ -1,6 +1,6 @@
 ---
 title: EMC Compliant Standards
-description:
+description: Top level concepts of what the HTML email markup should do
 layout: "@layouts/MainLayout"
 ---
 

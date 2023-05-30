@@ -6,9 +6,13 @@ import FeaturedArticle from '@components/FeaturedArticle';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const frontmatter = {
+	description: 'News and updates from the Email Markup Consortium team'
+};
 ---
 
-<BlogLayout isList=true>
+<BlogLayout isList=true frontmatter={frontmatter}>
 	<style>
 		.intro {
 			margin-bottom: 2rem;

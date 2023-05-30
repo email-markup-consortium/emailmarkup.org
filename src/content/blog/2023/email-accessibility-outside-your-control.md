@@ -55,7 +55,7 @@ When asking for these things, it can sometimes feel like nobody is listening, bu
 Sometimes you can see the issue but you don’t have the necessary resources to address it fully. In some cases there may be a generic solution you can use while you’re working on a long term fix.
 
 
-## Title tag
+### Title tag
 
 Ideally you’d have a unique title for each email, with some detail about what’s inside. This could be the subject line, but if you don’t yet have a way to edit that easily you can use a generic title while you work on a longer term solution. It’s much better than leaving it blank.
 
@@ -66,7 +66,7 @@ But as a partial solution you can use a generic title, such as;
 * “MyBrand Order Update”
 
 
-## Language and language direction
+### Language and language direction
 
 It’s important to set a language and direction. This helps with a number of assistive technology tools as well as translation tools.
 
@@ -77,11 +77,11 @@ Without a `lang` or `dir` attribute the language and direction will inherit from
 There is room for error here as the user agent might make the wrong guess, so setting an exact language and direction is always best. But setting `lang="und" dir="auto"` is far better than setting nothing and works as a good solution while you’re working on a longer term fix.
 
 
-## Content added by sending tools
+### Content added by sending tools
 
 Sending tools often add additional content to emails, this content doesn’t always meet accessibility standards. It’s understandable as It can be hard to match the requirements of the specific email. But there are a number of things sending tools can do to help this.
 
-## Preheader text
+### Preheader text
 
 Some sending tools will add preheader text to the email, making it easier for the user. They can just type the text they want into an input and it gets added to the code. It’s really helpful however this code is often added directly after the opening `<body>` tag so may not be included in the wrapping element used for adding language and direction.
 
@@ -96,7 +96,7 @@ There are a few options here to work around this issue;
 ```
 
 
-## Tracking codes
+### Tracking codes
 
 Most marketing emails include some kind of open tracking. This is usually an `<img>` tag, sometimes with a `<style>` block for some more advanced tracking.
 
@@ -121,7 +121,7 @@ The options for sending tools to fix this are similar to the solutions to prehea
 Here we’re using `lang="zxx"` to say that this is source code, also  we’re also adding `aria-hidden="true"` to say this should not be read out by assistive technology.
 
 
-## Empty links
+### Empty links
 
 Some tools will add in a honeypot link to help track bots. The idea is a link is hidden from the user, but bots will automatically click on it. However if the link is included in the DOM then it’s going to be found by assistive technology, like keyboard inputs and screen readers.
 

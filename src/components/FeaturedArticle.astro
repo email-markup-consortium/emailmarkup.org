@@ -1,14 +1,28 @@
 ---
-const { link, title, desc } = Astro.props;
+import FormattedDate from '@components/FormattedDate';
+const { link, title, desc, publishedDate, Heading = 'h3'} = Astro.props;
 ---
 
 <article class="featured-article">
-  <h3 class="featured-article-heading">
+  <Heading class="featured-article-heading">
     <a href={link}>
       {title}
     </a>
-  </h3>
+  </Heading>
+
+  {(publishedDate) &&
+    <div class="article-meta">
+      <p>
+        {publishedDate && <FormattedDate date={publishedDate} />}
+      </p>
+    </div>
+  }
+
   <p>{desc}</p>
+
+  <div class="article-footer">
+    <a href={link}><b>Read more →</b></a>
+  </div>
 </article>
 
 <style>
@@ -28,6 +42,14 @@ const { link, title, desc } = Astro.props;
     text-decoration: none;
   }
 
+  .article-meta {
+    margin-top: -.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .article-footer {
+    margin-top: 1rem;
+  }
 
   :root.theme-dark .featured-article {
     background-color: var(--theme-bg-alt);

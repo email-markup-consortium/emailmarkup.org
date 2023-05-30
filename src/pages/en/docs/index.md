@@ -1,6 +1,6 @@
 ---
 title: EMC documentation
-description: Docs intro
+description: The Email Markup Consortium documentation
 layout: '@layouts/MainLayout'
 ---
 

@@ -114,7 +114,7 @@ The options for sending tools to fix this are similar to the solutions to prehea
 ```html
 <div lang="zxx" dir="auto" aria-hidden="true">
   <style></style>
-  <img src="[trackingcode]" alt=">
+  <img src="[trackingcode]" alt="">
 </div>
 ```
 

@@ -43,16 +43,16 @@ export const SIDEBARS = {
 			{ text: 'Help', header: true },
 			{ text: 'Contribute', link: 'en/how-to-help' },
 			{ text: 'Sponsor', link: 'en/sponsors' },
-	
+
 			{ text: 'Docs', header: true },
 			{ text: 'Glossary', link: 'en/docs/glossary' },
 			{ text: 'Vision', link: 'en/docs/vision' },
 			{ text: 'Benefits', link: 'en/docs/benefits' },
 			{ text: 'Compliant Standards', link: 'en/docs/compliant-standards' },
-			{ text: 'Sanitizer', link: 'en/docs/sanitizer' },
-	
+
 			{ text: 'Reports', header: true },
 			{ text: 'Accessibility', link: 'en/reports/accessibility' },
+			{ text: 'Email Clients', link: 'en/reports/email-clients' }
 		],
 	},
 

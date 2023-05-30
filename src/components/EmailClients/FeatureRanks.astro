@@ -1,0 +1,388 @@
+---
+const response = await fetch('https://www.caniemail.com/api/data.json');
+const caniemail = await response.json();
+
+const tagDescriptions = {
+  performance: `These features are key to the success of email rendering and loading. `,
+  accessibility: `These features are key to enabling assistive technology such as screen readers to be able to ingest email content. Email clients that support a majority of these features give email creators all opportunities to create accessible emails for their subscribers.`,
+  i18n: `Certain aspects of HTML and CSS are limited in their ability to translate across many languages. This category of features outlines those that are beneficial to internationalization (I18n) which would allow for developers the freedom to create semantic HTML in languages aside from English.`,
+}
+
+function getCaniemailFeatureName(slug) {
+  return caniemail.data.find(feature => feature.slug == slug).title
+}
+
+function getCaniemailFeaturesURL(features) {
+  return `https://caniemail.com/search/?s=${features.join(encodeURIComponent('+'))}`;
+}
+
+
+function findUntestedFeatures(tagName, testedFeatures) {
+  return tags[tagName].filter(feature => {
+    for(const [support, features] of Object.entries(testedFeatures)) {
+      if(support == 'u') {
+        continue;
+      }
+
+      if (features.includes(feature)) {
+        return false;
+      }
+    }
+
+    return true;
+  })
+}
+
+function unslugify(str) {
+  let val = str.replaceAll('-', ' ');
+
+  switch(val) {
+    case 'ios':
+      return 'iOS';
+      break;
+
+    case 'macos':
+      return "MacOS";
+      break;
+
+    case 'outlook com':
+      return 'outlook.com';
+      break;
+
+    case 'i18n':
+      return 'Internationalization';
+      break;
+    
+    default:
+      return val.charAt(0).toUpperCase() + val.slice(1);
+  }
+}
+
+
+// {"accessibility":[], "performance":[], ...
+let tags = {};
+
+
+// {"families":{"gmail":{"name":"Gmail","clients":{"desktop-webmail":{"tags":["y":[], "n":[], "a":[]]},"ios":{"tags":[]}, ...
+let emailClientFamilies = {
+  families: {},
+
+  // families[familyName].clients[clientName].tags[tagName][support]
+  addFeatureToTag: function (emailClientFamily, emailClient, tag, featureSlug, support) {
+    this.families[emailClientFamily]
+      .clients[emailClient]
+      .tags[tag][support].push(featureSlug);
+  },
+
+
+  // adds a tag to all email clients (families[familyName].clients)
+  addTagToAllClients: function (tag) {
+    for (const [familyID, familyData] of Object.entries(this.families)) {
+      for (const clientID in familyData.clients) {
+        this.addTagToClient(familyID, clientID, tag)
+      }
+    }
+  },
+
+
+  // families[familyName].clients[clientName].tags[tagName]
+  addTagToClient: function (emailClientFamily, emailClient, tag) {
+    if (!this.tagExists(emailClientFamily, emailClient, tag)) {
+      this.families[emailClientFamily]
+        .clients[emailClient]
+        .tags[tag] = {
+          'y': [],
+          'a': [],
+          'n': [],
+          'u': []
+        };
+    }
+  },
+
+
+  // families[familyName].clients[clientName]
+  addClientToFamily: function (emailClientFamily, emailClient) {
+    if (!this.clientExists(emailClientFamily, emailClient)) {
+      this.families[emailClientFamily]
+          .clients[emailClient] = { tags: [] };
+    }
+  },
+
+
+  clientExists(emailClientFamily, emailClient) {
+    return this.families[emailClientFamily]
+                .clients.hasOwnProperty(emailClient);
+  },
+
+
+  tagExists(emailClientFamily, emailClient, tag) {
+    return this.families[emailClientFamily]
+              .clients[emailClient]
+              .tags.hasOwnProperty(tag);
+  },
+
+
+  getFlatClients(sortByTag=false) {
+    let clients = [];
+    
+    Object.entries(this.families).map(([id, item]) => {
+        Object.entries(item.clients).forEach(([platform, data]) => {
+          clients.push({
+            name: `${item.name} (${unslugify(platform)})`,
+            ...data
+          })
+        })
+    })
+
+    if(sortByTag) {
+      clients = clients.sort((a, b) => b.tags[sortByTag].y.length - a.tags[sortByTag].y.length);
+    }
+
+    return clients;
+  }
+};
+
+
+
+
+// populate emailClientFamilies with families
+for (const [key, value] of Object.entries(caniemail.nicenames.family)) {
+  emailClientFamilies.families[key] = {
+    name: value,
+    clients: {}
+  }
+}
+
+
+
+
+// loop over caniemail data and get data we care about
+// populate tags with tagNames and features
+// populate emailClientFamilies with email clients and tagged features
+caniemail.data
+  .filter(feature => feature.tags.length)
+  // add all email clients to eemailClientFamilies
+  .map(feature => {
+    for (const [emailClientFamily, emailClients] of Object.entries(feature.stats)) {
+      Object.keys(emailClients).forEach(client => emailClientFamilies.addClientToFamily(emailClientFamily, client));
+    }
+
+    return feature;
+  })
+  // add all tag categories and features to `tags`
+  // add all tags to all email clients
+  .map(feature => {
+    feature.tags.forEach(tag => {
+      if (!tags.hasOwnProperty(tag)) {
+        tags[tag] = [];
+        
+        emailClientFamilies.addTagToAllClients(tag);
+      }
+
+      // add feature to tags.tagName
+      if (!tags[tag].includes(feature.slug)) {
+        tags[tag].push(feature.slug)
+      }
+    });
+
+    return feature;
+  })
+  // populate categorised features in each email clients
+  // "stats": {"family":{"client":{}, "another-client":{}}, "apple-mail":{"macos":{},"ios":{}},"gmail":{...}, ...}
+  .forEach(feature => {
+    for (const [emailClientFamily, emailClients] of Object.entries(feature.stats)) {
+      for (const [emailClient, stats] of Object.entries(emailClients)) {
+        // only care about current support (last val from list)
+        // e.g. values `y`, `a #1`
+        let currentSupport = Object.values(stats).pop().toString().trim()[0];
+
+        // add tags and feature to email client data
+        feature.tags.forEach(tag => {
+          emailClientFamilies.addFeatureToTag(
+            emailClientFamily,
+            emailClient,
+            tag,
+            feature.slug,
+            currentSupport
+          );
+        });
+      }
+    }
+  })
+---
+<Fragment>
+
+<section>
+  <h2 id="email-client-ranks-by-category">Email client ranks by category</h2>
+  <p>
+    The below outlines the three categories of accessibility, performance, and internationalization with the respective email clients that support them.
+  </p>
+
+  { Object.entries(tags).map(([tagName, tagFeatures]) => (
+    <Fragment>
+      <h3 id={tagName}>
+        {unslugify(tagName)} ({tagFeatures.length} tested features)
+      </h3>
+
+      <p>
+        {tagDescriptions[tagName] ?? ''}
+      </p>
+
+      <details open>
+        <summary>
+          <h4 class="summary-title">Tested features</h4>
+        </summary>
+        <ul class="mulit-cols">
+          {tagFeatures.map(featureName => 
+            <li>
+              <a href={getCaniemailFeaturesURL([featureName])}>
+                {getCaniemailFeatureName(featureName)}
+              </a>
+            </li>
+          )}
+        </ul>
+    </details>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Number of features
+            </th>
+            <th>
+              Email Clients
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {emailClientFamilies.getFlatClients(tagName)
+            .map((item, index, arr) => (
+              (index==0 || item.tags[tagName].y.length !== arr[index-1].tags[tagName].y.length) &&
+              <tr>
+                <td>
+                  {item.tags[tagName].y.length}/{tagFeatures.length}
+                </td>
+
+                <td>
+                  <ul class="mulit-cols">
+                    {emailClientFamilies.getFlatClients(tagName)
+                      .filter((el) => el.tags[tagName].y.length == item.tags[tagName].y.length)
+                      .map((el) => (
+                        <li>{el.name}</li>
+                    ))}
+                  </ul>
+                </td>
+              </tr>
+          ))}
+        </tbody>
+      </table>
+    </Fragment>
+
+  )) }
+</section>
+
+
+<section>
+  <h2 id="features-per-email-client">Features per email client</h2>
+
+  { Object.entries(emailClientFamilies.families)
+    .filter(([emailClientFamily, emailClients]) => Object.keys(emailClients.clients).length)
+    .map(([emailClientFamily, emailClients]) => (
+    <Fragment>
+      { Object.entries(emailClients.clients).map(([emailClientName, emailClientData]) => (
+        <Fragment>
+          <h3>{emailClients.name} ({unslugify(emailClientName)})</h3>
+        
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Supported</th>
+                <th>Partial</th>
+                <th>Unsupported</th>
+                <th>Untested</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              { Object.entries(emailClientData.tags).sort().map(([tagName, features]) => (
+                <Fragment>
+                  <tr>
+                    <td>
+                      {unslugify(tagName)}
+                    </td>
+                    <td>
+                      {features.y.length}
+                      {
+                        features.y.length ? <span>(<a href={getCaniemailFeaturesURL(features.y)}>view</a>)</span> : ''
+                      }
+                    </td>
+                    <td>
+                      {features.a.length} 
+                      {
+                        features.a.length ? <span>(<a href={getCaniemailFeaturesURL(features.a)}>view</a>)</span> : ''
+                      }
+                    </td>
+                    <td>
+                      {features.n.length} 
+                      {
+                        features.n.length ? <span>(<a href={getCaniemailFeaturesURL(features.n)}>view</a>)</span> : ''
+                      }
+                    </td>
+                    <td>
+                      {findUntestedFeatures(tagName, features).length} 
+                      {
+                        findUntestedFeatures(tagName, features).length ? <span>(<a href={getCaniemailFeaturesURL(findUntestedFeatures(tagName, features))}>view</a>)</span> : ''
+                      }
+                    </td>
+                    
+                    <td>
+                      {tags[tagName].length}
+                    </td>
+                  </tr>
+                </Fragment>
+              )) }
+            </tbody>
+          </table>
+        </Fragment>
+      )) }
+    </Fragment>
+  )) }
+</section>
+
+
+
+
+<style>
+  section {
+    padding-block: 1.5rem;
+  }
+
+  details {
+    margin-block: 1.25rem;
+    cursor: pointer;
+  }
+  details .summary-title {
+    display: inline-block;
+  }
+  details :not(summary, summary *, a) {
+    cursor: auto;
+  }
+
+  td:has(.mulit-cols) {
+    padding-block: 1.5rem;
+  }
+  td {
+    padding-inline: 1rem;
+  }
+
+  @media screen and (min-width:450px) {
+    .mulit-cols {
+      column-count: 2;
+    }
+  }
+</style>
+
+</Fragment>

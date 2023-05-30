@@ -1,0 +1,28 @@
+---
+const { name } = Astro.props;
+import { getEntry } from 'astro:content';
+
+const author = await getEntry('authors', name);
+---
+
+<div class="author">
+	<img src={author.data.avatar} alt={author.data.name} width="1" height="1">
+
+	<div>
+		<p>{author.data.name}</p>
+		<p>{author.data.role}</p>
+	</div>
+</div>
+
+<style>
+	.author {
+		display: flex;
+		gap: .5rem;
+		align-items: center;
+	}
+	img {
+		width: 3em;
+		height: auto;
+		border-radius: 9999px;
+	}
+</style>

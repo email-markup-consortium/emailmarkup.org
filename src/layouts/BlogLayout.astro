@@ -3,30 +3,19 @@ import HeadCommon from '@components/HeadCommon';
 import HeadSEO from '@components/HeadSEO';
 import Header from '@components/Header/Header';
 import Body from '@components/Body';
+import SponsorRandom from '@components/Sponsors/SponsorRandom';
 import Footer from '@components/Footer/Footer';
-import PageContent from '@components/PageContent/PageContent';
-import LeftSidebar from '@components/LeftSidebar/LeftSidebar';
+import BlogContent from '@components/PageContent/BlogContent';
 import RightSidebar from '@components/RightSidebar/RightSidebar';
-import * as CONFIG from '../config';
 
 import '../styles/theme.css';
 import '../styles/index.css';
 
-const { frontmatter = {}, headings } = Astro.props;
+const { frontmatter = {}, isList, headings } = Astro.props;
 const onThisPageHeadings = frontmatter.customHeadings ?? headings;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
-
-const filePath = frontmatter.file;
-const currentFile = filePath.slice(filePath.indexOf('src/pages/'));
-const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + currentFile;
-
-const githubResponse = await fetch(`https://api.github.com/repos/${CONFIG.GITHUB_REPO}/commits?path=${encodeURIComponent(currentFile)}&page=1&per_page=1`);
-const githubData = await githubResponse.json();
-const lastModifiedDate = githubData.length ? new Date(githubData[0].commit.author.date) : null;
-
-import SponsorRandom from '@components/Sponsors/SponsorRandom';
 ---
 
 <html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial">
@@ -42,12 +31,10 @@ import SponsorRandom from '@components/Sponsors/SponsorRandom';
 				--doc-padding: 2rem;
 			}
 			.layout {
+				max-width: 82em;
 				display: grid;
 				grid-auto-flow: column;
-				grid-template-columns:
-					minmax(var(--gutter), 1fr)
-					minmax(0, var(--max-width))
-					minmax(var(--gutter), 1fr);
+				grid-template-columns: auto;
 				overflow-x: hidden;
 			}
 			.layout :global(> *) {
@@ -60,15 +47,9 @@ import SponsorRandom from '@components/Sponsors/SponsorRandom';
 				top: 0;
 				padding: 0;
 			}
-			#grid-left {
-				position: fixed;
-				background-color: var(--theme-bg);
-				z-index: 10;
-				display: none;
-			}
 			#grid-main {
-				padding: var(--doc-padding) var(--gutter);
-				grid-column: 2;
+				padding: var(--doc-padding) 1rem;
+				grid-column: 1;
 				display: flex;
 				flex-direction: column;
 				height: 100%;
@@ -79,38 +60,29 @@ import SponsorRandom from '@components/Sponsors/SponsorRandom';
 			:global(.mobile-sidebar-toggle) {
 				overflow: hidden;
 			}
-			:global(.mobile-sidebar-toggle) #grid-left {
-				display: block;
-				top: 3rem;
-			}
 			@media (min-width: 50em) {
 				.layout {
 					overflow: initial;
-					grid-template-columns:
-						20rem
-						minmax(0, var(--max-width));
+					grid-template-columns: 1fr 20rem;
 					gap: 1em;
 				}
-				#grid-left {
-					display: flex;
-					padding-left: 2rem;
-					position: sticky;
-					grid-column: 1;
+
+				#grid-right {
+					display: block;
 				}
 			}
 
 			@media (min-width: 72em) {
 				.layout {
 					grid-template-columns:
-						20rem
-						minmax(0, var(--max-width))
+						1fr
 						18rem;
 					padding-left: 0;
 					padding-right: 0;
 					margin: 0 auto;
 				}
 				#grid-right {
-					grid-column: 3;
+					grid-column: 2;
 					display: block;
 				}
 			}
@@ -118,20 +90,25 @@ import SponsorRandom from '@components/Sponsors/SponsorRandom';
 	</head>
 
 	<Body>
-		<Header {currentPage} {frontmatter} includeSidebarToggle=true />
+		<Header {currentPage} {frontmatter} />
 
 		<main class="layout">
-			<aside id="grid-left" class="grid-sidebar" title="Site Navigation">
-				<LeftSidebar {currentPage} {frontmatter} />
-			</aside>
 			<div id="grid-main">
-				<PageContent {frontmatter} headings={onThisPageHeadings} {githubEditUrl} {lastModifiedDate}>
+				{isList 
+					?
 					<slot />
-				</PageContent>
+					:
+					<BlogContent {frontmatter} headings={onThisPageHeadings}>
+						<slot />
+					</BlogContent>
+				}
 			</div>
 			<aside id="grid-right" class="grid-sidebar" title="Table of Contents">
 				<SponsorRandom />
-				<RightSidebar headings={onThisPageHeadings} {githubEditUrl} />
+				
+				{!isList &&
+					<RightSidebar headings={onThisPageHeadings} />
+				}
 			</aside>
 		</main>
 

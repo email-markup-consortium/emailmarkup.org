@@ -2,6 +2,7 @@
 title: Email Client Feature Support Rankings
 description: Email client feature support ranks in various categories such as performance, accessibility and internationalization
 layout: "@layouts/MainLayout"
+hideLastModifiedDate: true
 customHeadings:
   -
     depth: 2
@@ -26,6 +27,9 @@ customHeadings:
 
 ---
 import FeatureRanks from '@components/EmailClients/FeatureRanks';
+import LastModifiedNow from '@components/LastModifiedNow';
+
+<LastModifiedNow />
 
 [Can I Email?](https://caniemail.com) breaks down email features by the clients that support them. These features come with intrinsic value, which can be broken up into three buckets. Accessibility, performance, and internationalization (i18n).
 

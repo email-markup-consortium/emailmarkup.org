@@ -34,7 +34,7 @@ const currentPage = Astro.url.pathname;
 				max-width: 82em;
 				display: grid;
 				grid-auto-flow: column;
-				grid-template-columns: auto;
+				grid-template-columns: minmax(0,var(--max-width)) minmax(var(--gutter),1fr);
 				overflow-x: hidden;
 			}
 			.layout :global(> *) {

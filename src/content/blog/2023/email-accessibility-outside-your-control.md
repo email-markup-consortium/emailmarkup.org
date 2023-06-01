@@ -55,9 +55,9 @@ When asking for these things, it can sometimes feel like nobody is listening, bu
 Sometimes you can see the issue but you don’t have the necessary resources to address it fully. In some cases there may be a generic solution you can use while you’re working on a long term fix.
 
 
-### Title tag
+### Title element
 
-Ideally you’d have a unique title for each email, with some detail about what’s inside. This could be the subject line, but if you don’t yet have a way to edit that easily you can use a generic title while you work on a longer term solution. It’s much better than leaving it blank.
+Ideally you’d have a unique `<title>` element placed in the the `<head>` of each email, with text describing detail about what’s inside. This could be the subject line, but if you don’t yet have a way to edit that easily you can use a generic title while you work on a longer term solution. It’s much better than leaving it blank.
 
 But as a partial solution you can use a generic title, such as;
 
@@ -81,18 +81,18 @@ There is room for error here as the user agent might make the wrong guess, so se
 
 Sending tools often add additional content to emails, this content doesn’t always meet accessibility standards. It’s understandable as It can be hard to match the requirements of the specific email. But there are a number of things sending tools can do to help this.
 
-### Preheader text
+### Preview text
 
-Some sending tools will add preheader text to the email, making it easier for the user. They can just type the text they want into an input and it gets added to the code. It’s really helpful however this code is often added directly after the opening `<body>` tag so may not be included in the wrapping element used for adding language and direction.
+This is the text that can appear just below the subject line in the inbox. Some sending tools will add preview text to the email, making it easier for the user. The user can just type the text they want into an input and it gets added to the code. It’s really helpful however this code is often added directly after the opening `<body>` tag so may not be included in the wrapping element used for adding language and direction.
 
 There are a few options here to work around this issue;
 
-* Allow a user to add the preheader themselves with a merge tag. This will allow the user to place the preheader in exactly the right place. This is a great option but not every user will know how to edit the code to put this in.
-* Place the preheader inside the wrapping element with the language and direction set. This can be tricky to detect accurately, also there is a chance there is no wrapping element at all.
-* Set generic language and direction on the preheader
+* Allow a user to add the preview text themselves with a merge tag. This will allow the user to place the preview text in exactly the right place. This is a great option but not every user will know how to edit the code to put this in.
+* Place the preview text inside the wrapping element with the language and direction set. This can be tricky to detect accurately, also there is a chance there is no wrapping element at all.
+* Set generic language and direction on the preview text
 
 ```html
-<div style="display:none" lang="und" dir="auto">preheader text</div>
+<div style="display:none" lang="und" dir="auto">preview text</div>
 ```
 
 
@@ -102,10 +102,10 @@ Most marketing emails include some kind of open tracking. This is usually an `<i
 
 Sometimes this `<img>` doesn’t have an `alt` attribute. This image isn’t adding any meaning of function to the content. So it can be fixed by adding an empty `alt=""` attribute on the image.
 
-The tracking code can also get inserted automatically so again, like the preheader it may not be included in the wrapping element used for adding language and direction.
+The tracking code can also get inserted automatically so again, like the preview text it may not be included in the wrapping element used for adding language and direction.
 
 
-The options for sending tools to fix this are similar to the solutions to preheader text;
+The options for sending tools to fix this are similar to the solutions to preview text;
 
 * Allow a user to add the tracking code themselves with a merge tag. This will allow the user to place the it in exactly the right place. This is a great option but not every user will know how to edit the code to put this in.
 * Place the tracking code inside the wrapping element with the language and direction set. This can be tricky to detect accurately, also there is a chance there is no wrapping element at all.

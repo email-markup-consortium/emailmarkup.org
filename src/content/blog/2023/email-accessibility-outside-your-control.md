@@ -57,7 +57,7 @@ Sometimes you can see the issue but you don’t have the necessary resources to 
 
 ### Title element
 
-Ideally you’d have a unique `<title></title>` element places in the the `<head>` of each email, with text describing detail about what’s inside. This could be the subject line, but if you don’t yet have a way to edit that easily you can use a generic title while you work on a longer term solution. It’s much better than leaving it blank.
+Ideally you’d have a unique `<title>` element placed in the the `<head>` of each email, with text describing detail about what’s inside. This could be the subject line, but if you don’t yet have a way to edit that easily you can use a generic title while you work on a longer term solution. It’s much better than leaving it blank.
 
 But as a partial solution you can use a generic title, such as;
 

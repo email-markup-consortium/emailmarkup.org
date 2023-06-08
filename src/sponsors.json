@@ -32,14 +32,6 @@
     "partner": true
   },
   {
-    "name": "Action Rocket",
-    "link": "https://www.actionrocket.co/",
-    "logo": "/img/logo-action-rocket.png",
-
-    "sponsor": false,
-    "partner": true
-  },
-  {
     "name": "Customer.io",
     "link": "https://customer.io",
     "logo": "/img/logo-customer-io.png",

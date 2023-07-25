@@ -1,12 +1,12 @@
 ---
-title: Email Reader View browser extension 
-description: Display emails in a more readable format
-Remove clutter and complicated layouts to help focus on reading the content of emails. Supported in Gmail, Yahoo, AOL, Outlook when viewed in the browser.
+title: Email Reader View browser extension
+description: Display emails in a more readable format. Remove clutter and complicated layouts to help focus on reading the content of emails.
 author: mark-robbins
 pubDate: 2023-07-27
 published: true
 layout: "@layouts/BlogLayout"
 ---
+
 We’re excited to launch our new Email Reader View browser extension. You can [install it from Chrome Web Store now](https://chrome.google.com/webstore/detail/email-reader-view/eekkbigfifdabokecancejangeoallck).
 
 You should also be able to use that link to install it on any Chromium based browsers such as Edge, Opera, Brave, etc.
@@ -35,7 +35,7 @@ If you find an example where an email is displaying poorly when using reader vie
 
 ### Encourage developers to use semantic markup
 
-We’re always trying to get email senders to use semantic code, this tool helps emphasises the importance of semantic structure and hierarchy in a very visual way. When viewed in reader view, well written semantic code, simply looks better. If developers write code to optimise for reader view, the benefits should also apply more widely to the accessibility of the email.
+We’re always trying to get email senders to use semantic code, this tool helps emphasise the importance of semantic structure and hierarchy in a very visual way. When viewed in reader view, well written semantic code, simply looks better. If developers write code to optimise for reader view, the benefits should also apply more widely to the accessibility of the email.
 
 Additionally using the block images option makes checking alt text much easier, allowing you to easily read it in the flow of the email content, much like how a screen reader would.
 
@@ -48,4 +48,3 @@ We think this would be a very valuable feature to build directly into the email 
 In the future we are hoping to add support for more email clients and support for more browsers as well as looking at any feedback we get from users. But the EMC members behind this have day jobs as well as other commitments, so don’t expect a lot of updates.
 
 However if you are interested on working on this project or have more ideas for it, please check out the [Email Reader View Github page](https://github.com/email-markup-consortium/email-reader-view) and get in touch.
-

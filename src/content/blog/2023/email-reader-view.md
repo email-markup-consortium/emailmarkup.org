@@ -1,5 +1,5 @@
 ---
-title: Email reader View Browser extension 
+title: Email Reader View browser extension 
 description: Display emails in a more readable format
 Remove clutter and complicated layouts to help focus on reading the content of emails. Supported in Gmail, Yahoo, AOL, Outlook when viewed in the browser.
 author: mark-robbins

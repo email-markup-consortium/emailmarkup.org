@@ -2,7 +2,7 @@
 title: Email Reader View browser extension
 description: Display emails in a more readable format. Remove clutter and complicated layouts to help focus on reading the content of emails.
 author: mark-robbins
-pubDate: 2023-07-27
+pubDate: 2023-08-07
 published: true
 layout: "@layouts/BlogLayout"
 ---
@@ -17,9 +17,9 @@ Email Reader View is a browser extension that allows the user to view an HTML em
 
 This is inspired by web reader view features have become popular over the last few years, with built in versions in many browser as well as a number of browser extension. 
 
-## Why did we build it
+## Why we built it
 
-There are a number of goals we had with this project 
+There are a number of goals we had with this project.
 
 ### Help users with consuming content
 
@@ -29,7 +29,9 @@ Personally I use reader view on webpages a lot and since working on this project
 
 ### Help with email client rendering issues
 
-Sometimes emails can display badly due to various issue in different email clients or badly written code from the sender. Applying reader view removes all of the styling, simplifying the content and should mean the content is always readable despite these potential issues. A common issue is an email that isn’t built to be responsive can be scaled much better now using reader view. 
+Sometimes HTML email messages are badly displayed due to various issue in different email clients or badly written code from the sender. Applying reader view removes all of the styling, simplifying the content and should mean the content is always readable despite these potential issues. 
+
+A common issue is an email that isn’t built to be responsive, can now be scaled much better using reader view. Another issue is unexpected changes in email rendering, at the time of writing we recently saw a Gmail bug remove support for background image along with all other styles around it. This caused a number of emails to be unreadable. The browser extension provides the user with a way to still consume the content easily when rendering unexpectedly breaks like this.
 
 If you find an example where an email is displaying poorly when using reader view, please let us know.
 
@@ -41,10 +43,17 @@ Additionally using the block images option makes checking alt text much easier, 
 
 ### Encourage email clients to build their own
 
-We think this would be a very valuable feature to build directly into the email clients. We’re hoping this project will help encourage the email clients to follow suit and build their own. The code is all open source so if you are from an email client, please feel free to read over it.
+We think this would be a very valuable feature to build directly into the email clients. We’re hoping this project will help encourage the email clients to follow suit and build their own. Outlook does already have [Immersive Reader](https://support.microsoft.com/en-au/topic/open-immersive-reader-for-outlook-9249595c-4b9d-4f27-9f59-bc590a6152da) however, I've found it to be unintuitive to use and it can be quite hard to find in the user interface. 
+
+A few of the benefits we see, with a native reader view inside the email clients include;
+
+* Users can consume content when rendering unexpectedly break because of an email client bug.
+* Users can consume content when rendering break because sender included a bug in their code.
+* It would be available on native mobile/desktop apps rather than just in the browser. 
+
+The code is all open source so if you are from an email client, please feel free to read over it.
 
 ## What next
-
-In the future we are hoping to add support for more email clients and support for more browsers as well as looking at any feedback we get from users. But the EMC members behind this have day jobs as well as other commitments, so don’t expect a lot of updates.
+This is a free and open-source project, and updates can be slow. In the future we are hoping to add support for more email clients as well as looking at any feedback we get from users. 
 
 However if you are interested on working on this project or have more ideas for it, please check out the [Email Reader View Github page](https://github.com/email-markup-consortium/email-reader-view) and get in touch.

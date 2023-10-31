@@ -2,7 +2,7 @@
 title: How container queries could help email
 description: In webmail clients, media queries don't do what you ask them to. Can container queries solve this?
 author: mark-robbins
-pubDate: 2023-10-30
+pubDate: 2023-10-31
 published: true
 layout: "@layouts/BlogLayout"
 ---
@@ -13,11 +13,11 @@ Email clients embed our emails in one of 2 ways. Either the email message will b
 
 When embedded in an iframe, a media query in the iframe queries the width of the iframe, not the full window. So if we set `@media screen and (max-width:600px)` the styles within this media query will be applied when the iframe width is 600px or less.
 
-![Illustration of an email message within an email client UI in a browser window](/img/blog/email-client-ui-striped.png)
+![An email message within an email client UI. The email message container is highlighted to show the presence of an iframe, giving a viewport size around the message.](/img/blog/email-client-ui-striped.png)
 
 However, when an email is inserted directly into the page, the media query will query the width of the full window and the email message is only one small part of that. So that same query `@media screen and (max-width:600px)` will only trigger when the page width is 600px or less regardless of the width of the email message.  Most likely, it will not trigger at all.
 
-![Illustration of an email message within an email client UI in a browser window](/img/blog/email-client-ui.png)
+![An email message within an email client UI. The email message is not highlighted to show the that viewport size is the full size of the email client UI.](/img/blog/email-client-ui.png)
 
 We could try some complex calculations to work out when the page width = `X` then the email wrapper width = `Y` but that varies for each email client and also depends a lot on the users settings and layout preference. This is not a reliable or future-proof approach.
 

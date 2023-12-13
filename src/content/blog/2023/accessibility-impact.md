@@ -37,7 +37,7 @@ We’re looking forward to a continued relationship with them, and updates aroun
 
 At [Customer.io](https://customer.io/), they have integrated [Parcel’s Accessibility Checker](https://parcel.io/docs/dev-tools/accessibility-checker) into the email building experience, enabling creators to seamlessly check their code for errors. 
 
-We have also worked with the team to identify changes to email code post-send, and remediate a fix that now declares a language direction on the preheader text that previously wasn’t able to be controlled by the end user as,well as setting an empty `alt`` attribute on the tracking pixel. Ultimately, this solved for an Accessibility issue that was previously failing. 
+We have also worked with the team to identify changes to email code post-send, and remediate a fix that now declares a language direction on the preheader text that previously wasn’t able to be controlled by the end user as, well as setting an empty `alt` attribute on the tracking pixel. Ultimately, this solved for an Accessibility issue that was previously failing. 
 
 
 ## Future vendor relations 

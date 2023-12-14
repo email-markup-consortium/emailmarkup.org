@@ -8,6 +8,14 @@
     "partner": false
   },
   {
+    "name": "Litmus",
+    "link": "https://www.litmus.com/",
+    "logo": "/img/logo-litmus.png",
+
+    "sponsor": true,
+    "partner": false
+  },
+  {
     "name": "Mailjet",
     "link": "https://www.mailjet.com",
     "logo": "/img/logo-mailjet.png",

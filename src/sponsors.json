@@ -38,5 +38,13 @@
 
     "sponsor": true,
     "partner": false
+  },
+  {
+    "name": "Flourish",
+    "link": "https://flourishworld.com/",
+    "logo": "/img/logo-flourish.png",
+
+    "sponsor": false,
+    "partner": true
   }
 ]

@@ -27,4 +27,8 @@ import Sponsor from '@components/Sponsors/Sponsor';
   const sponsorRandomImg = sponsorRandomWrapper.querySelector('img');
   sponsorRandomImg.alt = sponsorRandom.name;
   sponsorRandomImg.src = sponsorRandom.logo;
+
+  if(sponsorRandom.partner && !sponsorRandom.sponsor) {
+    sponsorRandomWrapper.querySelector('h2').textContent = 'EMC Partner';
+  }
 </script>

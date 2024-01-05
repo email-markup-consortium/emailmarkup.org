@@ -45,7 +45,7 @@ Read more about [our vision](/en/docs/vision) for how HTML email can be standard
 
 - Project leader: Avi Goldman
 - Project home: Private GitHub repo
-- Sponsor: [Parcel](https://parcel.io)
+- Partner: [Parcel](https://parcel.io)
 - Status: In Progress
 - [How to help](https://github.com/email-markup-consortium/email-markup-consortium/issues?q=is%3Aissue+is%3Aopen+label%3A%22project%3A+data+collection%22+label%3A%22help+wanted%22)
 
@@ -63,7 +63,7 @@ In addition, coding practices and what is considered important could vary in dif
 
 - Project leaders: Mark Robbins, Avi Goldman
 - [Project home](/en/reports/accessibility/)
-- Sponsor: [Parcel](https://parcel.io)
+- Partner: [Parcel](https://parcel.io)
 - Status: In Progress
 
 Reports based on accessibility analysis performed on emails collected by the Data Collection project.
@@ -99,8 +99,9 @@ Documenting the default CSS styles added by email clients.
 
 ## Contributing to Can I Email?
 
-- Project leader: Jay Oram, Rémi Parmentier
+- Project leader: Hussein Al Hammad
 - Project home: [Repository](https://github.com/HTeuMeuLeu/caniemail), [Discussions](https://github.com/email-markup-consortium/email-markup-consortium/discussions?discussions_q=label%3A%22project%3A+Can+I+Email%3F%22)
+- Partner: [Flourish](https://flourishworld.com/)
 - Status: In Progress
 
 Contributing to an existing community project: **Can I Email?**
@@ -114,7 +115,7 @@ Email Markup Consortium is to help with:
 
 ## Contributing to Email Platform Status
 
-- Project leader: Rémi Parmentier
+- Project leader: none assigned
 - Status: On hold
 
 Contributing to an existing community project: **Email Platform Status**

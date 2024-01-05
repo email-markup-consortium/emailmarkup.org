@@ -4,6 +4,10 @@ description: Projects by Email Markup Consortium
 layout: "@layouts/MainLayout"
 ---
 
+import SponsorsGrid from '@components/Sponsors/SponsorsGrid';
+import Sponsor from '@components/Sponsors/Sponsor';
+import sponsors from '../../sponsors.json';
+
 ## Documentation
 
 - [Project home](https://github.com/email-markup-consortium/emailmarkup.org)
@@ -49,6 +53,10 @@ Read more about [our vision](/en/docs/vision) for how HTML email can be standard
 - Status: In Progress
 - [How to help](https://github.com/email-markup-consortium/email-markup-consortium/issues?q=is%3Aissue+is%3Aopen+label%3A%22project%3A+data+collection%22+label%3A%22help+wanted%22)
 
+<SponsorsGrid>
+  <Sponsor small sponsor={sponsors.find(item => item.name=='Parcel')} />
+</SponsorsGrid>
+
 A number of projects we are working on require us to analyze real emails being sent on an on-going basis. We could not find a single data source that meets our criteria. That’s why we started this project to collect email data with the help of our good friends and sponsors at [Parcel](https://parcel.io).
 
 A lot of data we see used in email reports is often skewed to a western audience. Collecting emails from the west alone is not going to give us the full picture of the real state of HTML emails. That’s why we are making an effort to diversify our data.
@@ -65,6 +73,10 @@ In addition, coding practices and what is considered important could vary in dif
 - [Project home](/en/reports/accessibility/)
 - Partner: [Parcel](https://parcel.io)
 - Status: In Progress
+
+<SponsorsGrid>
+  <Sponsor small sponsor={sponsors.find(item => item.name=='Parcel')} />
+</SponsorsGrid>
 
 Reports based on accessibility analysis performed on emails collected by the Data Collection project.
 
@@ -103,6 +115,10 @@ Documenting the default CSS styles added by email clients.
 - Project home: [Repository](https://github.com/HTeuMeuLeu/caniemail), [Discussions](https://github.com/email-markup-consortium/email-markup-consortium/discussions?discussions_q=label%3A%22project%3A+Can+I+Email%3F%22)
 - Partner: [Flourish](https://flourishworld.com/)
 - Status: In Progress
+
+<SponsorsGrid>
+  <Sponsor small sponsor={sponsors.find(item => item.name=='Flourish')} />
+</SponsorsGrid>
 
 Contributing to an existing community project: **Can I Email?**
 

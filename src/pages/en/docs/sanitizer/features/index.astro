@@ -8,20 +8,24 @@ const posts = (await getCollection('sanitizer'));
 const baseURL = `/en/docs/sanitizer`;
 
 const frontmatter = {
-	title: `What is safe/unsafe`,
+	title: `HTML and CSS features`,
 	description: ``,
 	sidebarType: `sanitizer`,
 }
 ---
 
 <MainLayout frontmatter={frontmatter}>
+	<p>
+		This part of the documentation provides insight to whether HTML and CSS features are safe and/or useful in the context of email, and whether the Email Markup Consortium recommends email clients to support these features.
+	</p>
+
 	<h2>HTML</h2>
 
 	<h3>Elements</h3>
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('safe/html/elements'))
+		.filter(post => post.slug.startsWith('features/html/elements'))
 		.map((post) => (
 			<li>
 				<a href={`${baseURL}/${post.slug}`}>
@@ -36,7 +40,7 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('safe/html/global-attributes'))
+		.filter(post => post.slug.startsWith('features/html/global-attributes'))
 		.map((post) => (
 			<li>
 				<a href={`${baseURL}/${post.slug}`}>
@@ -51,7 +55,7 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('safe/html/other'))
+		.filter(post => post.slug.startsWith('features/html/other'))
 		.map((post) => (
 			<li>
 				<a href={`${baseURL}/${post.slug}`}>
@@ -69,7 +73,7 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('safe/css/properties'))
+		.filter(post => post.slug.startsWith('features/css/properties'))
 		.map((post) => (
 			<li>
 				<a href={`${baseURL}/${post.slug}`}>
@@ -84,7 +88,7 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('safe/css/values'))
+		.filter(post => post.slug.startsWith('features/css/values'))
 		.map((post) => (
 			<li>
 				<a href={`${baseURL}/${post.slug}`}>
@@ -100,7 +104,7 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('safe/css/at-rules'))
+		.filter(post => post.slug.startsWith('features/css/at-rules'))
 		.map((post) => (
 			<li>
 				<a href={`${baseURL}/${post.slug}`}>

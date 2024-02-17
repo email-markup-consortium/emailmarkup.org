@@ -64,7 +64,7 @@ export const SIDEBARS = {
 			{ text: 'Sanitizer', header: true },
 			{ text: 'Intro', link: 'en/docs/sanitizer' },
 			{ text: 'Handling', link: 'en/docs/sanitizer/handling' },
-			{ text: 'Safe/Unsafe', link: 'en/docs/sanitizer/safe' },
+			{ text: 'Features', link: 'en/docs/sanitizer/features' },
 		],
 	}
 };

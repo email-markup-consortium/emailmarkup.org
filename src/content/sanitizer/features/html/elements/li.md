@@ -30,6 +30,6 @@ The `<li>` element is a semantic element. It is vital for other semantic element
 - [HTML Standard: The `li` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element)
 
 
-## Email compatibility
+## Email client compatibility
 
 <iframe title="Can I email… &lt;ul&gt;, &lt;ol&gt; and &lt;dl&gt;" src="https://embed.caniemail.com/html-lists/" width="640" height="420" style="width:100%; max-width:40rem; height:26.25rem; border:none;" loading="lazy"></iframe>

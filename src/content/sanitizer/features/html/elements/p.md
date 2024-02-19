@@ -21,6 +21,6 @@ Assistive technology including screen-readers understand what the `<p>` is meant
 - [MDN: `<p>`: The Paragraph element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
 - [HTML Standard: The `p` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element)
 
-## Email compatibility
+## Email client compatibility
 
 <iframe title="Can I email… &lt;p&gt; element" src="https://embed.caniemail.com/html-p/" width="640" height="420" style="width:100%; max-width:40rem; height:26.25rem; border:none;" loading="lazy"></iframe>

@@ -30,6 +30,6 @@ The `<ol>` element is a semantic element. Assistive techology including screen-r
 - [HTML Standard: The `ol` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element)
 - [Reversing an ordered list in HTML](https://www.tempertemper.net/blog/reversing-an-ordered-list-in-html)
 
-## Email compatibility
+## Email client compatibility
 
 <iframe title="Can I email… &lt;ul&gt;, &lt;ol&gt; and &lt;dl&gt;" src="https://embed.caniemail.com/html-lists/" width="640" height="420" style="width:100%; max-width:40rem; height:26.25rem; border:none;" loading="lazy"></iframe>

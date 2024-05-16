@@ -92,11 +92,11 @@ Issue present in 99.17% (406000) of emails tested.
 
 Number of appearances: 1471145.
 
-### **Why it’s needed:**
+#### **Why it’s needed:**
 
 The direction of the language set in the email client will inherit into the email content. So if the user has their email client set in a right to left language and they open an email written in a left to right language, this can cause several layout issues making it very hard to read.
 
-### **How to fix this:**
+#### **How to fix this:**
 
 To fix this you can set a `dir` attribute on any direct children of the body element.
 
@@ -110,11 +110,11 @@ Issue present in 98.29% (402,382) of emails tested.
 
 Number of appearances: 1,463,270.
 
-### **Why it’s needed:**
+#### **Why it’s needed:**
 
 A number of email clients will remove the language setting on the `<html>` element so we need to also include it on any direct children of the body element.
 
-### **How to fix this:**
+#### **How to fix this:**
 
 It’s important to apply the correct language, however if you need to have a fallback for when a language is not set then you can set `lang="und"`, this sets the language as undetermined. It’s not nearly as good as setting a language but it’s much better than setting nothing.
 
@@ -126,11 +126,11 @@ Issue present in 88.97% (364,240) of emails tested.
 
 Number of appearances: 16,417,428.
 
-### **Why it’s needed:**
+#### **Why it’s needed:**
 
 Table elements should only be used for displaying tables of data, they should not be used for laying out content.
 
-### **How to fix this:**
+#### **How to fix this:**
 
 It’s better to avoid table layouts completely, however if you do use them you can reduce the negative accessibility impact for some email clients by setting an attribute of `role="presentation"` or `role="none"` on the `<table>` element.
 
@@ -142,11 +142,11 @@ Issue present in 79.23% (324,337) of emails tested.
 
 Number of appearances: 324,337.
 
-### **Why it’s needed:**
+#### **Why it’s needed:**
 
 Headings are one of the [main ways screen reader users navigate a document](https://webaim.org/projects/screenreadersurvey10/#finding). Placing an `<h1>` element inside the content of the email means a user can quickly and accurately find the email content.
 
-### **How to fix this:**
+#### **How to fix this:**
 
 You can add an `<h1>` element around the main title of your content. However not all emails require headings, sometimes email can be short and used almost like SMS with only a few lines of text. In this case a heading may not be needed, hence why this is only listed as a mild issue.
 
@@ -158,13 +158,13 @@ Issue present in 73.73% (301,825) of emails tested.
 
 Number of appearances: 3016075.
 
-### **Why it’s needed:**
+#### **Why it’s needed:**
 
 Link text tells the user where the link is taking them, if there is no link text they won’t know what the link is for.
 
 One of the main causes for this we’ve seen is linked images that don’t have alt text set. It’s ok to use an empty alt attribute for a decorative image, however if the image is linked it’s not decorative it’s functional.
 
-### **How to fix this:**
+#### **How to fix this:**
 
 Add some text inside the link. If this issue is flagged on an image you can add some text alongside the image (but still inside the `<a>`) or you can add an `alt` attribute with text that describes the content of the image as well as the page it’s linked to. Alternatively you could add visibly hidden text inside the `<a>`, this is text that is styled to be hidden from the screen but still remains in the DOM. There is also an option to use an `aria-label` or a `title` attribute on the `<a>` however these have limited support in email.
 
@@ -176,11 +176,11 @@ Issue present in 68.32% (279,706) of emails tested.
 
 Number of appearances: 279,706.
 
-### **Why it’s needed:**
+#### **Why it’s needed:**
 
 Setting a language for the document helps with a range of things from translation tools to tell assistive technology how to correctly read out the content.
 
-### **How to fix this:**
+#### **How to fix this:**
 
 Add a `lang=""` attribute to the `<html>` element. It’s important to apply the correct language, however if you need fallback for when a language is not set then you can set `lang="und"`, this sets the language as undetermined. It’s not nearly as good as setting a language but it’s much better than setting nothing.
 
@@ -192,11 +192,11 @@ Issue present in 57.89% (236,993) of emails tested.
 
 Number of appearances: 2,535,736.
 
-### **Why it’s needed:**
+#### **Why it’s needed:**
 
 Alternate text (or alt text) is used to describe the content of an image to people who may not be able to understand it fully just by looking at it. This could be down to a visual impairment or in the case of text in the image can also cover people with reading difficulty.
 
-### **How to fix this:**
+#### **How to fix this:**
 
 An `alt=""` attribute is always needed, but in some cases can be left blank, when the image is purely for decoration and not adding content, meaning or function to the email.
 
@@ -208,11 +208,11 @@ Issue present in 34.95% (143,094) of emails tested.
 
 Number of appearances: 143,094.
 
-### **Why it’s needed:**
+#### **Why it’s needed:**
 
 The title is shown when the email is viewed as a web page, it is also listed in some email clients. It shows in the tab allowing users to quickly see what the page is, it also gives screen reader users a quick introduction to the page.
 
-### **How to fix this:**
+#### **How to fix this:**
 
 Add a `<title>` element to the top of your page with a short, descriptive summary of the email content. Ideally this would be descriptive of this specific email (like the subject line) but if that is complicated to include you can also use something more generic like “Email from the Email Markup Consortium”.
 
@@ -224,13 +224,13 @@ Issue present in 16.92% (69,272) of emails tested.
 
 Number of appearances: 102,704.
 
-### **Why it’s needed:**
+#### **Why it’s needed:**
 
 Link text tells the user where the link is taking them, non-descriptive text like “click here” doesn’t give enough information to allow the user to make an informed choice to click it or not.
 
 This becomes a larger issue for screen reader users who may be accessing the links via a shortcut key which will jump straight to the link text or via the links shortcut menu which lists all the link text of each link. Both of these cases mean there is no outside context leading into reading the link text.
 
-### **How to fix this:**
+#### **How to fix this:**
 
 Write short descriptive text inside links. If you are unable to add enough detail in the visual link text, it is also possible to add [visually hidden](https://www.goodemailcode.com/email-accessibility/visually-hidden-text) text inside a link to add more information.
 
@@ -244,11 +244,11 @@ Issue present in 16.91% (69,253) of emails tested.
 
 Number of appearances: 277,536.
 
-### **Why it’s needed:**
+#### **Why it’s needed:**
 
 Some people with low vision or color blindness may struggle to distinguish links from surrounding text when the design of the links doesn’t stand out.
 
-### **How to fix this:**
+#### **How to fix this:**
 
 Make sure links have something other than colour to make them stand out. The default link style of `text-decoration: underline` is the easiest and probably the best solution. If you must only relying on color then you need to reach a contrast ration of 3:1 compared to surrounding text, however this can be a tricky balance to achieve while still maintaining sufficient contrast against the background.
 

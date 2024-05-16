@@ -254,14 +254,18 @@ Make sure links have something other than colour to make them stand out. The def
 
 ## Comparing to the rule set from last year 
 
-Issues related to VML have fallen off the top ten list, and in its place, **Links must be distinguishable without relying on color**. We also saw the order of the issues presented change.
+As a number of the changes to the rules are down to fine tuning of the code it's hard to undo these. However we can remove the color contrast rules and look at how that would have changed things.
 
-Missing `lang` attribute from the `<html>` tag has seen the most significant change, dropping from 72.19% down to 68.32% which is promising, however we are still seeing 98.29% of email not setting a language inside the body. So although this issue will be fixed for some emails clients, it will still be very present in a lot of others.
+Running the report without the color contrast rules, the total number fo emails with critical or serious issues comes down to 99.95%. And total number of emails passing without issue is up to 40. We no longer see the "Links must be distinguishable without relying on color" issue in the top 10, as that partially uses color contrast in it's calculation. Instead we see the reurn of "VML must have alternate text".
 
 
 ## Conclusions
 
 Although we have seen a few changes from last year, with new rules in place and some movement in the top 10 issues the overall outcome is the same. 99.97% of email are failing accessibility checks. Because the rules have become more strict achieving the same result can be seen as a small win, but we still have a long long way to go.
+
+Issues related to VML have fallen off the top ten list, and in its place one of the new color contrast rules **Links must be distinguishable without relying on color**. 
+
+We also saw the order of the issues presented change. Missing `lang` attribute from the `<html>` tag has seen the most significant change, dropping from 72.19% down to 68.32% which is promising, however we are still seeing 98.29% of email not setting a language inside the body. So although this issue will be fixed for some emails clients, it will still be very present in a lot of others.
 
 Four of the top 10 issues are completely fixable by any marketer, regardless of the tooling involved. Images should have alt text, emails should contain an H1, links should be distinguishable without relying on color (ie. include an underline), and link text should be descriptive. Each of these issues should be something a marketer can access from either a drag-and-drop editor or a code editor.
 

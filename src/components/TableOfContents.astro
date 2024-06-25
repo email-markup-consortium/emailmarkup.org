@@ -1,0 +1,23 @@
+---
+const { headings } = Astro.props;
+---
+
+{headings && headings.length > 0 && (
+  <div>
+    <h3>Table of Content</h3>
+    <ul>
+      <li class="heading-link depth-2">
+         <a href="#overview">Overview</a>
+      </li>
+
+      {headings.filter(heading => heading.depth < 4)
+        .map(heading => (
+        <li class={`heading-link depth-${heading.depth}`}>
+          <a href={`#${heading.slug}`}>
+            {heading.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}

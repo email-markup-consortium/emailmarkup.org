@@ -1,5 +1,7 @@
 # build output
 dist/
+# generated types
+.astro/
 
 # dependencies
 node_modules/
@@ -19,3 +21,6 @@ pnpm-debug.log*
 .DS_Store
 .astro/types.d.ts
 src/env.d.ts
+
+# jetbrains setting folder
+.idea/

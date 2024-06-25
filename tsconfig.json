@@ -12,6 +12,8 @@
     // Add type definitions for our Vite runtime.
     "types": ["vite/client"],
 
+    "allowJs": true,
+
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*.astro"],

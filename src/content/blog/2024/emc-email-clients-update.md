@@ -2,12 +2,12 @@
 title: A check-in on our progress with email clients
 description: An update on how our efforts on getting email clients onboard our vision is going, the positives that reignite our motivations and the challenges ahead of us.
 author: hussein-alhammad
-pubDate: 2024-06-25
+pubDate: 2024-06-26
 published: true
 layout: "@layouts/BlogLayout"
 ---
 
-It’s always been our goal to be as transparent and open as possible. We think we owe you an update on how our efforts on getting email clients onboard our vision is going, the positives that reignite our motivations  and the challenges ahead of us.
+It’s always been our goal to be as transparent and open as possible. We think we owe you an update on how our efforts on getting email clients onboard our vision is going, the positives that reignite our motivations and the challenges ahead of us.
 
 Since EMC was established we have spoken in various depths to a number of people at various roles at companies that have at least one email client as a product. These companies include Yahoo, Mailbird and IONOS (previosuly known as 1&1).
 

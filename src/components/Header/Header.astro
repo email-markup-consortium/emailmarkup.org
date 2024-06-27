@@ -6,7 +6,8 @@ import Search from './Search';
 
 import SkipToContent from './SkipToContent.astro';
 import EmcLogo from './EmcLogo.astro';
-import ThemeToggleButton from '../ThemeToggleButton/ThemeToggleButton';
+// import ThemeToggleButton from '../ThemeToggleButton/ThemeToggleButton';
+import ThemeToggleButton from '@components/Header/ThemeToggleButton';
 import LeftSidebarToggle from './LeftSidebarToggle.astro';
 
 
@@ -91,7 +92,7 @@ const lang = currentPage && getLanguageFromURL(currentPage);
 	
 				<div class="nav-options">
 					<!-- TODO: add lang select -->
-					<ThemeToggleButton client:visible />
+					<ThemeToggleButton />
 				</div>
 			</div>
 		</nav>

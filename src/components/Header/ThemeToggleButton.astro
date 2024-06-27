@@ -40,7 +40,7 @@
 
 
 <div class="theme-toggle">
-	<label>
+	<label x-bind:class="{'checked': theme==`light`}">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="1.25em"
@@ -63,11 +63,12 @@
 			aria-label="Use light theme"
 
 			x-model="theme"
+			x-bind:class="{'checked': $el.checked}"
 			x-on:change="setTheme(`light`)"
 		/>
 	</label>
 
-	<label>
+	<label x-bind:class="{'checked': theme==`dark`}">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="1.25em"

@@ -1,0 +1,56 @@
+---
+import FormattedDate from '@components/FormattedDate';
+import { getCollection } from 'astro:content';
+
+const supporters = (await getCollection('supporters')).sort(
+	(a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+);
+---
+
+<ul class="supporters">
+  {supporters.map(supporter => (
+    <li>
+      <strong>{supporter.data.name}</strong>
+      
+      { supporter.data.role &&
+        <span>
+          {supporter.data.role} {supporter.data.company && `(${supporter.data.company})`}
+        </span>
+      }
+
+      <span>
+        Signed: {supporter.data.date && <FormattedDate date={supporter.data.date} />}
+      </span>
+    </li>
+  ))}
+</ul>
+
+
+<style>
+  .supporters {
+    margin: 0;
+    padding: 0;
+  }
+
+  .supporters li {
+    list-style-type: none;
+    margin-bottom: 2rem;
+  }
+
+  .supporters span {
+    display: block;
+    margin-block: .5rem;
+  }
+
+  @media screen and (min-width: 36rem) {
+    .supporters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .supporters li {
+      margin-bottom: 0;
+    }
+  }
+</style>

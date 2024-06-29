@@ -18,7 +18,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
 ---
 
-<html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial">
+<html 
+	dir={frontmatter.dir ?? 'ltr'}
+	lang={frontmatter.lang ?? 'en-us'}
+	class="initial"
+	
+	x-data="siteTheme"
+	x-bind:class="{'theme-dark': theme == 'dark'}"
+>
 	<head>
 		<HeadCommon />
 		<HeadSEO {frontmatter} canonicalURL={canonicalURL} />

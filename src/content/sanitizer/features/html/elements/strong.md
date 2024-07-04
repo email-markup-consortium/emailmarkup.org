@@ -13,7 +13,7 @@ It is highly recommended for an email client to support the `<strong>` element g
 
 ## Resources
 
-- [MDN: `<strong>`: The Strong Importance element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
+- [MDN: `<strong>`: The Strong Importance element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong)
 - [HTML Standard: The `strong` element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element)
 
 ## Email client compatibility

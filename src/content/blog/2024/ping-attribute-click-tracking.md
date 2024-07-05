@@ -92,4 +92,4 @@ At the time of writing only the following email clients support the `ping` attri
 
 * Apple Mail
 * T-Online
-* [Mail.ru](http://mail.ru/)
+* Mail.ru

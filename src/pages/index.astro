@@ -10,6 +10,9 @@ import SponsorsGrid from '@components/Sponsors/SponsorsGrid';
 import Sponsor from '@components/Sponsors/Sponsor';
 import sponsors from '../sponsors.json';
 
+import { getCollection } from 'astro:content';
+export const supporters = (await getCollection('supporters'));
+
 import '../styles/theme.css';
 import '../styles/index.css';
 
@@ -102,6 +105,9 @@ const currentPage = Astro.url.pathname;
         <br>
         <p>
           <strong>Looking to help us?</strong> There are different ways for individuals and companies. Read our <a href="/en/how-to-help" class="txt-bold">Contribution Guide</a>.
+        </p>
+        <p>
+          Or <a href="https://forms.gle/WehDtXRH5oYTVCFG6" class="txt-bold">sign your support</a> and join <a href="/en/supporters" class="txt-bold">{supporters.length} industry professionals</a> who publicly support us.
         </p>
       </div>
     </section>

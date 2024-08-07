@@ -41,4 +41,4 @@ If the above describes you, please fill in our [membership application form](htt
 
 We understand that many individuals may simply not have the time to contribute, but they still want to raise their hand as a supporter for the Email Markup Consortium and what we do.
 
-If this describes you, you can fill the [supporter form](https://forms.gle/XVdT3JGUbLZQEHXu6) and we will list your name as a supporter on our website.
+If this describes you, you can fill the [supporter form](https://forms.gle/WehDtXRH5oYTVCFG6) and we will list your name as a supporter on our website.

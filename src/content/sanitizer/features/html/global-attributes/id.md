@@ -9,7 +9,7 @@ The `id` global attribute defines a unqiue identifier on an element.
 
 ## Recommendation
 
-It is highly recommended to support the `id` attribute.
+It is highly recommended for an email client to support the `id` attribute.
 
 The value of the `id` attribute on an element may be referenced in the values of other attributes on other elements such as the `for` and `aria-labelledby` attributes. Removing the `id` attribute in such cases affects the semantics of the HTML document and has negative impact on accessibility.
 

@@ -10,6 +10,9 @@ import SponsorsGrid from '@components/Sponsors/SponsorsGrid';
 import Sponsor from '@components/Sponsors/Sponsor';
 import sponsors from '../sponsors.json';
 
+import { getCollection } from 'astro:content';
+export const supporters = (await getCollection('supporters'));
+
 import '../styles/theme.css';
 import '../styles/index.css';
 
@@ -19,7 +22,7 @@ const currentPage = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="siteTheme" x-bind:class="{'theme-dark': theme == 'dark'}">
 <head>
   <HeadCommon />
   <HeadSEO {content} {canonicalURL} />
@@ -70,7 +73,7 @@ const currentPage = Astro.url.pathname;
       border-bottom: 1px dotted #fff;
     }
   
-    .supporters-heading {
+    .supporters .supporters-heading {
       font-size: 1.4rem;
       font-size: clamp(1.1rem, 3vw, 1.4rem);
       background-color: #fff;
@@ -103,6 +106,9 @@ const currentPage = Astro.url.pathname;
         <p>
           <strong>Looking to help us?</strong> There are different ways for individuals and companies. Read our <a href="/en/how-to-help" class="txt-bold">Contribution Guide</a>.
         </p>
+        <p>
+          Or <a href="https://forms.gle/WehDtXRH5oYTVCFG6" class="txt-bold">sign your support</a> and join <a href="/en/supporters" class="txt-bold">{supporters.length} industry professionals</a> who publicly support us.
+        </p>
       </div>
     </section>
 
@@ -112,21 +118,21 @@ const currentPage = Astro.url.pathname;
           Featured Reads
         </h2>
         <FeaturedArticle 
-          title="Accessibility Report 2023" 
+          title="Accessibility Report 2024" 
           desc="Read our latest report on the state of the accessibility in HTML emails and learn how 99.97% of emails tested, contain issues categorized as “Serious” or “Critical”."
-          link="/en/reports/accessibility/2023/"
+          link="/en/reports/accessibility/2024/"
+        />
+
+        <FeaturedArticle 
+          title="Email Client Feature Support Rankings" 
+          desc="Email client feature support ranks in various categories such as performance, accessibility and internationalization."
+          link="/en/reports/email-clients/feature-support-rankings/"
         />
 
         <FeaturedArticle 
           title="Our Vision" 
           desc="The Email Markup Consortium's vision for more consistent rendering in email clients."
           link="/en/docs/vision/"
-        />
-
-        <FeaturedArticle 
-          title="Data Collection" 
-          desc="Learn why we are collecting a diversified set of emails and what we are doing with this unique data."
-          link="https://dev.to/emailmarkup/collecting-data-1gdb"
         />
 
         <FeaturedArticle 
@@ -171,7 +177,10 @@ const currentPage = Astro.url.pathname;
         </SponsorsGrid>
 
 
-        <!-- TODO: List supporters and backers -->
+        <h3>Supporters</h3>
+        <p>
+          Many industry professionals support us with our mission. See a <a href="/en/supporters">full list of EMC supporters</a>.
+        </p>
       </div>
     </section>
   </main>

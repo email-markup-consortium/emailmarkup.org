@@ -1,0 +1,15 @@
+---
+title: Supporters
+description: Supporters of the Email Markup Consortium
+layout: "@layouts/MainLayout"
+---
+
+import SupportersList from '@components/SupportersList';
+
+import { getCollection } from 'astro:content';
+export const supporters = (await getCollection('supporters'));
+
+
+{supporters.length} industry professionals support the Email Markup Consortium. Join them and [sign your support for the Email Markup Consortium](https://forms.gle/WehDtXRH5oYTVCFG6).
+
+<SupportersList />

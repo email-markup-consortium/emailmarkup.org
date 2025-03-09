@@ -1,16 +1,16 @@
 [
   {
-    "name": "Email Loot",
-    "link": "https://www.emailloot.com/",
-    "logo": "/img/logo-email-loot.png",
+    "name": "Stensul",
+    "link": "https://stensul.com",
+    "logo": "/img/logo-stensul.png",
 
     "sponsor": true,
     "partner": false
   },
   {
-    "name": "Stensul",
-    "link": "https://stensul.com",
-    "logo": "/img/logo-stensul.png",
+    "name": "Litmus",
+    "link": "https://www.litmus.com/",
+    "logo": "/img/logo-litmus.png",
 
     "sponsor": true,
     "partner": false
@@ -32,19 +32,19 @@
     "partner": true
   },
   {
-    "name": "Action Rocket",
-    "link": "https://www.actionrocket.co/",
-    "logo": "/img/logo-action-rocket.png",
-
-    "sponsor": false,
-    "partner": true
-  },
-  {
     "name": "Customer.io",
     "link": "https://customer.io",
-    "logo": "/img/logo-customer-io.png",
+    "logo": "/img/logo-customer-io.svg",
 
     "sponsor": true,
     "partner": false
+  },
+  {
+    "name": "Flourish",
+    "link": "https://flourishworld.com/",
+    "logo": "/img/logo-flourish.png",
+
+    "sponsor": false,
+    "partner": true
   }
 ]

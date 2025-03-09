@@ -1,6 +1,6 @@
 ---
 title: Glossary of terms
-description: 
+description: Commonly used terms in the Email Markup Consortium documentation
 layout: '@layouts/MainLayout'
 ---
 

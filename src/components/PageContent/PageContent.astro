@@ -1,6 +1,6 @@
 ---
 import MoreMenu from '../RightSidebar/MoreMenu.astro';
-import TableOfContents from '../RightSidebar/TableOfContents';
+import TableOfContents from '@components/TableOfContents';
 
 const { frontmatter, headings, githubEditUrl, lastModifiedDate } = Astro.props;
 const title = frontmatter.title;
@@ -21,7 +21,7 @@ if(lastModifiedDate) {
 		)}
 
 		<nav class="block sm:hidden">
-			<TableOfContents client:media="(max-width: 50em)" {headings} />
+			<TableOfContents {headings} />
 		</nav>
 		<slot />
 	</section>

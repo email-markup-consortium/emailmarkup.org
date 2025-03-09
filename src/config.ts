@@ -36,23 +36,24 @@ export const SIDEBARS = {
 		en: [
 			{ text: '', header: true },
 			{ text: 'Mission', link: 'en/docs/mission' },
-			{ text: 'Projects', link: 'en/projects' },
-			{ text: 'Roles', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/roles-and-responsibilities.md' },
-			{ text: 'Code of Conduct', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md' },
-			
-			{ text: 'Help', header: true },
-			{ text: 'Contribute', link: 'en/how-to-help' },
-			{ text: 'Sponsor', link: 'en/sponsors' },
-
-			{ text: 'Docs', header: true },
-			{ text: 'Glossary', link: 'en/docs/glossary' },
 			{ text: 'Vision', link: 'en/docs/vision' },
 			{ text: 'Benefits', link: 'en/docs/benefits' },
+			{ text: 'Glossary', link: 'en/docs/glossary' },
+			
+			{ text: 'Work', header: true },
+			{ text: 'Planned Projects', link: 'en/projects' },
 			{ text: 'Compliant Standards', link: 'en/docs/compliant-standards' },
+			{ text: 'Sanitizer', link: 'en/docs/sanitizer' },
 
 			{ text: 'Reports', header: true },
 			{ text: 'Accessibility', link: 'en/reports/accessibility' },
-			{ text: 'Email Clients', link: 'en/reports/email-clients' }
+			{ text: 'Email Clients', link: 'en/reports/email-clients' },
+
+			{ text: 'Help', header: true },
+			{ text: 'Contribute', link: 'en/how-to-help' },
+			{ text: 'Sponsor', link: 'en/sponsors' },
+			{ text: 'Roles', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/roles-and-responsibilities.md' },
+			{ text: 'Code of Conduct', link: 'https://github.com/email-markup-consortium/email-markup-consortium/blob/main/code-of-conduct.md' }
 		],
 	},
 

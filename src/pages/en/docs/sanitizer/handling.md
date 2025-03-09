@@ -5,16 +5,18 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-TODO: intro
+Handling supported and unsupported HTML and CSS features refers to how the email client should deal with these features during the sanitization process.
+
+The approach detailed in this document takes into account the potential side effects to both the email client application and to the HTML email message.
 
 ## HTML Elements
 
-TODO
+This section is under active discussion.
 
 ## CSS Properties
 
-TODO
+This section is under active discussion.
 
 ## CSS Values
 
-TODO
+This section is under active discussion.

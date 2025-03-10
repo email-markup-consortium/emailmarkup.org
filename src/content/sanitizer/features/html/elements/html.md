@@ -1,5 +1,5 @@
 ---
-title: comments
+title: "<html>"
 description:
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer

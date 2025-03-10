@@ -18,4 +18,4 @@ It is highly recommended for an email client to support the `<em>` element given
 
 ## Email client compatibility
 
-No compatibility available.
+No compatibility data available.

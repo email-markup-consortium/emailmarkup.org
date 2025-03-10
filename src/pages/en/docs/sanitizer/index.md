@@ -48,7 +48,3 @@ Having a standardized sanitization approach for third-party code (i.e. HTML mess
 
 1. Documenting a specification which details how supported and unsupported features should be handled.
 2. Building an open source, email-specific sanitizer. Email clients can choose to use this sanitizer, but they would also be free to build their own spec-compliant version.
-
-## Scope
-
-TODO

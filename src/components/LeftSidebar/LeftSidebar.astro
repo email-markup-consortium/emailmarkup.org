@@ -1,11 +1,13 @@
 ---
 import { getLanguageFromURL } from '../../languages';
-import { SIDEBAR } from '../../config';
-const { currentPage } = Astro.props;
+import { SIDEBARS } from '../../config';
+const { currentPage, frontmatter } = Astro.props;
 const currentPageMatch = currentPage.slice(1);
 const langCode = getLanguageFromURL(currentPage);
+const sidebarType = frontmatter.sidebarType ?? 'default';
+
 // SIDEBAR is a flat array. Group it by sections to properly render.
-const sidebarSections = SIDEBAR[langCode].reduce((col, item, i) => {
+const sidebarSections = SIDEBARS[sidebarType][langCode].reduce((col, item, i) => {
 	// If the first item is not a section header, create a new container section.
 	if (i === 0) {
 		if (!item.header) {

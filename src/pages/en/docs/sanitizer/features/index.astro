@@ -1,0 +1,118 @@
+---
+import MainLayout from '@layouts/MainLayout';
+import { getCollection } from 'astro:content';
+import FeaturedArticle from '@components/FeaturedArticle';
+import { listApiKeys } from '@algolia/client-search';
+
+const posts = (await getCollection('sanitizer'));
+const baseURL = `/en/docs/sanitizer`;
+
+const frontmatter = {
+	title: `HTML and CSS features`,
+	description: ``,
+	sidebarType: `sanitizer`,
+}
+---
+
+<MainLayout frontmatter={frontmatter}>
+	<p>
+		This part of the documentation provides insight to whether HTML and CSS features are safe and/or useful in the context of email, and whether the Email Markup Consortium recommends email clients to support these features.
+	</p>
+
+	<h2>HTML</h2>
+
+	<h3>Elements</h3>
+	<ul>
+	{
+		posts
+		.filter(post => post.slug.startsWith('features/html/elements'))
+		.map((post) => (
+			<li>
+				<a href={`${baseURL}/${post.slug}`}>
+					{post.data.title}
+				</a>
+			</li>
+		))
+	}
+	</ul>
+
+	<h3>Global Attributes</h3>
+	<ul>
+	{
+		posts
+		.filter(post => post.slug.startsWith('features/html/global-attributes'))
+		.map((post) => (
+			<li>
+				<a href={`${baseURL}/${post.slug}`}>
+					{post.data.title}
+				</a>
+			</li>
+		))
+	}
+	</ul>
+
+	<h3>Other</h3>
+	<ul>
+	{
+		posts
+		.filter(post => post.slug.startsWith('features/html/other'))
+		.map((post) => (
+			<li>
+				<a href={`${baseURL}/${post.slug}`}>
+					{post.data.title}
+				</a>
+			</li>
+		))
+	}
+	</ul>
+
+
+	<h2>CSS</h2>
+	
+	<h3>Properties</h3>
+	<ul>
+	{
+		posts
+		.filter(post => post.slug.startsWith('features/css/properties'))
+		.map((post) => (
+			<li>
+				<a href={`${baseURL}/${post.slug}`}>
+					{post.data.title}
+				</a>
+			</li>
+		))
+	}
+	</ul>
+
+	<h3>Values</h3>
+	<ul>
+	{
+		posts
+		.filter(post => post.slug.startsWith('features/css/values'))
+		.map((post) => (
+			<li>
+				<a href={`${baseURL}/${post.slug}`}>
+					{post.data.title}
+				</a>
+			</li>
+		))
+	}
+	</ul>
+
+
+	<h3>At-rules</h3>
+	<ul>
+	{
+		posts
+		.filter(post => post.slug.startsWith('features/css/at-rules'))
+		.map((post) => (
+			<li>
+				<a href={`${baseURL}/${post.slug}`}>
+					{post.data.title}
+				</a>
+			</li>
+		))
+	}
+	</ul>
+	
+</MainLayout>

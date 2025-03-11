@@ -19,14 +19,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
 
 const filePath = frontmatter.file;
-const currentFile = filePath.slice(filePath.indexOf('src/pages/'));
-const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + currentFile;
+let currentFile, githubEditUrl, lastModifiedDate = null;
 
-const githubResponse = await fetch(`https://api.github.com/repos/${CONFIG.GITHUB_REPO}/commits?path=${encodeURIComponent(currentFile)}&page=1&per_page=1`);
-const githubData = await githubResponse.json();
-let lastModifiedDate = githubData.length ? new Date(githubData[0].commit.author.date) : null;
-if (frontmatter.hideLastModifiedDate) {
-	lastModifiedDate = null;
+if(filePath) {
+	currentFile = filePath.slice(filePath.indexOf('src/pages/'));
+	githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + currentFile;
+	
+	const githubResponse = await fetch(`https://api.github.com/repos/${CONFIG.GITHUB_REPO}/commits?path=${encodeURIComponent(currentFile)}&page=1&per_page=1`);
+	const githubData = await githubResponse.json();
+	lastModifiedDate = githubData.length ? new Date(githubData[0].commit.author.date) : null;
 }
 
 import SponsorRandom from '@components/Sponsors/SponsorRandom';
@@ -132,7 +133,7 @@ import SponsorRandom from '@components/Sponsors/SponsorRandom';
 
 		<main class="layout">
 			<aside id="grid-left" class="grid-sidebar" title="Site Navigation">
-				<LeftSidebar {currentPage} />
+				<LeftSidebar {currentPage} {frontmatter} />
 			</aside>
 			<div id="grid-main">
 				<PageContent {frontmatter} headings={onThisPageHeadings} {githubEditUrl} {lastModifiedDate}>

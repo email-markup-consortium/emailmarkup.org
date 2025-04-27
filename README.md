@@ -16,6 +16,4 @@ All commands are run from the root of the project, from the command line:
 
 ## Automated deploys
 
-The site is set to build and deploy once a week. This is triggered by posting to a Netlify webhook from an IFTTT applet.
-
-Similar setup: https://flaviocopes.com/netlify-auto-deploy/ 
+The site is set to build and deploy once a week. This is triggered by posting to a Netlify webhook from a Render.com cron.

@@ -15,7 +15,7 @@ Out of that number, 274 emails could not be analyzed, bringing the total of emai
 
 > **Result**
 >
-> [TBC]% of HTML emails tested contain accessibility issues categorized as "Serious" or "Critical".
+> [99.89]% of HTML emails tested contain accessibility issues categorized as "Serious" or "Critical".
 
 
 **This report was created in collaboration with our partner, Parcel.io**
@@ -53,33 +53,27 @@ Accessibility issues are categorized into four depending on how serious they are
 
 In our test we looked to find the highest category of issue recorded in each email:
 
-[TBC] --
 | Issue severity | Percentage of emails   |
 | -------------- | --------------------   |
-| Critical       | 66.68% (272,968 emails) |
-| Serious        | 33.29% (136,279 emails) |
-| Moderate       | < 0.01% (2 emails)     |
-| Mild           | 0.02% (80 emails)      |
-| No issues      | 0.01% (28 emails)      |
+| Critical       | 60.66% (269,092 emails)|
+| Serious        | 39.23% (174,026 emails)|
+| Moderate       | 0.01% (53 emails)      |
+| Mild           | 0.09% (394 emails)     |
+| No issues      | < 0.01% (21 emails)    |
 
-| Issue severity | Total Emails | Percentage of emails |
-|----------------|--------------|----------------------|
-| Critical       | 262,744      | 60.72%               |
-| Serious        | 432,227      | 99.89%               |
-| Moderate       | 145,155      | 33.55%               |
-| Mild           | 345,936      | 79.95%               |
-| No Issues      | 21           | < 0.01%                |
 
-From this we can see that [TBC]% of emails tested contain accessibility issues categorized as "Serious" or "Critical". These are the highest categories and fixing these issues should be considered high priority. 
+From this we can see that 99.89% of emails tested contain accessibility issues categorized as "Serious" or "Critical". These are the highest categories and fixing these issues should be considered high priority. 
 
--- [TBC]
+
 
 ### Emails without issues
 
-Out of all the emails we tested, only 21 (< 0.01%) passed without issue. And those emails came from * [TBC] brands.
+Out of all the emails we tested, only 21 (< 0.01%) passed without issue. And those emails came from just two brands.
 
-* [TBC]
-* [TBC]
+* Parcel.io
+* NaomiWest.ca
+
+It's also worth pointing out that Naomi West is one of our admins and she builds the Parcel emails. So great work Naomi.
 
 Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message.
 
@@ -89,9 +83,9 @@ Also, some emails with mild or moderate issues may actually be very accessible a
 
 #### **(1) Serious: Content inside the body should be wrapped in a dir attribute**
 
-Issue present in 99.17% (406000) of emails tested.
+Issue present in 98.14% (435,326) of emails tested.
 
-Number of appearances: 1471145.
+<!-- Number of appearances: 1471145. -->
 
 ##### **Why it’s needed:**
 
@@ -107,9 +101,9 @@ It’s important to apply the correct direction, however if you need fallback fo
 
 #### **(2) Serious: Content inside the body should be wrapped in a `lang` attribute**
 
-Issue present in 98.29% (402,382) of emails tested.
+Issue present in 96.67% (428,819) of emails tested.
 
-Number of appearances: 1,463,270.
+<!-- Number of appearances: 1,463,270. -->
 
 ##### **Why it’s needed:**
 
@@ -123,9 +117,9 @@ It’s important to apply the correct language, however if you need to have a fa
 
 #### **(3) Serious: Tables used for formatting should have the `role` attribute set to `presentation` or `none`**
 
-Issue present in 88.97% (364,240) of emails tested.
+Issue present in 86.24% (382,566) of emails tested.
 
-Number of appearances: 16,417,428.
+<!-- Number of appearances: 16,417,428. -->
 
 ##### **Why it’s needed:**
 
@@ -139,9 +133,9 @@ It’s better to avoid table layouts completely, however if you do use them you 
 
 #### **(4) Mild: Page should contain a level-one heading**
 
-Issue present in 79.23% (324,337) of emails tested.
+Issue present in 76.78% (340,605) of emails tested.
 
-Number of appearances: 324,337.
+<!-- Number of appearances: 324,337. -->
 
 ##### **Why it’s needed:**
 
@@ -155,9 +149,9 @@ You can add an `<h1>` element around the main title of your content. However n
 
 #### **(5) Serious: Links must have discernible text**
 
-Issue present in 73.73% (301,825) of emails tested.
+Issue present in 72.04% (319,550) of emails tested.
 
-Number of appearances: 3016075.
+<!-- Number of appearances: 3016075. -->
 
 ##### **Why it’s needed:**
 
@@ -173,9 +167,9 @@ Add some text inside the link. If this issue is flagged on an image you can add 
 
 #### **(6) Serious: `<html>` element must have a lang attribute**
 
-Issue present in 68.32% (279,706) of emails tested.
+Issue present in 67.01% (297,253) of emails tested.
 
-Number of appearances: 279,706.
+<!-- Number of appearances: 279,706. -->
 
 ##### **Why it’s needed:**
 
@@ -187,11 +181,25 @@ Add a `lang=""` attribute to the `<html>` element. It’s important to apply
 
 ---
 
-#### **(7) Critical: Images must have alternate text**
+#### **(7) Serious: color-contrast **
 
-Issue present in 57.89% (236,993) of emails tested.
+Issue present in 59.37% (263,360) of emails tested.
 
-Number of appearances: 2,535,736.
+##### **Why it’s needed:**
+
+[TBC]
+
+##### **How to fix this:**
+
+[TBC]
+
+---
+
+#### **(8) Critical: Images must have alternate text**
+
+Issue present in 51.42% (228,081) of emails tested.
+
+<!-- Number of appearances: 2,535,736. -->
 
 ##### **Why it’s needed:**
 
@@ -203,11 +211,11 @@ An `alt=""` attribute is always needed, but in some cases can be left blank, w
 
 ---
 
-#### **(8) Serious: Documents must have `<title>` element to aid in navigation**
+#### **(9) Serious: Documents must have `<title>` element to aid in navigation**
 
-Issue present in 34.95% (143,094) of emails tested.
+Issue present in 41.35% (183,423) of emails tested.
 
-Number of appearances: 143,094.
+<!-- Number of appearances: 143,094. -->
 
 ##### **Why it’s needed:**
 
@@ -219,11 +227,11 @@ Add a `<title>` element to the top of your page with a short, descriptive summ
 
 ---
 
-#### **(9) Moderate: Link text should be descriptive**
+#### **(10) Moderate: Link text should be descriptive**
 
-Issue present in 16.92% (69,272) of emails tested.
+Issue present in 17.62% (78,162) of emails tested.
 
-Number of appearances: 102,704.
+<!-- Number of appearances: 102,704. -->
 
 ##### **Why it’s needed:**
 
@@ -255,7 +263,7 @@ Make sure links have something other than colour to make them stand out. The def
 
 ## Comparing to the rule set from last year 
 
-We've seen a small drop in email failing accessibility tests with either Critical or Serious issues. For the last 2 years this was 99.97%, this year it's dropped to [TBC]%.
+We've seen a small drop in email failing accessibility tests with either Critical or Serious issues. For the last 2 years this was 99.97%, this year it's dropped to 99.89%.
 
 Although that change is small, we are seeing some bigger improvemnts in  some of the top 10 issues with most issues seeing fewer occurances than last year.
 

@@ -248,15 +248,15 @@ Although that change is small, we are seeing some bigger improvements in some of
 
 | Description                           | Severity | 2023 % | 2024 % | 2025 % |
 |---------------------------------------|----------|--------|--------|--------|
-| Body content must have dir attribute  | Serious  | N/A    | 99.17  | 98.14  |
-| Body content must have lang attribute | Serious  | 96.37  | 98.29  | 96.67  |
-| Tables used for layout must have role | Serious  | 89.16  | 88.97  | 86.24  |
+| Body content must have `dir` attribute  | Serious  | N/A    | 99.17  | 98.14  |
+| Body content must have `lang` attribute | Serious  | 96.37  | 98.29  | 96.67  |
+| Tables used for layout must have `role` | Serious  | 89.16  | 88.97  | 86.24  |
 | Missing level-one heading             | Mild     | 81.7   | 79.23  | 76.78  |
 | Links must have discernible text      | Serious  | 71.36  | 73.73  | 72.04  |
-| <html> must have lang attribute       | Serious  | 72.19  | 68.32  | 67.01  |
+| `<html>` must have lang attribute       | Serious  | 72.19  | 68.32  | 67.01  |
 | Insufficient color contrast           | Serious  | N/A    | N/A    | 59.37  |
 | Images must have alternate text       | Critical | 55.26  | 57.89  | 51.42  |
-| Missing title element                 | Serious  | 35.05  | 34.95  | 41.35  |
+| Missing `<title>` element                 | Serious  | 35.05  | 34.95  | 41.35  |
 | Link text should be descriptive       | Moderate | 16.8   | 16.92  | 17.62  |
 
 Contrast checks were introduced it in the 2024 report but didn't register in the top 10. Looking into it, there was a problem with the way the issue were grouped, although they were registering they weren't combining to gain significant numbers.

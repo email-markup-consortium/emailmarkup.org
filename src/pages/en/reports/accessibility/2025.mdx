@@ -9,7 +9,7 @@ import SponsorsGrid from '@components/Sponsors/SponsorsGrid';
 import Sponsor from '@components/Sponsors/Sponsor';
 import sponsors from '../../../../sponsors.json';
 
-We have spent the last year collecting emails as part of our [data collection project](../../../projects/#data-collection). Since the last report, we’ve collected 443,870 emails to be included in this years accessibility report, about 23,000 more email than were analyzed in the 2024 report.
+We have spent the last year collecting emails as part of our [data collection project](/en/projects/#data-collection). Since the last report, we’ve collected 443,870 emails to be included in this years accessibility report, about 23,000 more email than were analyzed in the 2024 report.
 
 Out of that number, 285 emails could not be analyzed, bringing the total of emails analysed down to 443,585. Only 21 emails contained no issues, representing two brands.
 
@@ -68,7 +68,7 @@ Out of all the emails we tested, only 21 (< 0.01%) passed without issue. And tho
 * Parcel.io
 * NaomiWest.ca
 
-It's also worth pointing out that Naomi West is one of our admins and she builds the Parcel emails. So great work Naomi.
+It is worth noting that Naomi West is on the EMC admins board, and is in charge of building both Parcel.io and NaomiWest.ca emails. 
 
 Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message.
 
@@ -165,7 +165,7 @@ Add a `lang=""` attribute to the `<html>` element. It’s important to apply the
 
 ---
 
-#### **(7) Serious: Element has insufficient color contrast **
+#### **(7) Serious: Element has insufficient color contrast**
 
 Issue present in 59.37% (263,360) of emails tested.
 
@@ -252,7 +252,7 @@ Although that change is small, we are seeing some bigger improvements in some of
 | Tables used for layout must have `role` | Serious  | 89.16  | 88.97  | 86.24  |
 | Missing level-one heading             | Mild     | 81.7   | 79.23  | 76.78  |
 | Links must have discernible text      | Serious  | 71.36  | 73.73  | 72.04  |
-| `<html>` must have lang attribute       | Serious  | 72.19  | 68.32  | 67.01  |
+| `<html>` must have `lang` attribute       | Serious  | 72.19  | 68.32  | 67.01  |
 | Insufficient color contrast           | Serious  | N/A    | N/A    | 59.37  |
 | Images must have alternate text       | Critical | 55.26  | 57.89  | 51.42  |
 | Missing `<title>` element                 | Serious  | 35.05  | 34.95  | 41.35  |
@@ -261,7 +261,7 @@ Although that change is small, we are seeing some bigger improvements in some of
 Contrast checks were introduced it in the 2024 report but didn't register in the top 10. Looking into it, there was a problem with the way the issue were grouped, although they were registering they weren't combining to gain significant numbers.
 
 ## Industry break down
-For this years report we've broken out `.edu` (education) and `.gov` (government) senders, to see if there are any insights into those emails.
+For this year's report, we have also examined email messages sent by `.edu` (education) domains and `.gov` (government) domains. These are two sectors in which accessibility is not negotiable and should be held to a higher standard. 
 
 ### Education
 We found 113 emails from education domains. 100% failed accessibility tests. 4% with Critical issues and 96% with Serious issues.
@@ -283,11 +283,11 @@ We found 2556 emails from government domains. 100% failed accessibility tests. 7
 The most common Critical issue was **Images must have alternate text** (6.5%), we're also seeing about 1% with **Zooming and scaling must not be disabled** (30 emails). As well as issues with **allowed ARIA attributes** (7 emails) and **invalid ARIA attributes** (4 emails).
 
 For Serious issues;
-* 85.6% **Tables used for formatting should have the `role` attribute **
-* 83.72% Content inside the body should be wrapped in a `dir` attribute
-* 83.72% Content inside the body should be wrapped in a `lang` attribute
+* **85.6%** Tables used for formatting should have the `role` attribute 
+* **83.72%** Content inside the body should be wrapped in a `dir` attribute
+* **83.72%** Content inside the body should be wrapped in a `lang` attribute
 
-Although it's only a mild issue 49% of emails had **Duplicate ID's**
+Although it's only a mild issue **49%** of emails had Duplicate ID's
 
 ## Conclusions
 

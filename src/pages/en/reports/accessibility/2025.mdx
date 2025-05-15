@@ -9,45 +9,112 @@ import SponsorsGrid from '@components/Sponsors/SponsorsGrid';
 import Sponsor from '@components/Sponsors/Sponsor';
 import sponsors from '../../../../sponsors.json';
 
-We have spent the last year collecting emails as part of our [data collection project](/en/projects/#data-collection). Since the last report, we’ve collected 443,870 emails to be included in this years accessibility report, about 23,000 more email than were analyzed in the 2024 report.
+In previous years, this report only focused on the code sent in the HTML message. It reported on what developers, drag-and-drop tools and senders are and are not doing well. This year's report also sheds some light on the state of accessibility inside the email clients. We are basing this on our [Email Client Feature Support Rankings](/en/reports/email-clients/feature-support-rankings/).
 
-Out of that number, 285 emails could not be analyzed, bringing the total of emails analysed down to 443,585. Only 21 emails contained no issues, representing two brands.
+
+Accessibility in HTML emails remains critically under-addressed in 2025.
+
+Across the ecosystem, accessibility failures are systemic, widespread, and largely preventable. After analyzing 443,585 emails collected over the past year, we found that 99.89% contain accessibility issues rated “Serious” or “Critical.” Only 21 emails passed all automated accessibility checks — and they came from just two brands.
+
+This year’s report expands beyond just the code sent in HTML messages by senders. This time, we also evaluate the state of accessibility inside email clients, based on our [Email Client Feature Support Rankings](/en/reports/email-clients/feature-support-rankings/). Shockingly, only one email client supports all HTML and CSS accessibility features.
 
 > **Result**
 >
-> 99.89% of HTML emails tested contain accessibility issues categorized as "Serious" or "Critical".
+> - 99.89% of HTML emails tested contain accessibility issues categorized as “Serious” or “Critical”.
+> - Only 21 emails (< 0.01%) passed all accessibility checks. These emails came from a single author representing two separate brands!
+> - The majority of the issues are not edge cases. These are basic, machine-checkable accessibility failures.
+> - Only one email client supports all HTML/CSS accessibility features tested on "Can I Email?"
 
-**This report was created in collaboration with our partner, Parcel.io**
+---
+
+## Partners
+
+This report was created in collaboration with our partners, [Parcel.io](https://parcel.io/) and [Flourish](https://flourishworld.com/)
 
 <SponsorsGrid>
-<Sponsor  small  sponsor={sponsors.find(item  => item.name=='Parcel')} />
+  {sponsors
+    .filter(item => ['Parcel', 'Flourish'].includes(item.name))
+    .map(item => <Sponsor small sponsor={item} />)
+  }
 </SponsorsGrid>
 
 ## Funding
+
 Our funding comes from our sponsors and a number of individual contributors from the email community and beyond. If you would like to support this report and help contribute to keep the EMC going, you can do so on our [Open Collective page](https://opencollective.com/email-markup-consortium#category-CONTRIBUTE).
 
-## The data
+<br/>
 
-The data was sourced by the Email Markup Consortium Data Collection project between May 2024 and May 2025. We collected 432,990 emails from multiple industries in multiple languages. We do attempt to diversify our data set as much as possible.
+---
 
-If you would like to add to and help expand our dataset or find out more about it, you can read more about our [data collection project](../../../projects/#data-collection).
+## Summary
 
-## Testing methodology
+### What’s going wrong?
+
+The causes of the issues are systemic:
+
+- Developers, even those experienced with web accessibility, often lack email-specific knowledge
+- Drag-and-drop email builders generate inaccessible HTML markup
+- Email clients fail to support key HTML/CSS features that would enable developers to build accessible HTML emails
+
+### What Needs to Change
+
+This report is a call to action for shared responsibility:
+
+- **Senders:** use tools like Parcel to audit your HTML emails.
+- **Template and ESP tools:** audit your generated markup. Set better defaults and fallbacks. Add accessibility checks.
+- **Email clients:** support HTML/CSS features needed to author accessible code.
+
+### A Few Leading the Way
+
+#### Senders
+
+We recognize the work of brands like [Parcel](https://parcel.io/) and [NaomiWest.ca](https://www.naomiwest.ca/), whose emails passed all automated tests. Their success shows what's possible when accessibility is prioritized.
+
+To get these same results other senders need to be putting emails through a proper accessibility QA process to check every email before it’s sent.  This is pretty common when testing for rendering issues. Accessibility deserves that same level of attention.
+
+One approach teams can take to iteratively improve the accessibility of their emails is building  a robust design system that allows them to implement fixes and improvements in a single source. These changes can then roll out to all of their email templates
+
+#### Email clients
+
+We also recognize SFR Mail which supports all the accessibility features tested on "Can I Email?". Honourable mentions to Apple Mail and Samsung Email, which are not far from the 100% mark.
+
+Other email clients should aim to follow suit. We understand there are concerns around allowing certain HTML/CSS features that could potentially be exploited by malicious senders. If this applies to an accessibility feature, suitable work arounds or fallback options should be provided.  The EMC would love to work closer with the email clients to help facilitate this. 
+
+<br />
+
+---
+
+## Accessibility in HTML messages
+
+### The data
+
+The data was sourced by the Email Markup Consortium Data Collection project between May 2024 and May 2025. We collected 443,870 emails from multiple industries in multiple languages. This is roughly 23,000 more emails than what we analyzed for the 2024 report.
+
+- Number of emails collected between May 2024 and May 2025: 443,870
+- Number of emails that could not be analyzed (due to invalid code): 285
+- Number of emails analyzed: 443,585
+
+If you would like to add to and help expand our dataset or find out more about it, you can read more about our [data collection project](/en/projects/#data-collection).
+
+
+### Testing methodology
 
 The testing is performed via the [Parcel](https://parcel.io/) accessibility checker. This is a tool built specifically for email accessibility tests. Learn more about the tests and what they cover by reading the [Parcel accessibility-checker documentation](https://parcel.io/docs/dev-tools/accessibility-checker).
 
+Parcel's accessibility checker for a wide range of accessibility issues, not only looking at compatibility with assistive technologies, but also looking for issues that could affect people with a wide range of accessible needs.
+
 We’d like to give huge thanks to the team at [Parcel.io](https://parcel.io/) for all the help with collecting the data and running the tests. The accessibility checker is available on the free Community plan at Parcel, so if you want to test your emails on the same criteria that we use you can do so very easily, and add it into your regular email production workflow.
 
-## Results
+### Results
 
-### Issues severity
+#### Issues severity
 
 Accessibility issues are categorised into four depending on how serious they are. These are defined by Deque Axe as:
 
--  **Mild** - Considered to be a nuisance or an annoyance bug. Prioritize fixing if the fix only takes a few minutes and the developer is working on the same screen/feature at the same time, otherwise the issue should not be prioritized. Will still get in the way of compliance if not fixed. Should be very infrequent.
--  **Moderate** - Results in some barriers for people with disabilities, but will not prevent them from accessing fundamental features or content. Prioritize fixing in this release, if there are no higher-priority issues. Will get in the way of compliance if not fixed. Should be fairly common.
--  **Serious** - Results in serious barriers for people with disabilities and will partially prevent them from accessing fundamental features or content. People relying on assistive technologies will experience significant frustration as a result. Issues falling under this category are major problems, and remediation should be a priority. Should be very common.
--  **Critical** - Results in blocked content for people with disabilities, and will definitely prevent them from accessing fundamental features or content. This type of issue puts your organisation at risk. Prioritise fixing as soon as possible, within the week if possible. Remediation should be a top priority. Should be infrequent.
+- **Mild** - Considered to be a nuisance or an annoyance bug. Prioritize fixing if the fix only takes a few minutes and the developer is working on the same screen/feature at the same time, otherwise the issue should not be prioritized. Will still get in the way of compliance if not fixed. Should be very infrequent.
+- **Moderate** - Results in some barriers for people with disabilities, but will not prevent them from accessing fundamental features or content. Prioritize fixing in this release, if there are no higher-priority issues. Will get in the way of compliance if not fixed. Should be fairly common.
+- **Serious** - Results in serious barriers for people with disabilities and will partially prevent them from accessing fundamental features or content. People relying on assistive technologies will experience significant frustration as a result. Issues falling under this category are major problems, and remediation should be a priority. Should be very common.
+- **Critical** - Results in blocked content for people with disabilities, and will definitely prevent them from accessing fundamental features or content. This type of issue puts your organisation at risk. Prioritise fixing as soon as possible, within the week if possible. Remediation should be a top priority. Should be infrequent.
 
 In our test we looked to find the highest category of issue recorded in each email:
 
@@ -61,20 +128,20 @@ In our test we looked to find the highest category of issue recorded in each ema
 
 From this we can see that 99.89% of emails tested contain accessibility issues categorised as "Serious" or "Critical". These are the highest categories and fixing these issues should be considered high priority.
 
-### Emails without issues
+#### Emails without issues
 
 Out of all the emails we tested, only 21 (< 0.01%) passed without issue. And those emails came from just two brands.
 
 * Parcel.io
 * NaomiWest.ca
 
-It is worth noting that Naomi West is on the EMC admins board, and is in charge of building both Parcel.io and NaomiWest.ca emails. 
+It is worth noting that Naomi West is on the EMC admins board, and is in charge of building both Parcel.io and NaomiWest.ca emails.
 
 Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message.
 
 Also, some emails with mild or moderate issues may actually be very accessible as these rules often have exceptions that these emails may meet. For example, a level-one heading may be unnecessary if the message is short.
 
-## **Top 10 most common accessibility issues in email**
+### **Top 10 most common accessibility issues in email**
 
 #### **(1) Serious: Content inside the body should be wrapped in a dir attribute**
 
@@ -239,7 +306,7 @@ Some people with low vision or color blindness may struggle to distinguish links
 
 Make sure links have something other than colour to make them stand out. The default link style of `text-decoration: underline` is the easiest and probably the best solution. If you must only relying on color then you need to reach a contrast ration of 3:1 compared to surrounding text, however this can be a tricky balance to achieve while still maintaining sufficient contrast against the background.
 
-## Comparing to the rule set from previous years
+### Comparing to the rule set from previous years
 
 We've seen a small drop in email failing accessibility tests with either Critical or Serious issues. For the last 2 years this was 99.97%, this year it's dropped to 99.89%.
 
@@ -258,12 +325,12 @@ Although that change is small, we are seeing some bigger improvements in some of
 | Missing `<title>` element                 | Serious  | 35.05  | 34.95  | 41.35  |
 | Link text should be descriptive       | Moderate | 16.8   | 16.92  | 17.62  |
 
-Contrast checks were introduced it in the 2024 report but didn't register in the top 10. Looking into it, there was a problem with the way the issue were grouped, although they were registering they weren't combining to gain significant numbers.
+Contrast checks were introduced in the 2024 report but didn't register in the top 10. Looking into it, there was a problem with the way the issues were grouped, although they were registering, they weren't combining to gain significant numbers.
 
-## Industry break down
+### Industry break down
 For this year's report, we have also examined email messages sent by `.edu` (education) domains and `.gov` (government) domains. These are two sectors in which accessibility is not negotiable and should be held to a higher standard. 
 
-### Education
+#### Education
 We found 113 emails from education domains. 100% failed accessibility tests. 4% with Critical issues and 96% with Serious issues.
 
 Only 5 emails failed with a Critical issue, and that was the same issue across all 5. **Zooming and scaling must not be disabled**.
@@ -278,7 +345,7 @@ The rest of the messages failed with serious issues.
 
 Also, 100% were missing an `<h1>` element.
 
-### Government
+#### Government
 We found 2556 emails from government domains. 100% failed accessibility tests. 7% with Critical issues and 93% with Serious issues.
 The most common Critical issue was **Images must have alternate text** (6.5%), we're also seeing about 1% with **Zooming and scaling must not be disabled** (30 emails). As well as issues with **allowed ARIA attributes** (7 emails) and **invalid ARIA attributes** (4 emails).
 
@@ -289,24 +356,155 @@ For Serious issues;
 
 Although it's only a mild issue **49%** of emails had Duplicate ID's
 
-## Conclusions
+### Conclusions
 
-This is the third full year for this report and we're still seeing the same issues coming up as we have in previous years. The top 10 issues haven't changed order since last year, apart from the addition of color contrast, which can be put down to a change in the testing and reporting.
+This is the third full year for this report and we are disappointed to see the same issues as we have in previous years. The top 10 issues haven't changed order since last year, apart from the addition of color contrast, which can be put down to a change in the testing and reporting.
 
-It's disappointing to see the same issue come up time and again, however we have seen lower percentages of issues which suggests improvements are being made. Messages with Critical issue have dropped from 66.68% in 2024 to 60.66% in 2025. This could suggest these fixes are being prioritized. 
+We were hoping to see better standards across education and government emails because generally there are stricter accessibility laws for these. Although both groups have a 100% failure rate, the Critical issues are much lower than the overall stats, 4% and 7% respectively. However the sample data size for these two sectors is small: combined it's less than 1% of total messages analyzed.
 
-We were hoping to see better standards across education and government emails because generally there are stricter accessibility laws for these. Although both groups have a 100% failure rate, the Critical issues are much lower than the overall stats 4% and 7% respectively. But the sample data is low, combined it's less than 1% of total message, so we can't make strong judgements here.
+Fewer than 0.01% of emails passed automated accessibility checks. That’s a call to action. The tools exist to do better — we just need more of them to be used, and more platforms to make them standard.
 
-Although we have seen some improvements, there is still a long way to go. At least 99.89% of email we looked at are broken, probably a lot more if we were to include manual testing. Broken emails should be the exception, not the standard.
+On the bright side, we have seen lower percentages of issues which suggests improvements are being made. Messages with Critical issues have dropped from 66.68% in 2024 to 60.66% in 2025. This could suggest these fixes are being prioritized.
 
-Accessibility is everyones responsibility. Every email should go through a proper QA process before it's sent. Not everyone will have the skills to fix accessibility issues — but everyone should be able to find them and report them so they can be addressed.
+Frameworks and drag-and-drop tools are uniquely positioned to raise the accessibility baseline. Yet many still output templates that miss fundamental requirements. We know our past reports helped [MJML to improve their defaults](https://github.com/mjmlio/mjml/issues/2725). We strongly encourage others to do the same, and perhaps start introducing automated audits on their generated code.
 
-Senders should be giving accessibility issues the same priority as rendering bugs. It's not uncommon for an email to be delayed until it looks right in Outlook — accessibility deserves that same level of attention.
+---
 
-Email creation tools need to do better by improving default templates, setting accessible defaults for components, and offering fallbacks or warnings when users create inaccessible content.
+## Accessibility in Email Clients
 
-Email clients need to ensure they support [standard accessible code](/en/reports/email-clients/feature-support-rankings/). And any unsupported code is handled in a way that will fallback gracefully, less likely the create accessibility issues.
+### The data
+
+This data comes from our [Email Client Feature Support Rankings](/en/reports/email-clients/feature-support-rankings/), which is based on the features tested on ["Can I Email?"](https://www.caniemail.com/). The Email Markup Consortium in collaboration with [Flourish](https://flourishworld.com/), directly contribute to the ["Can I Email?"](https://www.caniemail.com/) project.
+
+The following 20 HTML/CSS features have been identified as features that help developers build accessible HTML emails:
+
+#### CSS features:
+
+  1. `@media (hover)`, `@media (any-hover)`
+  1. `@media (prefers-color-scheme)`
+  1. `@media (prefers-reduced-motion)`
+  1. `:active`
+  1. `:focus`
+  1. `:hover`
+
+#### HTML features:
+
+  1. `role` attribute
+  1. `dir` attribute
+  1. `lang` attribute
+  1. `aria-label` attribute
+  1. `aria-labelledby` attribute
+  1. `aria-live` attribute
+  1. `aria-describedby` attribute
+  1. `aria-hidden` attribute
+  1. `hidden` attribute
+  1. `<hr>` element
+  1. `<img>` element
+  1. `<picture>` element
+  1. `<abbr>` element
+  1. `<code>` element
+
+These features were tested on 44 email clients:
+
+1. Gmail (Desktop webmail)
+1. Gmail (iOS)
+1. Gmail (Android)
+1. Gmail (Mobile webmail)
+1. Outlook (Windows)
+1. Outlook (Windows mail)
+1. Outlook (MacOS)
+1. Outlook (outlook.com)
+1. Outlook (iOS)
+1. Outlook (Android)
+1. Yahoo! Mail (Desktop webmail)
+1. Yahoo! Mail (iOS)
+1. Yahoo! Mail (Android)
+1. Apple Mail (MacOS)
+1. Apple Mail (iOS)
+1. AOL (Desktop webmail)
+1. AOL (iOS)
+1. AOL (Android)
+1. Mozilla Thunderbird (MacOS)
+1. Mozilla Thunderbird (Windows)
+1. Samsung Email (Android)
+1. SFR (Desktop webmail)
+1. SFR (iOS)
+1. SFR (Android)
+1. Orange (Desktop webmail)
+1. Orange (iOS)
+1. Orange (Android)
+1. ProtonMail (Desktop webmail)
+1. ProtonMail (iOS)
+1. ProtonMail (Android)
+1. HEY (Desktop webmail)
+1. Mail.ru (Desktop webmail)
+1. Fastmail (Desktop webmail)
+1. LaPoste.net (Desktop webmail)
+1. T-online.de (Desktop webmail)
+1. Free.fr (Desktop webmail)
+1. GMX (Desktop webmail)
+1. GMX (iOS)
+1. GMX (Android)
+1. WEB.DE (Desktop webmail)
+1. WEB.DE (iOS)
+1. WEB.DE (Android)
+1. 1&amp;1 (Desktop webmail)
+1. 1&amp;1 (Android)
+
+### Testing methodology
+
+For a HTML/CSS feature to be tested, a reduced test case is created and sent to various inboxes. The rendered code by the email client is examined to determine whether an email client supports a feature.
+
+### Email client results
+
+#### Email clients that support all 20 tested accessibility features:
+
+Only one email client (SFR Desktop webmail) supports all 20 accessibility features.
+
+#### Email clients that support fewer than 5 out of the 20 tested accessibility features:
+
+- T-online.de (Desktop webmail): 2/20 features supported
+- Free.fr (Desktop webmail): 4/20 features supported
+- Outlook (Windows mail): 4/20 features supported
+- AOL (iOS): 4/20 features supported
+- GMX (Desktop webmail): 4/20 features supported
+- GMX (Android): 4/20 features supported
+- WEB.DE (Android): 4/20 features supported
+- 1&1 (Android): 4/20 features supported
+- WEB.DE (Desktop webmail): 3/20 features supported
+
+#### Commonly unsupported accessibility features
+
+- ARIA attributes: such as aria-label, aria-labelledby, and aria-describedby. These can be crucial for screen readers to convey contextual information.
+- CSS pseudo-classes: such as :hover, :focus, and :active. These can be used to enhance keyboard navigation and interactivity.
+- CSS Media Queries: such as @media (prefers-color-scheme) and @media (prefers-reduced-motion). These can be used to allow for adaptations based on user preferences.
+
+#### Gmail
+
+At the time of writing, none of the Gmail email clients support key features that allow developers to respect user preferences such as `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)`. For a company that actively promotes an accessible web, Gmail’s lack of support for such features is a notable inconsistency.
+
+#### Outlook
+
+The legacy Outlook for Windows desktop app only supports 7 out of the 20 tested features. Given its market share, this just means a lot of its users have inaccessible experiences. This is especially problematic in enterprise and government use cases where compliance is mandated and often users don’t get a choice of email client to use.
+
+The good news is that Microsoft is deprecating this version of the app and they are working towards a more unified approach for rendering HTML emails across their email clients, all of which are scoring better than the legacy Outlook for Windows. This move will have a big impact on a decent percentage of users worldwide.
+
+#### Yahoo
+
+Yahoo Mail (on all operating systems) has a similar score to the legacy Outlook for Windows desktop app: 7 out of 20. This is concerning for a major email client running on a modern stack (unlike the legacy Outlook for Windows which uses Microsoft Word as a rendering engine). It is also disappointing given Yahoo is one of the few email clients that decided to support AMP for email, but didn’t put the effort to improve the accessibility for the largest percentage of its users.
+
+
+#### Conclusion of email client accessibility
+
+The state of accessibility in email clients reflects the broader challenges facing the email ecosystem: a lack of coordination, missing standards, and uneven support for fundamental features.
+
+The Email Markup Consortium is looking to help close these gaps. Our mission is to bring greater consistency to how email clients handle code and to empower everyone to build better, more inclusive experiences. Accessibility isn’t an optional enhancement; it’s a core part of delivering reliable, user-centered communication.
+
+Real change will require a commitment from the email clients to implement and maintain support for accessibility standards. As well as commitments from senders to create and send more accessible messages. By working together toward an open, reliable, and inclusive email ecosystem, we move closer to a future where no user is left behind.
+
+
 
 -----
 
 If you have found this report helpful, please consider a small donation via our [Open Collective page](https://opencollective.com/email-markup-consortium#category-CONTRIBUTE). We rely on donations to keep this report and other projects running.
+

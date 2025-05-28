@@ -9,7 +9,7 @@ layout: "@layouts/BlogLayout"
 
 Respecting user preferences isn't a nice-to-have. It is a basic accessibility principle.
 
-Many people rely on system-level settings, such as prefers-reduced-motion or prefers-color-scheme, to make digital content safer, more readable, and less physically or cognitively taxing. These aren't just personalizations; they're assistive mechanisms that reflect a user's needs and sometimes their medical requirements.
+Many people rely on system-level settings, such as reduced motion or color scheme preferences, to make digital content safer, more readable, and less physically or cognitively taxing. These aren't just personalizations; they're assistive mechanisms that reflect a user's needs and sometimes their medical requirements.
 
 But for users reading email messages in many email clients including Gmail, these preferences are ignored. Worse: these emails clients strips out the code that developers use to respect these preferences.
 
@@ -26,7 +26,7 @@ In email, the situation is different. Many email clients, including major ones s
 
 ## What the 2025 Accessibility Report shows
 
-In our 2025 Accessibility Report, we tested several widely-used email clients for support of user preference CSS media queries. Many email clients do not support CSS media queries for prefers-reduced-motion and prefers-color-scheme, stripping them completely from the email before rendering.
+In our 2025 Accessibility Report, we tested several widely-used email clients for support of user preference CSS media queries. Many email clients do not support CSS media queries for `prefers-reduced-motion` and `prefers-color-scheme`, stripping them completely from the email before rendering.
 
 This means:
 
@@ -50,7 +50,7 @@ Gmail and other email clients need to rethink their approach. Their sanitization
 
 We're asking for:
 
-* Support for accessibility related HTML and CSS features, such as prefers-reduced-motion and prefers-color-scheme CSS media queries
+* Support for accessibility related HTML and CSS features, such as `prefers-reduced-motion` and `prefers-color-scheme` CSS media queries
 * Transparent documentation about what features are allowed or stripped from HTML emails as well as recommendations for workarounds when features cannot be supported (e.g. for security or privacy reasons).
 * Collaboration with standards bodies and developer communities to close these accessibility gaps.
 

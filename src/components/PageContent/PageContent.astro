@@ -5,7 +5,7 @@ import TableOfContents from '@components/TableOfContents';
 const { frontmatter, headings, githubEditUrl, lastModifiedDate } = Astro.props;
 const title = frontmatter.title;
 let formattedLastModifiedDate;
-if(lastModifiedDate) {
+if(lastModifiedDate && !frontmatter.hideLastModifiedDate) {
 	formattedLastModifiedDate = `${lastModifiedDate.getDate()} ${lastModifiedDate.toLocaleString('default', { month: 'long' })} ${lastModifiedDate.getFullYear()}`;
 }
 ---

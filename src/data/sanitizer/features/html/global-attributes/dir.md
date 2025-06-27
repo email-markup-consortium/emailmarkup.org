@@ -1,6 +1,6 @@
 ---
 title: dir
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

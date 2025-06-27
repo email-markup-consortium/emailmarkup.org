@@ -1,6 +1,6 @@
 ---
 title: "<hgroup>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

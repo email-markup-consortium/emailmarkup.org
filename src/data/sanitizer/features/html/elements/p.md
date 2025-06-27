@@ -1,6 +1,6 @@
 ---
 title: "<p>: The Paragraph element"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

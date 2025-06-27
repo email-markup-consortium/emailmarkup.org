@@ -1,6 +1,6 @@
 ---
 title: clamp()
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

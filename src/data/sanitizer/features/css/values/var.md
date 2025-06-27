@@ -1,6 +1,6 @@
 ---
 title: var()
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

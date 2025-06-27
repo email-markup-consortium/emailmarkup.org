@@ -1,6 +1,6 @@
 ---
 title: "@font-face"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

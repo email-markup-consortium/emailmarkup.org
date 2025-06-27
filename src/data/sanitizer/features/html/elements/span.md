@@ -1,6 +1,6 @@
 ---
 title: "<span>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

@@ -1,6 +1,6 @@
 ---
 title: "data-*"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

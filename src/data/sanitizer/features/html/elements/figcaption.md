@@ -1,6 +1,6 @@
 ---
 title: "<figcaption>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

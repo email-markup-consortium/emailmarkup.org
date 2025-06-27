@@ -1,6 +1,6 @@
 ---
 title: "<meta>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

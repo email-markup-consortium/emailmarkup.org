@@ -1,6 +1,6 @@
 ---
 title: "aria-*"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

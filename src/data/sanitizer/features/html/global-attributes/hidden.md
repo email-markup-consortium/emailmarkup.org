@@ -1,6 +1,6 @@
 ---
 title: hidden
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

@@ -1,6 +1,6 @@
 ---
 title: counters(), counter()
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

@@ -1,6 +1,6 @@
 ---
 title: contenteditable
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

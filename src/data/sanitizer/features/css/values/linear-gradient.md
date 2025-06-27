@@ -1,6 +1,6 @@
 ---
 title: linear-gradient()
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

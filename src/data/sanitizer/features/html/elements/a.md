@@ -1,6 +1,6 @@
 ---
 title: "<a>: The Anchor element"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

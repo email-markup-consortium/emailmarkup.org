@@ -1,6 +1,6 @@
 ---
 title: "<em>: The Emphasis element"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

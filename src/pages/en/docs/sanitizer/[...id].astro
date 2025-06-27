@@ -1,0 +1,26 @@
+---
+import { CollectionEntry, getCollection, render } from 'astro:content';
+import MainLayout from '@layouts/MainLayout';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('sanitizer');
+
+	return posts.map((post) => ({
+		params: { id: post.id },
+		props: post,
+	}));
+}
+
+type Props = CollectionEntry<'sanitizer'>;
+
+const post = Astro.props;
+const { Content, headings } = await render(post);
+
+const frontmatter = post.data;
+frontmatter.headings = headings;
+frontmatter.sidebarType = 'sanitizer';
+---
+
+<MainLayout frontmatter={frontmatter}>
+	<Content />
+</MainLayout>

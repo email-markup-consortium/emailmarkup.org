@@ -1,6 +1,6 @@
 ---
 title: "@import"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

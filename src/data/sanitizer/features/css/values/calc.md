@@ -1,6 +1,6 @@
 ---
 title: calc()
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

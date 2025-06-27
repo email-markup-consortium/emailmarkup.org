@@ -1,6 +1,6 @@
 ---
 title: "<input>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

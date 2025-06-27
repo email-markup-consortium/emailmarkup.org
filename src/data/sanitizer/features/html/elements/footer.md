@@ -1,6 +1,6 @@
 ---
 title: "<footer>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

@@ -18,7 +18,6 @@ const { Content, headings } = await render(post);
 
 let frontmatter = post.data;
 frontmatter.headings = headings;
-console.log(frontmatter)
 ---
 
 <BlogLayout frontmatter={frontmatter}>

@@ -1,6 +1,6 @@
 ---
 title: "<table>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

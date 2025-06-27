@@ -1,6 +1,6 @@
 ---
 title: rgb(), rgba()
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

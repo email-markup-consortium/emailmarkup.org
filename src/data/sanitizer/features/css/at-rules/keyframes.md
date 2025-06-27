@@ -1,6 +1,6 @@
 ---
 title: "@keyframes"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

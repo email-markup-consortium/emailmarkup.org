@@ -1,6 +1,6 @@
 ---
 title: max()
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

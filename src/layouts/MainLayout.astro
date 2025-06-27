@@ -13,7 +13,7 @@ import '../styles/theme.css';
 import '../styles/index.css';
 
 const { frontmatter = {}, headings } = Astro.props;
-const onThisPageHeadings = frontmatter.customHeadings ?? headings;
+const onThisPageHeadings = frontmatter.customHeadings ?? frontmatter.headings ?? headings;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;

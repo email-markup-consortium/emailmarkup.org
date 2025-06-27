@@ -1,6 +1,6 @@
 ---
 title: radial-gradient()
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

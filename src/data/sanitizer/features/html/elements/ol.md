@@ -1,6 +1,6 @@
 ---
 title: "<ol>: The Ordered List element"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

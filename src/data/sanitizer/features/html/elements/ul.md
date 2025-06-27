@@ -1,6 +1,6 @@
 ---
 title: "<ul>: The Unordered List element"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

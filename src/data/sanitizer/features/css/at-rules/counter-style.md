@@ -1,6 +1,6 @@
 ---
 title: "@counter-style"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

@@ -1,6 +1,6 @@
 ---
 title: lang
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

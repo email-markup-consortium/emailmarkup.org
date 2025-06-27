@@ -1,6 +1,6 @@
 ---
 title: "<link>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

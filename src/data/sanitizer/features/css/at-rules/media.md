@@ -1,6 +1,6 @@
 ---
 title: "@media"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

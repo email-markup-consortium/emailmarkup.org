@@ -1,6 +1,6 @@
 ---
 title: comments
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

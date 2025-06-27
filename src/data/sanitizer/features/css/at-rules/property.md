@@ -1,6 +1,6 @@
 ---
 title: "@property"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

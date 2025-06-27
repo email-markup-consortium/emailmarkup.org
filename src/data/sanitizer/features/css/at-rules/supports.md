@@ -1,6 +1,6 @@
 ---
 title: "@supports"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

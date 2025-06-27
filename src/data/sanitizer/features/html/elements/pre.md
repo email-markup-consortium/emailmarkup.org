@@ -1,6 +1,6 @@
 ---
 title: "<pre>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

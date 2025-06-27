@@ -1,6 +1,6 @@
 ---
 title: "<header>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

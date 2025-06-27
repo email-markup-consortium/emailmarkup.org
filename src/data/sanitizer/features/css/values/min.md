@@ -1,6 +1,6 @@
 ---
 title: min()
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

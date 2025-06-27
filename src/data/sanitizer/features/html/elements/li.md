@@ -1,6 +1,6 @@
 ---
 title: "<li>: The List Item element"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

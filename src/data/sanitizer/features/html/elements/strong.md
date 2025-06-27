@@ -1,6 +1,6 @@
 ---
 title: "<strong>: The Strong Importance element"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

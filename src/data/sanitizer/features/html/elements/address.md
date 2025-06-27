@@ -1,6 +1,6 @@
 ---
 title: "<address>"
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

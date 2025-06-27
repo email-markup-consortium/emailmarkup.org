@@ -1,6 +1,5 @@
 {
-  "name": "@example/docs",
-  "version": "0.0.1",
+  "name": "emailmarkup.org",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -10,21 +9,18 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.13.1",
-    "@astrojs/alpinejs": "^0.1.3",
-    "@astrojs/mdx": "^3.1.2",
-    "@astrojs/rss": "^4.0.7",
+    "@astrojs/alpinejs": "^0.4.8",
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/rss": "^4.0.12",
     "@docsearch/css": "^3.1.0",
     "@docsearch/react": "^3.1.0",
-    "@types/react": "^17.0.45",
-    "dotenv": "^16.5.0",
-    "preact": "^10.7.3",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "@types/react": "^19.0.0",
+    "dotenv": "^16.5.0"
   },
   "devDependencies": {
-    "@astrojs/preact": "^0.3.1",
-    "@astrojs/react": "^3.6.0",
-    "@astrojs/sitemap": "^3.1.6",
-    "astro": "^4.11.1"
+    "@astrojs/preact": "^4.1.0",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.1",
+    "astro": "^5.10.0"
   }
 }

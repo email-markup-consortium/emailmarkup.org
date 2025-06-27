@@ -1,6 +1,6 @@
 ---
 title: Handling of supported and unsupported features
-description:
+description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---

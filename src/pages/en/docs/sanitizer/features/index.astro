@@ -2,7 +2,6 @@
 import MainLayout from '@layouts/MainLayout';
 import { getCollection } from 'astro:content';
 import FeaturedArticle from '@components/FeaturedArticle';
-import { listApiKeys } from '@algolia/client-search';
 
 const posts = (await getCollection('sanitizer'));
 const baseURL = `/en/docs/sanitizer`;
@@ -25,10 +24,10 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('features/html/elements'))
+		.filter(post => post.id.startsWith('features/html/elements'))
 		.map((post) => (
 			<li>
-				<a href={`${baseURL}/${post.slug}`}>
+				<a href={`${baseURL}/${post.id}`}>
 					{post.data.title}
 				</a>
 			</li>
@@ -40,10 +39,10 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('features/html/global-attributes'))
+		.filter(post => post.id.startsWith('features/html/global-attributes'))
 		.map((post) => (
 			<li>
-				<a href={`${baseURL}/${post.slug}`}>
+				<a href={`${baseURL}/${post.id}`}>
 					{post.data.title}
 				</a>
 			</li>
@@ -55,10 +54,10 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('features/html/other'))
+		.filter(post => post.id.startsWith('features/html/other'))
 		.map((post) => (
 			<li>
-				<a href={`${baseURL}/${post.slug}`}>
+				<a href={`${baseURL}/${post.id}`}>
 					{post.data.title}
 				</a>
 			</li>
@@ -73,10 +72,10 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('features/css/properties'))
+		.filter(post => post.id.startsWith('features/css/properties'))
 		.map((post) => (
 			<li>
-				<a href={`${baseURL}/${post.slug}`}>
+				<a href={`${baseURL}/${post.id}`}>
 					{post.data.title}
 				</a>
 			</li>
@@ -88,10 +87,10 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('features/css/values'))
+		.filter(post => post.id.startsWith('features/css/values'))
 		.map((post) => (
 			<li>
-				<a href={`${baseURL}/${post.slug}`}>
+				<a href={`${baseURL}/${post.id}`}>
 					{post.data.title}
 				</a>
 			</li>
@@ -104,10 +103,10 @@ const frontmatter = {
 	<ul>
 	{
 		posts
-		.filter(post => post.slug.startsWith('features/css/at-rules'))
+		.filter(post => post.id.startsWith('features/css/at-rules'))
 		.map((post) => (
 			<li>
-				<a href={`${baseURL}/${post.slug}`}>
+				<a href={`${baseURL}/${post.id}`}>
 					{post.data.title}
 				</a>
 			</li>

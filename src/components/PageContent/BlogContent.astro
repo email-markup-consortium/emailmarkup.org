@@ -1,14 +1,16 @@
 ---
 import MoreMenu from '../RightSidebar/MoreMenu.astro';
 import TableOfContents from '@components/TableOfContents';
+import { getEntry, getEntries } from 'astro:content';
 
 import FormattedDate from '@components/FormattedDate';
 import Author from '@components/Author';
 
 const { frontmatter, headings, githubEditUrl } = Astro.props;
-const { title, author, pubDate } = frontmatter;
+const { title, pubDate } = frontmatter;
 const publishedDate = new Date( frontmatter.pubDate );
 
+const author = await getEntry('authors', frontmatter.author.id);
 ---
 
 <nav class="top-nav">
@@ -25,7 +27,7 @@ const publishedDate = new Date( frontmatter.pubDate );
 			</p>
 
 			
-			<Author name={author} />
+			<Author name={author.id} />
 		</header>
 
 

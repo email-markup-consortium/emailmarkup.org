@@ -11,8 +11,8 @@ import RightSidebar from '@components/RightSidebar/RightSidebar';
 import '../styles/theme.css';
 import '../styles/index.css';
 
-const { frontmatter = {}, isList, headings } = Astro.props;
-const onThisPageHeadings = frontmatter.customHeadings ?? headings;
+const { frontmatter = {}, isList } = Astro.props;
+const onThisPageHeadings = frontmatter.customHeadings ?? frontmatter.headings;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;

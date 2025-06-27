@@ -27,9 +27,9 @@ const supporters = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/data/supporters' }),
   schema: z.object({
     name: z.string(),
-    role: z.string(),
-    company: z.string(),
-    date: z.string(),
+    role: z.string().optional(),
+    company: z.string().optional(),
+    date: z.date(),
   }),
 });
 

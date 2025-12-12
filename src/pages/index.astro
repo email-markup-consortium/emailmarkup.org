@@ -115,7 +115,7 @@ const currentPage = Astro.url.pathname;
     <section>
       <div class="container">
         <h2 class="heading-medium">
-          Featured Reads
+          Highlights
         </h2>
         <FeaturedArticle 
           title="Accessibility Report 2025" 
@@ -124,11 +124,21 @@ const currentPage = Astro.url.pathname;
         />
 
         <FeaturedArticle 
+          title="The Email Markup Database" 
+          desc="The Email Markup Database is a comprehensive, continuously updated repository of how real-world emails are built. By scanning over a million emails, with new emails added daily, it surfaces the patterns, features, and coding techniques that real senders rely on."
+          link="https://database.emailmarkup.org/"
+        />
+
+        <FeaturedArticle 
           title="Email Client Feature Support Rankings" 
           desc="Email client feature support ranks in various categories such as performance, accessibility and internationalization."
           link="/en/reports/email-clients/feature-support-rankings/"
         />
 
+
+        <h2 class="heading-medium">
+          Featured Reads
+        </h2>
         <FeaturedArticle 
           title="Our Vision" 
           desc="The Email Markup Consortium's vision for more consistent rendering in email clients."

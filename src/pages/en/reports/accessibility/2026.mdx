@@ -70,13 +70,11 @@ We recognize the work of brands like [Customer.io](https://customer.io/), [Naomi
 
 To get these same results other senders need to be putting emails through a proper accessibility QA process to check every email before it’s sent.  This is pretty common when testing for rendering issues. Accessibility deserves that same level of attention.
 
-One approach teams can take to iteratively improve the accessibility of their emails is building  a robust design system that allows them to implement fixes and improvements in a single source. These changes can then roll out to all of their email templates
+One approach teams can take to iteratively improve the accessibility of their emails is building a robust design system that allows them to implement fixes and improvements in a single source. These changes can then roll out to all of their email templates
 
 #### Email clients
 
-We also recognize SFR Mail which supports all the accessibility features tested on "Can I Email?". Honourable mentions to Apple Mail, Samsung Email and Proton Mail, which are not far from the 100% mark.
-
-Other email clients should aim to follow suit. We understand there are concerns around allowing certain HTML/CSS features that could potentially be exploited by malicious senders. If this applies to an accessibility feature, suitable work arounds or fallback options should be provided.  The EMC would love to work closer with the email clients to help facilitate this. 
+> TODO - looks like we need to update the feature rankings as some seem to be out of date.
 
 <br />
 
@@ -86,11 +84,11 @@ Other email clients should aim to follow suit. We understand there are concerns 
 
 ### The data
 
-The data was sourced by the Email Markup Consortium Data Collection project between May 2024 and May 2025. We collected 443,870 emails from multiple industries in multiple languages. This is roughly 23,000 more emails than what we analyzed for the 2024 report.
+The data was sourced by the Email Markup Consortium Data Collection project between May 2025 and May 2026. We collected 372,641 emails from multiple industries in multiple languages. 
 
-- Number of emails collected between May 2024 and May 2025: 443,870
-- Number of emails that could not be analyzed (due to invalid code): 285
-- Number of emails analyzed: 443,585
+- Number of emails collected between May 2025 and May 2026: 372,641
+- Number of emails that could not be analyzed (due to invalid code): 56
+- Number of emails analyzed: 372,585
 
 If you would like to add to and help expand our dataset or find out more about it, you can read more about our [data collection project](/en/projects/#data-collection).
 
@@ -107,7 +105,7 @@ We’d like to give huge thanks to the team at [Parcel.io](https://parcel.io/) f
 
 #### Issues severity
 
-Accessibility issues are categorised into four depending on how serious they are. These are defined by Deque Axe as:
+Accessibility issues are categorised into four, depending on how serious they are. These are defined by Deque Axe as:
 
 - **Mild** - Considered to be a nuisance or an annoyance bug. Prioritize fixing if the fix only takes a few minutes and the developer is working on the same screen/feature at the same time, otherwise the issue should not be prioritized. Will still get in the way of compliance if not fixed. Should be very infrequent.
 - **Moderate** - Results in some barriers for people with disabilities, but will not prevent them from accessing fundamental features or content. Prioritize fixing in this release, if there are no higher-priority issues. Will get in the way of compliance if not fixed. Should be fairly common.
@@ -118,33 +116,28 @@ In our test we looked to find the highest category of issue recorded in each ema
 
 | Issue severity | Percentage of emails   |
 | -------------- | --------------------   |
-| Critical       | 60.66% (269,092 emails)|
-| Serious.       | 39.23% (174,026 emails)|
-| Moderate       | 0.01% (53 emails)      |
-| Mild           | 0.09% (394 emails)     |
-| No issues      | < 0.01% (21 emails)    |
+| Critical       | 57.96%% (215,947 emails)|
+| Serious.       | 41.94% (156,275 emails)|
+| Moderate       | 0.02% (78 emails)      |
+| Mild           | 0.07% (277 emails)     |
+| No issues      | 0.002% (8 emails)    |
 
 
-critical: 57.96%
-serious: 41.94%
-moderate: 0.02%
-mild: 0.07%
-no_issues: 0.002%
-
-From this we can see that 99.89% of emails tested contain accessibility issues categorised as "Serious" or "Critical". These are the highest categories and fixing these issues should be considered high priority.
+From this we can see that 99.9% of emails tested contain accessibility issues categorised as "Serious" or "Critical". These are the highest categories and fixing these issues should be considered high priority.
 
 #### Emails without issues
 
-Out of all the emails we tested, only 21 (< 0.01%) passed without issue. And those emails came from just two brands.
+Out of all the emails we tested, only 8 (0.002%) passed without issue. And those emails came from just three brands.
 
-* Parcel.io
+* Customer.io
 * NaomiWest.ca
-
-It is worth noting that Naomi West is on the EMC admins board, and is in charge of building both Parcel.io and NaomiWest.ca emails.
+* Noble Panacea
 
 Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message.
 
 Also, some emails with mild or moderate issues may actually be very accessible as these rules often have exceptions that these emails may meet. For example, a level-one heading may be unnecessary if the message is short.
+
+
 
 ### **Top 10 most common accessibility issues in email**
 
@@ -364,6 +357,11 @@ For Serious issues;
 * **83.72%** Content inside the body should be wrapped in a `lang` attribute
 
 Although it's only a mild issue **49%** of emails had Duplicate ID's
+
+### Limits of automated testing
+It is also worth mentioning that passing automated testing does not guarantee that an email is accessible. Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message. 
+
+Something like a `<title>` element is not required for an email to be accessible, how ever a large number of emails have a view in browser version that shows the same content. In this context `<title>` is required. If there is no browser version, or if the browser version has a `<title>` inserted into it, then this rule doesn't matter and the email would pass manual testing.
 
 ### Conclusions
 

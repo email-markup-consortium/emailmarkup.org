@@ -49,10 +49,11 @@ const currentPage = Astro.url.pathname;
 				height: 100%;
 			}
 			.grid-sidebar {
-				height: 100vh;
+				max-height: 100vh;
 				position: sticky;
 				top: 0;
-				padding: 0;
+				overflow-y: auto;
+				padding-bottom: var(--doc-padding);
 			}
 			#grid-main {
 				padding: var(--doc-padding) 1rem;

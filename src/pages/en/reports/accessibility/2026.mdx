@@ -10,15 +10,15 @@ import Sponsor from '@components/Sponsors/Sponsor';
 import sponsors from '../../../../sponsors.json';
 
 
-We are seeing some small improvements in the 2026 accessibility report, however too slow. We're still seeing 99.9% of email fail basic testing. 
+We are seeing some small improvements in the 2026 accessibility report, however too slow. We're still seeing 99.88% of email fail basic testing. 
 
-Across the ecosystem, accessibility failures are systemic, widespread, and largely preventable. After analyzing 443,585 emails collected over the past year, we found that 99.9% contain accessibility issues rated “Serious” or “Critical.” Only 8 emails passed all automated accessibility checks, and they came from three brands.
+Across the ecosystem, accessibility failures are systemic, widespread, and largely preventable. After analyzing 376,348 emails collected over the past year, we found that 99.88% contain accessibility issues rated “Serious” or “Critical.” Only 8 emails passed all automated accessibility checks, and they came from three brands.
 
 This year’s report again also takes a look to evaluate the state of accessibility inside email clients, based on our [Email Client Feature Support Rankings](/en/reports/email-clients/feature-support-rankings/). However we've increased the number of features tested from 20 in last years report to 37 this year.
 
 > **Result**
 >
-> - 99.9% of HTML emails tested contain accessibility issues categorized as “Serious” or “Critical”.
+> - 99.88% of HTML emails tested contain accessibility issues categorized as “Serious” or “Critical”.
 > - Only 8 emails (< 0.002%) passed all accessibility checks. These emails came from just three separate brands!
 > - The majority of the issues are not edge cases. These are basic, machine-checkable accessibility failures.
 > - No email clients support all HTML/CSS accessibility features tested on "Can I Email?"
@@ -84,11 +84,11 @@ One approach teams can take to iteratively improve the accessibility of their em
 
 ### The data
 
-The data was sourced by the Email Markup Consortium Data Collection project between May 2025 and May 2026. We collected 372,641 emails from multiple industries in multiple languages. 
+The data was sourced by the Email Markup Consortium Data Collection project between May 2025 and May 2026. We collected 376,404 emails from multiple industries in multiple languages. 
 
-- Number of emails collected between May 2025 and May 2026: 372,641
+- Number of emails collected between May 2025 and May 2026: 376,404
 - Number of emails that could not be analyzed (due to invalid code): 56
-- Number of emails analyzed: 372,585
+- Number of emails analyzed: 376,348
 
 If you would like to add to and help expand our dataset or find out more about it, you can read more about our [data collection project](/en/projects/#data-collection).
 
@@ -116,14 +116,14 @@ In our test we looked to find the highest category of issue recorded in each ema
 
 | Issue severity | Percentage of emails   |
 | -------------- | --------------------   |
-| Critical       | 57.96%% (215,947 emails)|
-| Serious.       | 41.94% (156,275 emails)|
+| Critical       | 57.97% (218,188 emails)|
+| Serious        | 41.91% (157,735 emails)|
 | Moderate       | 0.02% (78 emails)      |
-| Mild           | 0.07% (277 emails)     |
+| Mild           | 0.08% (283 emails)     |
 | No issues      | 0.002% (8 emails)    |
 
 
-From this we can see that 99.9% of emails tested contain accessibility issues categorised as "Serious" or "Critical". These are the highest categories and fixing these issues should be considered high priority.
+From this we can see that 99.88% of emails tested contain accessibility issues categorised as "Serious" or "Critical". These are the highest categories and fixing these issues should be considered high priority.
 
 #### Emails without issues
 
@@ -143,7 +143,7 @@ Also, some emails with mild or moderate issues may actually be very accessible a
 
 #### **(1) Serious: Content inside the body should be wrapped in a dir attribute**
 
-Issue present in 98.14% (435,326) of emails tested.
+Issue present in 97.41% (366,558) of emails tested.
 
 ##### **Why it’s needed:**
 
@@ -159,7 +159,7 @@ It’s important to apply the correct direction, however if you need fallback fo
 
 #### **(2) Serious: Content inside the body should be wrapped in a `lang` attribute**
 
-Issue present in 96.67% (428,819) of emails tested.
+Issue present in 95.66% (359,950) of emails tested.
 
 ##### **Why it’s needed:**
 
@@ -173,7 +173,7 @@ It’s important to apply the correct language, however if you need to have a fa
 
 #### **(3) Serious: Tables used for formatting should have the `role` attribute set to `presentation` or `none`**
 
-Issue present in 86.24% (382,566) of emails tested.
+Issue present in 83.78% (315,272) of emails tested.
 
 ##### **Why it’s needed:**
 
@@ -187,7 +187,7 @@ It’s better to avoid table layouts completely, however if you do use them you 
 
 #### **(4) Mild: Page should contain a level-one heading**
 
-Issue present in 76.78% (340,605) of emails tested.
+Issue present in 74.23% (279,325) of emails tested.
 
 ##### **Why it’s needed:**
 
@@ -201,7 +201,7 @@ You can add an `<h1>` element around the main title of your content. However not
 
 #### **(5) Serious: Links must have discernible text**
 
-Issue present in 72.04% (319,550) of emails tested.
+Issue present in 71.23% (268,049) of emails tested.
 
 
 ##### **Why it’s needed:**
@@ -218,7 +218,7 @@ Add some text inside the link. If this issue is flagged on an image you can add 
 
 #### **(6) Serious: `<html>` element must have a lang attribute**
 
-Issue present in 67.01% (297,253) of emails tested.
+Issue present in 62.16% (233,886) of emails tested.
 
 ##### **Why it’s needed:**
 
@@ -232,7 +232,7 @@ Add a `lang=""` attribute to the `<html>` element. It’s important to apply the
 
 #### **(7) Serious: Element has insufficient color contrast**
 
-Issue present in 59.37% (263,360) of emails tested.
+Issue present in 58.48% (220,038) of emails tested.
 
 ##### **Why it’s needed:**
 
@@ -246,7 +246,7 @@ Adjust either the text `color` or the `background-color` to ensure color contras
 
 #### **(8) Critical: Images must have alternate text**
 
-Issue present in 51.42% (228,081) of emails tested.
+Issue present in 47.88% (180,171) of emails tested.
 
 ##### **Why it’s needed:**
 
@@ -260,7 +260,7 @@ An `alt=""` attribute is always needed, but in some cases can be left blank, whe
 
 #### **(9) Serious: Documents must have `<title>` element to aid in navigation**
 
-Issue present in 41.35% (183,423) of emails tested.
+Issue present in 45.21% (170,132) of emails tested.
 
 ##### **Why it’s needed:**
 
@@ -274,7 +274,7 @@ Add a `<title>` element to the top of your page with a short, descriptive summar
 
 #### **(10) Moderate: Link text should be descriptive**
 
-Issue present in 17.62% (78,162) of emails tested.
+Issue present in 15.83% (59,577) of emails tested.
 
 ##### **Why it’s needed:**
 
@@ -292,9 +292,9 @@ It is worth noting that currently this rule is only checking for generic text in
 
 #### **(10) Serious: Links must be distinguishable without relying on color**
 
-Issue present in 16.91% (69,253) of emails tested.
+Issue present in 15.08% (56,753) of emails tested.
 
-Number of appearances: 277,536.
+Number of appearances: 56,753.
 
 ##### **Why it’s needed:**
 
@@ -306,36 +306,36 @@ Make sure links have something other than colour to make them stand out. The def
 
 ### Comparing to the rule set from previous years
 
-In 2026 we're seeing a marginal regression in overall failure rate for Critical & Serious issues, moving from 99.89% in 2025 up to 99.9% in 2026.
+In 2026 we're seeing a very similar failure rate for Critical & Serious issues, moving from 99.89% in 2025 to 99.88% in 2026.
 
-However, we are seeing some consistent improvements across most of the top 10 issues.
+It's an insignificant change, however we are seeing some consistent improvements across most of the top 10 issues.
 
 | Description                             | Severity | 2023 % | 2024 % | 2025 % | 2026 % |
 |-----------------------------------------|----------|--------|--------|--------|--------|
-| Body content must have `dir` attribute  | Serious  | N/A    | 99.17  | 98.14  | 97.42  |
+| Body content must have `dir` attribute  | Serious  | N/A    | 99.17  | 98.14  | 97.41  |
 | Body content must have `lang` attribute | Serious  | 96.37  | 98.29  | 96.67  | 95.66  |
-| Tables used for layout must have `role` | Serious  | 89.16  | 88.97  | 86.24  | 83.81  |
-| Missing level-one heading               | Mild     | 81.7   | 79.23  | 76.78  | 74.25  |
-| Links must have discernible text        | Serious  | 71.36  | 73.73  | 72.04  | 71.2   |
-| `<html>` must have `lang` attribute     | Serious  | 72.19  | 68.32  | 67.01  | 62.23  |
-| Insufficient color contrast             | Serious  | N/A    | N/A    | 59.37  | 58.45  |
-| Images must have alternate text         | Critical | 55.26  | 57.89  | 51.42  | 47.86  |
+| Tables used for layout must have `role` | Serious  | 89.16  | 88.97  | 86.24  | 83.78  |
+| Missing level-one heading               | Mild     | 81.7   | 79.23  | 76.78  | 74.23  |
+| Links must have discernible text        | Serious  | 71.36  | 73.73  | 72.04  | 71.23  |
+| `<html>` must have `lang` attribute     | Serious  | 72.19  | 68.32  | 67.01  | 62.16  |
+| Insufficient color contrast             | Serious  | N/A    | N/A    | 59.37  | 58.48  |
+| Images must have alternate text         | Critical | 55.26  | 57.89  | 51.42  | 47.88  |
 | Missing `<title>` element               | Serious  | 35.05  | 34.95  | 41.35  | 45.21  |
-| Link text should be descriptive         | Moderate | 16.8   | 16.92  | 17.62  | 15.84  |
+| Link text should be descriptive         | Moderate | 16.8   | 16.92  | 17.62  | 15.83  |
 
 A noticeable improvement can be seen across the simple attribute rules, such as `dir`, `lang`, `alt` and `role`. We are aware of a number of email building tools and frameworks that are now setting these attributes by default. 
 
 The only rule that has increased is "Missing `<title>` element", this in mainly a rule for the "view in browser" link that many emails include. If there is no browser version, or if the browser version has a `<title>` inserted into it, then this rule doesn't matter and the email would pass manual testing.
 
-Overall we are seeing positive movement but it's very slow, and without manual testing we are unsure if the changes are being made to pass automated testing or if they are actually improving accessibility.
+Overall we are seeing positive movement but it's very slow, and without manual testing we are unsure if the changes are being made to just pass automated testing or if they are actually improvements.
 
 ### Industry break down
 For this year's report, we have also examined email messages sent by `.edu` (education) domains and `.gov` (government) domains. These are two sectors in which accessibility is not negotiable and should be held to a higher standard. 
 
 #### Education
-We found 113 emails from education domains. 100% failed accessibility tests. 4% with Critical issues and 96% with Serious issues.
+We found 115 emails from education domains. 100% failed accessibility tests. 2% with Critical issues and 98% with Serious issues.
 
-Only 5 emails failed with a Critical issue, and that was the same issue across all 5. **Zooming and scaling must not be disabled**.
+Only 2 emails failed with a Critical issue, and that was the same issue across both. **Images must have alternate text**.
 
 The rest of the messages failed with serious issues.
 
@@ -343,20 +343,21 @@ The rest of the messages failed with serious issues.
 
 * Content inside the body should be wrapped in a `dir` attribute
 * Content inside the body should be wrapped in a `lang` attribute
-* Tables used for formatting should have the `role` attribute set to `presentation` or `none`
 
-Also, 100% were missing an `<h1>` element.
+99.13% had tables used for formatting that should have the `role` attribute set to `presentation` or `none`.
+
+Also, 97.39% were missing an `<h1>` element.
 
 #### Government
-We found 2556 emails from government domains. 100% failed accessibility tests. 7% with Critical issues and 93% with Serious issues.
-The most common Critical issue was **Images must have alternate text** (6.5%), we're also seeing about 1% with **Zooming and scaling must not be disabled** (30 emails). As well as issues with **allowed ARIA attributes** (7 emails) and **invalid ARIA attributes** (4 emails).
+We found 2,124 emails from government domains. 100% failed accessibility tests. 7% with Critical issues and 93% with Serious issues.
+The most common Critical issue was **Images must have alternate text** (5.3%), we're also seeing about 1.6% with **VML must have alternate text** (34 emails). As well as issues with **Zooming and scaling must not be disabled** (14 emails).
 
 For Serious issues;
-* **85.6%** Tables used for formatting should have the `role` attribute 
-* **83.72%** Content inside the body should be wrapped in a `dir` attribute
-* **83.72%** Content inside the body should be wrapped in a `lang` attribute
+* **86.11%** Tables used for formatting should have the `role` attribute 
+* **84.09%** Content inside the body should be wrapped in a `dir` attribute
+* **84.09%** Content inside the body should be wrapped in a `lang` attribute
 
-Although it's only a mild issue **49%** of emails had Duplicate ID's
+Although it's only a mild issue **55.7%** of emails had Duplicate ID's
 
 ### Limits of automated testing
 It is also worth mentioning that passing automated testing does not guarantee that an email is accessible. Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message. 
@@ -367,7 +368,7 @@ Something like a `<title>` element is not required for an email to be accessible
 
 This is the third full year for this report and we are disappointed to see the same issues as we have in previous years. The top 10 issues haven't changed order since last year, apart from the addition of color contrast, which can be put down to a change in the testing and reporting.
 
-We were hoping to see better standards across education and government emails because generally there are stricter accessibility laws for these. Although both groups have a 100% failure rate, the Critical issues are much lower than the overall stats, 4% and 7% respectively. However the sample data size for these two sectors is small: combined it's less than 1% of total messages analyzed.
+We were hoping to see better standards across education and government emails because generally there are stricter accessibility laws for these. Although both groups have a 100% failure rate, the Critical issues are much lower than the overall stats, 2% and 7% respectively. However the sample data size for these two sectors is small: combined it's less than 1% of total messages analyzed.
 
 Fewer than 0.01% of emails passed automated accessibility checks. That’s a call to action. Accessibility tools exist to do better, we just need more of them to be used, and more platforms to make them standard.
 

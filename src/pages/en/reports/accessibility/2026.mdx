@@ -10,7 +10,7 @@ import Sponsor from '@components/Sponsors/Sponsor';
 import sponsors from '../../../../sponsors.json';
 
 
-We are seeing some small improvements in the 2026 accessibility report, however too slow. We're still seeing 99.88% of email fail basic testing. 
+We are seeing some small positive signs in the 2026 accessibility report, however it's too slow. We're still seeing 99.88% of email fail basic testing. 
 
 Across the ecosystem, accessibility failures are systemic, widespread, and largely preventable. After analyzing 376,348 emails collected over the past year, we found that 99.88% contain accessibility issues rated “Serious” or “Critical.” Only 8 emails passed all automated accessibility checks, and they came from three brands.
 
@@ -51,7 +51,7 @@ Our funding comes from our sponsors and a number of individual contributors from
 The causes of the issues are systemic:
 
 - Developers, even those experienced with web accessibility, often lack email-specific knowledge
-- Drag-and-drop email builders generate inaccessible HTML markup
+- Drag-and-drop email builders, although we have seem improvements in capabilities to generate accessible emails. But more still needs to be done to guide users into creating accessible content.
 - Email clients fail to support key HTML/CSS features that would enable developers to build accessible HTML emails
 
 ### What Needs to Change
@@ -59,7 +59,7 @@ The causes of the issues are systemic:
 This report is a call to action for shared responsibility:
 
 - **Senders:** use tools like Parcel to audit your HTML emails.
-- **Template and ESP tools:** audit your generated markup. Set better defaults and fallbacks. Add accessibility checks.
+- **Template and ESP tools:** audit your generated markup. Set better defaults and fallbacks. Add accessibility checks. Guide users into creating accessible content.
 - **Email clients:** support HTML/CSS features needed to author accessible code.
 
 ### A Few Leading the Way
@@ -70,7 +70,7 @@ We recognize the work of brands like [Customer.io](https://customer.io/), [Naomi
 
 To get these same results other senders need to be putting emails through a proper accessibility QA process to check every email before it’s sent.  This is pretty common when testing for rendering issues. Accessibility deserves that same level of attention.
 
-One approach teams can take to iteratively improve the accessibility of their emails is building a robust design system that allows them to implement fixes and improvements in a single source. These changes can then roll out to all of their email templates
+One approach teams can take to iteratively improve the accessibility of their emails is building a robust design system that allows them to implement fixes and improvements in a single source. These changes can then roll out to all of their email templates.
 
 #### Email clients
 
@@ -97,7 +97,7 @@ If you would like to add to and help expand our dataset or find out more about i
 
 The testing is performed via the [Parcel](https://parcel.io/) accessibility checker. This is a tool built specifically for email accessibility tests. Learn more about the tests and what they cover by reading the [Parcel accessibility-checker documentation](https://parcel.io/docs/dev-tools/accessibility-checker).
 
-Parcel's accessibility checker for a wide range of accessibility issues, not only looking at compatibility with assistive technologies, but also looking for issues that could affect people with a wide range of accessible needs.
+Parcel's accessibility checker looks at a wide range of accessibility issues, not only looking at compatibility with assistive technologies, but also looking for issues that could affect people with a wide range of accessible needs.
 
 We’d like to give huge thanks to the team at [Parcel.io](https://parcel.io/) for all the help with collecting the data and running the tests. The accessibility checker is available on the free Community plan at Parcel, so if you want to test your emails on the same criteria that we use you can do so very easily, and add it into your regular email production workflow.
 
@@ -290,19 +290,6 @@ It is worth noting that currently this rule is only checking for generic text in
 
 ---
 
-#### **(10) Serious: Links must be distinguishable without relying on color**
-
-Issue present in 15.08% (56,753) of emails tested.
-
-Number of appearances: 56,753.
-
-##### **Why it’s needed:**
-
-Some people with low vision or color blindness may struggle to distinguish links from surrounding text when the design of the links doesn’t stand out.
-
-##### **How to fix this:**
-
-Make sure links have something other than colour to make them stand out. The default link style of `text-decoration: underline` is the easiest and probably the best solution. If you must only relying on color then you need to reach a contrast ration of 3:1 compared to surrounding text, however this can be a tricky balance to achieve while still maintaining sufficient contrast against the background.
 
 ### Comparing to the rule set from previous years
 
@@ -330,7 +317,7 @@ The only rule that has increased is "Missing `<title>` element", this in mainly 
 Overall we are seeing positive movement but it's very slow, and without manual testing we are unsure if the changes are being made to just pass automated testing or if they are actually improvements.
 
 ### Industry break down
-For this year's report, we have also examined email messages sent by `.edu` (education) domains and `.gov` (government) domains. These are two sectors in which accessibility is not negotiable and should be held to a higher standard. 
+For this year's report, we again examined email messages sent by `.edu` (education) domains and `.gov` (government) domains. These are two sectors in which accessibility is not negotiable and should be held to a higher standard. 
 
 #### Education
 We found 115 emails from education domains. 100% failed accessibility tests. 2% with Critical issues and 98% with Serious issues.
@@ -341,15 +328,17 @@ The rest of the messages failed with serious issues.
 
 100% of emails had the following serious issues:
 
+* Documents must have `<title>` element to aid in navigation 
 * Content inside the body should be wrapped in a `dir` attribute
 * Content inside the body should be wrapped in a `lang` attribute
 
-99.13% had tables used for formatting that should have the `role` attribute set to `presentation` or `none`.
+And all but 1 email had tables used for formatting that should have the `role` attribute set to `presentation` or `none`.
 
-Also, 97.39% were missing an `<h1>` element.
+On the positive side, we're not seeing many emails with missing alt attributes in images, only 1.74% compared to overall 47.88%. And we didn't detect any color contrast issues. The sample size is small but it's a good sign.
 
 #### Government
 We found 2,124 emails from government domains. 100% failed accessibility tests. 7% with Critical issues and 93% with Serious issues.
+
 The most common Critical issue was **Images must have alternate text** (5.3%), we're also seeing about 1.6% with **VML must have alternate text** (34 emails). As well as issues with **Zooming and scaling must not be disabled** (14 emails).
 
 For Serious issues;
@@ -357,24 +346,33 @@ For Serious issues;
 * **84.09%** Content inside the body should be wrapped in a `dir` attribute
 * **84.09%** Content inside the body should be wrapped in a `lang` attribute
 
-Although it's only a mild issue **55.7%** of emails had Duplicate ID's
+Government results for missing alt attributes in images are also lower than overall results, 5.32% compared to overall 47.88% and links without discernible text is down from 71.23% overall to just 17.42% in government emails.
+
 
 ### Limits of automated testing
 It is also worth mentioning that passing automated testing does not guarantee that an email is accessible. Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message. 
 
 Something like a `<title>` element is not required for an email to be accessible, how ever a large number of emails have a view in browser version that shows the same content. In this context `<title>` is required. If there is no browser version, or if the browser version has a `<title>` inserted into it, then this rule doesn't matter and the email would pass manual testing.
 
+Advances in AI can help with picking up some of the more nuanced issues such as:
+ * Checking the `lang` and `dir` attributes against the language used in the email.
+ * Checking the `alt` attribute against the image content, as well as looking at the context in which the image is used in the email.
+ * More advanced checks on non-descriptive link text rather than just comparing to a list of generic text.
+ * Checking semantic mark up again design and content.
+ 
+However, this is still not a replacement for manual testing. It's just a way to help speed up the process and catch some of the more common issues. Manual testing is still required to ensure the email is accessible to all users.
+
 ### Conclusions
 
-This is the third full year for this report and we are disappointed to see the same issues as we have in previous years. The top 10 issues haven't changed order since last year, apart from the addition of color contrast, which can be put down to a change in the testing and reporting.
+Once again we are disappointed to see the same issues as we have in previous years. The top 10 issues remain the same.
 
-We were hoping to see better standards across education and government emails because generally there are stricter accessibility laws for these. Although both groups have a 100% failure rate, the Critical issues are much lower than the overall stats, 2% and 7% respectively. However the sample data size for these two sectors is small: combined it's less than 1% of total messages analyzed.
+We are aware of email developers, building tools, email frameworks and emails clients making updates to improve accessibility but that's only having minimal impact in the real world emails we are looking at. 
 
-Fewer than 0.01% of emails passed automated accessibility checks. That’s a call to action. Accessibility tools exist to do better, we just need more of them to be used, and more platforms to make them standard.
+We know there are a few people doing some good work but we need to see bigger improvements from a much wider range of sources. 
 
-On the bright side, we have seen lower percentages of issues which suggests improvements are being made. Messages with Critical issues have dropped from 66.68% in 2024 to 60.66% in 2025. This could suggest these fixes are being prioritized.
+One underused opportunity could be building tools and frameworks flagging warnings for accessibility issues in real time rather than asking users to run checks. As a user selects a color, run and contrast check. As a user adds an images, help them with alt text. As they add a heading, make sure it's not skipping levels.
 
-Frameworks and drag-and-drop tools are uniquely positioned to raise the accessibility baseline. Yet many still output templates that miss fundamental requirements. We know our past reports helped [MJML to improve their defaults](https://github.com/mjmlio/mjml/issues/2725). We strongly encourage others to do the same, and perhaps start introducing automated audits on their generated code.
+It would also be great to see more email clients supporting accessibility focused HTML and CSS features. And also better documenting the feature they support and recommending how to work within their limitations.
 
 ---
 

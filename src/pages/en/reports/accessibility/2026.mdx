@@ -382,35 +382,52 @@ It would also be great to see more email clients supporting accessibility focuse
 
 This data comes from our [Email Client Feature Support Rankings](/en/reports/email-clients/feature-support-rankings/), which is based on the features tested on ["Can I Email?"](https://www.caniemail.com/). The Email Markup Consortium in collaboration with [Flourish](https://flourishworld.com/), directly contribute to the ["Can I Email?"](https://www.caniemail.com/) project.
 
-The following 20 HTML/CSS features have been identified as features that help developers build accessible HTML emails:
+The following 37 HTML/CSS features have been identified as features that help developers build accessible HTML emails:
 
 #### CSS features:
 
   1. `@media (hover)`, `@media (any-hover)`
   1. `@media (prefers-color-scheme)`
   1. `@media (prefers-reduced-motion)`
+  1. `color-scheme` CSS property
+  1. `cursor`
+  1. `font-size-adjust`
+  1. `light-dark()`
   1. `:active`
+  1. `:default`
+  1. `:focus-visible`
+  1. `:focus-within`
   1. `:focus`
   1. `:hover`
 
 #### HTML features:
 
-  1. `role` attribute
-  1. `dir` attribute
-  1. `lang` attribute
+  1. `inert` attribute
+  1. `<abbr>` element
+  1. `aria-describedby` attribute
+  1. `aria-hidden` attribute
   1. `aria-label` attribute
   1. `aria-labelledby` attribute
   1. `aria-live` attribute
-  1. `aria-describedby` attribute
-  1. `aria-hidden` attribute
+  1. `<blockquote>` element
+  1. `<code>` element
+  1. `<dfn>` element
+  1. `dir` attribute
+  1. `<h1>` to `<h6>` elements
   1. `hidden` attribute
   1. `<hr>` element
   1. `<img>` element
+  1. `lang` attribute
+  1. `<ul>`, `<ol>` and `<dl>`
+  1. `color-scheme` meta tag
+  1. `<p>` element
   1. `<picture>` element
-  1. `<abbr>` element
-  1. `<code>` element
+  1. `role` attribute
+  1. `<ruby>` element
+  1. HTML5 semantics
+  1. `<table>` element
 
-These features were tested on 44 email clients:
+These features were tested on 43 email clients:
 
 1. Gmail (Desktop webmail)
 1. Gmail (iOS)
@@ -431,7 +448,6 @@ These features were tested on 44 email clients:
 1. AOL (iOS)
 1. AOL (Android)
 1. Mozilla Thunderbird (MacOS)
-1. Mozilla Thunderbird (Windows)
 1. Samsung Email (Android)
 1. SFR (Desktop webmail)
 1. SFR (iOS)
@@ -459,45 +475,88 @@ These features were tested on 44 email clients:
 
 ### Testing methodology
 
-For a HTML/CSS feature to be tested, a reduced test case is created and sent to various inboxes. The rendered code by the email client is examined to determine whether an email client supports a feature.
+For a HTML/CSS feature to be tested, a reduced test case is created and sent to various inboxes. The rendered code by the email client is examined to determine whether an email client supports a feature. This is a very manual process so it can take a while to update if an email client adds or removes a feature.
 
 ### Email client results
 
-#### Email clients that support all 20 tested accessibility features:
+This report looks at how well **HTML and CSS used inside email messages** are supported when those messages are rendered in a client. It does **not** assess the accessibility of the **email client application itself** for example the client’s own interface, keyboard navigation, or how well the client works with assistive technology.
 
-Only one email client (SFR Desktop webmail) supports all 20 accessibility features.
+No email client in this round supported all **37** accessibility features. The highest score was **34/37** (Apple Mail on macOS). However those 3 failing tests all have partial support. Samsung with a score of 31/37 only has 2 failing tests, one point is lost for a partially supported test and 3 are untested.
 
-#### Email clients that support fewer than 5 out of the 20 tested accessibility features:
+The table below lists every client tested and how many of the 37 features it supports.
 
-- T-online.de (Desktop webmail): 2/20 features supported
-- Free.fr (Desktop webmail): 4/20 features supported
-- Outlook (Windows mail): 4/20 features supported
-- AOL (iOS): 4/20 features supported
-- GMX (Desktop webmail): 4/20 features supported
-- GMX (Android): 4/20 features supported
-- WEB.DE (Android): 4/20 features supported
-- 1&1 (Android): 4/20 features supported
-- WEB.DE (Desktop webmail): 3/20 features supported
+| Features (of 37) | Email client |
+| ---: | --- |
+| 34 | Apple Mail (MacOS) |
+| 31 | Apple Mail (iOS) |
+| 31 | Samsung Email (Android) |
+| 27 | ProtonMail (Desktop webmail) |
+| 27 | ProtonMail (iOS) |
+| 25 | Outlook (Android) |
+| 25 | Mozilla Thunderbird (MacOS) |
+| 24 | ProtonMail (Android) |
+| 23 | SFR (Desktop webmail) |
+| 23 | GMX (iOS) |
+| 22 | Outlook (MacOS) |
+| 22 | Outlook (iOS) |
+| 22 | SFR (iOS) |
+| 21 | SFR (Android) |
+| 21 | WEB.DE (iOS) |
+| 20 | Outlook (outlook.com) |
+| 20 | Fastmail (Desktop webmail) |
+| 19 | LaPoste.net (Desktop webmail) |
+| 17 | Gmail (Desktop webmail) |
+| 17 | AOL (Android) |
+| 16 | Yahoo! Mail (Desktop webmail) |
+| 16 | Yahoo! Mail (Android) |
+| 16 | AOL (Desktop webmail) |
+| 16 | Mail.ru (Desktop webmail) |
+| 16 | 1&amp;1 (Desktop webmail) |
+| 15 | Gmail (iOS) |
+| 15 | Gmail (Android) |
+| 15 | Gmail (Mobile webmail) |
+| 14 | Yahoo! Mail (iOS) |
+| 12 | AOL (iOS) |
+| 12 | GMX (Android) |
+| 11 | Outlook (Windows) |
+| 11 | Orange (Desktop webmail) |
+| 11 | Orange (Android) |
+| 11 | HEY (Desktop webmail) |
+| 10 | Orange (iOS) |
+| 10 | GMX (Desktop webmail) |
+| 10 | WEB.DE (Android) |
+| 10 | 1&amp;1 (Android) |
+| 9 | WEB.DE (Desktop webmail) |
+| 8 | Outlook (Windows mail) |
+| 4 | Free.fr (Desktop webmail) |
+| 2 | T-online.de (Desktop webmail) |
+
+#### Clients with the weakest scores
+
+**More than half** of the tested clients (**25 of 43**) supported **fewer than half** of these accessibility-related features—that is, **18 or fewer** out of **37**. Many sit in the single digits or low teens, which leaves large gaps for authors who want to use semantic HTML, ARIA, or modern CSS safely.
 
 #### Commonly unsupported accessibility features
 
-- ARIA attributes: such as aria-label, aria-labelledby, and aria-describedby. These can be crucial for screen readers to convey contextual information.
-- CSS pseudo-classes: such as :hover, :focus, and :active. These can be used to enhance keyboard navigation and interactivity.
-- CSS Media Queries: such as @media (prefers-color-scheme) and @media (prefers-reduced-motion). These can be used to allow for adaptations based on user preferences.
+- **ARIA attributes** (for example `aria-label`, `aria-labelledby`, and `aria-describedby`): important for screen readers to convey structure and context.
+- **CSS pseudo-classes** (for example `:hover`, `:focus`, `:focus-visible`, `:focus-within`, `:active`, and `:default`): useful for visible focus, keyboard affordances, and interactive states.
+- **CSS preference media queries** (for example `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)`): needed to respect system appearance and user preferences.
+- **Other CSS** that often lags in clients includes `color-scheme`, `light-dark()`, `cursor`, `font-size-adjust`.
+
+For some of the newer CSS features like `light-dark()`, it's understandable that email clients may be a bit behind web. However, for things like `:hover`, `:focus` that have been in the CSS specification since 1998 and are supported by all modern browsers, it's very disappointing to not support them.
 
 #### Gmail
 
-At the time of writing, none of the Gmail email clients support key features that allow developers to respect user preferences such as `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)`. For a company that actively promotes an accessible web, Gmail’s lack of support for such features is a notable inconsistency.
+Gmail’s scores in this set range from **15/37** (iOS, Android, and mobile webmail) to **17/37** (desktop webmail). At the time of writing, Gmail still does not support key preference-driven features such as `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)` in a way authors can depend on. For a company that promotes an accessible web, that gap remains a notable inconsistency. The issue is made worse by the forced dark mode that Gmail enforces, which take control away from the sender and often results in color contrast issues.
 
 #### Outlook
 
-The legacy Outlook for Windows desktop app only supports 7 out of the 20 tested features. Given its market share, this just means a lot of its users have inaccessible experiences. This is especially problematic in enterprise and government use cases where compliance is mandated and often users don’t get a choice of email client to use.
+Outlook’s results are split by platform: **Outlook (Android)** is among the stronger clients (**25/37**), while **Outlook (Windows)** (**11/37**) and **Outlook (Windows mail)** (**8/37**) sit much lower. **Outlook (outlook.com)** scored **20/37**, and **Outlook (MacOS)** and **Outlook (iOS)** each scored **22/37**. The legacy Outlook for Windows desktop app still leaves many accessibility-oriented features unsupported for a large share of enterprise and government users who cannot choose another client.
 
-The good news is that Microsoft is deprecating this version of the app and they are working towards a more unified approach for rendering HTML emails across their email clients, all of which are scoring better than the legacy Outlook for Windows. This move will have a big impact on a decent percentage of users worldwide.
+The good news is that Microsoft is deprecating the legacy Windows app and moving toward a more unified rendering story across its clients; several Outlook surfaces already score meaningfully higher than classic Outlook for Windows in this feature set.
 
 #### Yahoo
 
-Yahoo Mail (on all operating systems) has a similar score to the legacy Outlook for Windows desktop app: 7 out of 20. This is concerning for a major email client running on a modern stack (unlike the legacy Outlook for Windows which uses Microsoft Word as a rendering engine). It is also disappointing given Yahoo is one of the few email clients that decided to support AMP for email, but didn’t put the effort to improve the accessibility for the largest percentage of its users.
+Yahoo Mail scored **16/37** on desktop webmail and on Android, and **14/37** on iOS. That is stronger than the lowest-tier clients but still only mid-pack for a major consumer client on a modern stack. It remains disappointing that investment in capabilities such as AMP for email has not translated into broader, baseline accessibility feature coverage for everyday HTML email.
 
 
 #### Conclusion of email client accessibility

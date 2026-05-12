@@ -42,15 +42,15 @@ const showMeta =
 
         <div class="meta">
           {author && (
-            <div class="name">
+            <cite class="name">
               {author}
-            </div>
+            </cite>
           )}
 
           {(role) && (
-            <div class="details">
+            <p class="details">
               {role}
-            </div>
+            </p>
           )}
         </div>
       </div>
@@ -104,7 +104,7 @@ const showMeta =
   }
 
   :root.theme-dark .feature-quote blockquote {
-    color: var(--font-body);
+    color: var(--theme-text);
   }
 
 
@@ -135,9 +135,9 @@ const showMeta =
   .name {
     font-size: 1rem;
     font-weight: 700;
+    font-style: normal;
     line-height: 1.4;
-
-    color: var(--font-body);
+    color: var(--theme-text);
   }
 
   .details {
@@ -146,7 +146,8 @@ const showMeta =
     font-size: 0.95rem;
     line-height: 1.5;
 
-    color: var(--font-body);
+    color: var(--theme-text);
+    text-wrap: pretty;
   }
 
   .logo-container {

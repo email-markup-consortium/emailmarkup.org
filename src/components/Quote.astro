@@ -1,0 +1,181 @@
+---
+interface Props {
+  quote: string;
+  author?: string;
+  role?: string;
+  avatar?: string;
+  companyLogo?: string;
+  companyName?: string;
+}
+
+const {
+  author,
+  role,
+  avatar,
+  companyLogo,
+  companyName,
+} = Astro.props;
+
+const showMeta =
+  author || role || avatar || companyLogo || companyName;
+---
+
+<figure class="feature-quote">
+  <blockquote>
+    <slot />
+  </blockquote>
+
+  {showMeta && (
+    <figcaption>
+      <div class="person">
+        {avatar && (
+          <img
+            class="avatar"
+            src={avatar}
+            alt=""
+            width="1"
+            height="1"
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+
+        <div class="meta">
+          {author && (
+            <div class="name">
+              {author}
+            </div>
+          )}
+
+          {(role) && (
+            <div class="details">
+              {role}
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div class="logo-container">
+        {companyLogo && (
+          <img
+            class="logo"
+            src={companyLogo}
+            alt={
+              companyName && !role
+                ? `${companyName} logo`
+                : ""
+            }
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+      </div>
+    </figcaption>
+  )}
+</figure>
+
+<style>
+  .feature-quote {
+    padding: clamp(1.5rem, 3vw, 3rem);
+
+    border: 1px solid var(--theme-divider);
+    border-inline-start: 2rem solid var(--theme-accent);
+    border-radius: .35rem;
+
+    background: var(--color-surface);
+  }
+
+  .feature-quote blockquote {
+    background-color: transparent;
+    border: none;
+    margin: 0 0 1rem;
+  
+    font-size: 1.15rem;
+    font-weight: 400;
+  
+    color: var(--theme-brand-primary);
+  
+    max-width: 70ch;
+    text-wrap: balance;
+  }
+
+  .feature-quote blockquote > :global(*+*) {
+    margin-top: 1rem;
+  }
+
+  :root.theme-dark .feature-quote blockquote {
+    color: var(--font-body);
+  }
+
+
+
+
+  figcaption {
+    padding: 0 1.5rem;
+  }
+
+  .person {
+    display: flex;
+		gap: .5rem;
+		align-items: center;
+
+    min-width: 0;
+  }
+
+  .avatar {
+    width: 4.5em;
+		height: auto;
+		border-radius: 9999px;
+  }
+
+  .meta {
+    min-width: 0;
+  }
+
+  .name {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+
+    color: var(--font-body);
+  }
+
+  .details {
+    margin-top: 0.2rem;
+
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    color: var(--font-body);
+  }
+
+  .logo-container {
+    margin-inline-start: 5rem;
+    padding: .6rem;
+    border: 1px solid var(--theme-divider);
+    background-color: #fff;
+    border-radius: .3rem;
+    max-width: fit-content;
+  }
+  :root.theme-dark {
+    background-color: hsla(var(--color-gray-90), 1);
+  }
+  .logo {
+    max-width: 110px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 48rem) {
+    .feature-quote {
+      padding: .4rem;
+      border-inline-start: 1.4rem solid var(--theme-accent);
+    }
+
+    figcaption {
+      padding: .4rem;
+    }
+  }
+</style>

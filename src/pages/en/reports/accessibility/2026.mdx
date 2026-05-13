@@ -8,6 +8,7 @@ layout: "@layouts/MainLayout"
 import SponsorsGrid from '@components/Sponsors/SponsorsGrid';
 import Sponsor from '@components/Sponsors/Sponsor';
 import sponsors from '../../../../sponsors.json';
+import Quote from '@components/Quote';
 
 
 We are seeing some small positive signs in the 2026 accessibility report, however it's too slow. We're still seeing 99.88% of email fail basic testing. 
@@ -380,7 +381,22 @@ These results don't necessarily reflect issues with the platforms. The issues co
 
 99.59% of emails had non-descriptive link text (Link text should be descriptive). Such a high percentage suggests something systemic, such as poor default link text. Only 9 emails out of 2,189 did not have this issue.
 
-92.55% of emails were missing link text (Links must have discernible text). Often caused by linked images without alt text. 
+92.55% of emails were missing link text (Links must have discernible text). Often caused by linked images without alt text.
+
+
+<Quote
+  author="Cosmin Popovici"
+  role="Founder"
+  avatar="/img/people/cosmin-popovici.webp"
+  companyLogo="/img/logo-maizzle.svg"
+  companyName="Maizzle"
+>
+Maizzle has always been about giving developers full control over their HTML, but we still want to make it easier to get accessibility right. The EMC report was a useful reality check: it showed us where our documentation and starter templates can do more of the work, so people aren't starting from scratch every time.
+
+If you're building for email, accessibility shouldn't feel like extra work or something you tack on later. It should come through in your workflows, your components, your templates and your documentation. It's about giving developers a solid baseline to build from.
+</Quote>
+
+
 
 ### Limits of automated testing
 It is also worth mentioning that passing automated testing does not guarantee that an email is accessible. Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message. 
@@ -394,6 +410,19 @@ Advances in AI can help with picking up some of the more nuanced issues such as:
  * Checking semantic mark up again design and content.
  
 However, this is still not a replacement for manual testing. It's just a way to help speed up the process and catch some of the more common issues. Manual testing is still required to ensure the email is accessible to all users.
+
+
+<Quote
+  author="Sarah Gallardo"
+  role="Associate Principal Technical Producer"
+  avatar="/img/people/sarah-gallardo.jpg"
+  companyLogo="/img/logo-stitch.svg"
+  companyName="Stitch"
+>
+Automated accessibility testing and AI can be a great start, but they can't find most accessibility errors. They can easily find color contrast errors and whether or not you have alt text, but they can't determine if your link text is appropriate for the link destination and a whole host of other issues.
+
+Automated checkers are a useful starting point, but manual and user testing are essential to catch what they miss.
+</Quote>
 
 ### Conclusions
 
@@ -576,6 +605,19 @@ The table below lists every client tested and how many of the 37 features it sup
 - **Other CSS** that often lags in clients includes `color-scheme`, `light-dark()`, `cursor`, `font-size-adjust`.
 
 For some of the newer CSS features like `light-dark()`, it's understandable that email clients may be a bit behind web. However, for things like `:hover`, `:focus` that have been in the CSS specification since 1998 and are supported by all modern browsers, it's very disappointing to not support them.
+
+<Quote
+  author="Nicolas Hoffmann"
+  role="Senior UX Engineer & UXE Team leader"
+  avatar="/img/people/nicolas-hoffmann.jpg"
+  companyLogo="/img/logo-proton-mail.png"
+  companyName="Proton Mail"
+>
+We're big believers in the EMC's mission. Their latest report helped us realize that our public documentation didn't actually reflect the progress we had made; we actually supported more accessibility-related features than we were getting credit for! Fixing that was just the start. Since then we have launched a wider effort to align our cross-platform implementations and automate our accessibility testing. The work is ongoing.
+
+For any engineers or PMs looking to improve their products: the EMC has already done the heavy lifting of identifying what matters. It's a fantastic starting point for making a real impact on the user experience.
+</Quote>
+
 
 #### Gmail
 

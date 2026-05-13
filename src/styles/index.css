@@ -276,9 +276,9 @@ blockquote code {
 blockquote {
 	margin: 2rem 0;
 	padding: 1.25em 1.5rem;
-	border-left: 3px solid var(--theme-text-light);
-	background-color: var(--theme-bg-offset);
-	border-radius: 0 0.25rem 0.25rem 0;
+	border: 1px solid var(--theme-divider);
+	border-inline-start: .4rem solid var(--theme-accent);
+	border-radius: .35rem;
 	line-height: 1.7;
 }
 

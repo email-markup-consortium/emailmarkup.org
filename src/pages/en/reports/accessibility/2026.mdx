@@ -348,6 +348,39 @@ For Serious issues;
 
 Government results for missing alt attributes in images are also lower than overall results, 5.32% compared to overall 47.88% and links without discernible text is down from 71.23% overall to just 17.42% in government emails.
 
+### Sender domains
+For this year's report we've introduced a breakdown of some sender domains: Substack, Shopify, and Beehiiv. Sender domain data has only been tracked for the last six months; emails from these senders may still appear in the full twelve months of data used elsewhere in this report.
+
+We detected 6,909 Substack emails, 1,468 Shopify emails, and 2,189 Beehiiv emails.
+100% of the emails found from each of these platforms failed out testing.
+
+These results don't necessarily reflect issues with the platforms. The issues could also come down to user choices. However, it is the responsibility of these platforms to help guide their users toward more accessible choices.
+
+| Domain | Critical | Serious |
+| --- | --- | --- |
+| Substack | 83.77% (5,788) | 16.23% (1,121) |
+| Shopify | 84.67% (1,243) | 15.33% (225) |
+| Beehiiv | 46.41% (1,016) | 53.59% (1,173) |
+
+#### Substack
+100% of emails were found to be missing internal `lang` and `dir` attributes (Content inside the body should be wrapped in a `dir` attribute, Content inside the body should be wrapped in a `lang` attribute). However, a small number of emails (14.2%) were found to have `lang` set on the `<html>`. This suggests it is possible to set a language; it is just not being applied correctly in the body.
+
+99.96% of emails had color contrast issues (Element has insufficient color contrast). Only 3 emails out of the 6,909 didn't have this issue. This is surprisingly high and suggests an underlying issue. Perhaps default text with poor contrast, or some dark mode issues.
+
+97.37% of emails were missing link text (Links must have discernible text). Often caused by linked images without alt text. 
+
+
+#### Shopify
+100% of emails were also found to be missing all internal `lang` and `dir` attributes. For Shopify, 100% were also missing HTML `lang` attributes (`<html>` element must have a lang attribute). That suggests the language setting is either hard to find or not exposed to users.
+
+99.59% of layout tables were missing a role attribute (Tables used for formatting should have the `role` attribute set to "none" or "presentation"). Only 6 out of 1,468 emails passed. 
+
+#### Beehiiv
+100% of emails were found to be missing `dir` attributes. Almost all passed the `lang` check, only 8 emails (0.37%) failed it. That points to a potnetially straightforward automated fix: infer the correct text direction for the language and set `dir` accordingly.
+
+99.59% of emails had non-descriptive link text (Link text should be descriptive). Such a high percentage suggests something systemic, such as poor default link text. Only 9 emails out of 2,189 did not have this issue.
+
+92.55% of emails were missing link text (Links must have discernible text). Often caused by linked images without alt text. 
 
 ### Limits of automated testing
 It is also worth mentioning that passing automated testing does not guarantee that an email is accessible. Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message. 

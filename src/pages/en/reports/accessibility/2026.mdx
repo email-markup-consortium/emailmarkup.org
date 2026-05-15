@@ -11,11 +11,15 @@ import sponsors from '../../../../sponsors.json';
 import Quote from '@components/Quote';
 
 
-We are seeing some small positive signs in the 2026 accessibility report, however it's too slow. We're still seeing 99.88% of email fail basic testing. 
 
-Across the ecosystem, accessibility failures are systemic, widespread, and largely preventable. After analyzing 376,348 emails collected over the past year, we found that 99.88% contain accessibility issues rated “Serious” or “Critical.” Only 8 emails passed all automated accessibility checks, and they came from three brands.
 
-This year’s report again also takes a look to evaluate the state of accessibility inside email clients, based on our [Email Client Feature Support Rankings](/en/reports/email-clients/feature-support-rankings/). However we've increased the number of features tested from 20 in last years report to 37 this year.
+The 2026 Email Accessibility Report reveals an industry at a technical standstill. Despite a marginal uptick, the email ecosystem remains in a state of systemic failure: 99.88% of the 376,348 emails analyzed this year contain 'Serious' or 'Critical' accessibility defects leaving only a 0.002% pass rate represented by just eight emails from three brands.
+
+This year's report we are also looking beyond the sender and at widely-used sender platforms with built-in email build/authoring tools. We audited 10,566 emails sent via Substack, Shopify and Beehiiv. None passed our automated testing.
+
+When it comes to email clients, we have taken a deeper look this year, nearly doubling our email client accessibility criteria from 20 to [37 feature benchmarks](/en/reports/email-clients/feature-support-rankings/). The data is clear: a major reason why accessibility is failing in email is a lack of implementation.
+
+This report serves as a technical audit of the senders, platforms and email clients that define the modern inbox. It highlights the responsibility is divided by evaluating the systemic barriers within email clients and marketing platforms instead of solely pointing at the senders.
 
 > **Result**
 >
@@ -51,16 +55,16 @@ Our funding comes from our sponsors and a number of individual contributors from
 
 The causes of the issues are systemic:
 
-- Developers, even those experienced with web accessibility, often lack email-specific knowledge
-- Drag-and-drop email builders, although we have seem improvements in capabilities to generate accessible emails. But more still needs to be done to guide users into creating accessible content.
-- Email clients fail to support key HTML/CSS features that would enable developers to build accessible HTML emails
+- The Knowledge Gap (senders): Traditional web accessibility standards do not always translate to the unique constraints of the inbox. Developers often overlook email-specific requirements
+- The Tooling Gap (build tools): While drag-and-drop builders have improved, many still generate HTML that prioritizes layout over semantics. Platforms often fail to expose critical accessibility fields like language settings to the end user, making it impossible for a sender to be compliant.
+- The Rendering Gap (email clients): Email clients continue to strip or ignore key accessibility features. Without consistent support for these features, developers are forced into "hacky" workarounds or are unable to produce compliant code.
 
 ### What Needs to Change
 
 This report is a call to action for shared responsibility:
 
-- **Senders:** use tools like Parcel to audit your HTML emails.
-- **Template and ESP tools:** audit your generated markup. Set better defaults and fallbacks. Add accessibility checks. Guide users into creating accessible content.
+- **Senders:** Move beyond standard visual rendering QA. Use automated auditing tools like Parcel's accessibility checker to catch machine-checkable errors before deployment.
+- **Template and ESP tools:** audit your generated markup. Set better defaults and fallbacks. Add automated accessibility checks. Guide users into creating accessible content.
 - **Email clients:** support HTML/CSS features needed to author accessible code.
 
 ### A Few Leading the Way
@@ -69,9 +73,9 @@ This report is a call to action for shared responsibility:
 
 We recognize the work of brands like [Customer.io](https://customer.io/), [NaomiWest.ca](https://www.naomiwest.ca/) and [Noble Panacea](https://noblepanacea.com/), whose emails passed all automated tests. Their success shows what's possible when accessibility is prioritized.
 
-To get these same results other senders need to be putting emails through a proper accessibility QA process to check every email before it’s sent.  This is pretty common when testing for rendering issues. Accessibility deserves that same level of attention.
+Achieving these results requires a QA process where accessibility is equal in importance to visual rendering. Currently, most senders prioritize rendering across email clients but do not pay enough attention to how accessible their messages are.
 
-One approach teams can take to iteratively improve the accessibility of their emails is building a robust design system that allows them to implement fixes and improvements in a single source. These changes can then roll out to all of their email templates.
+And to scale these results, high-performing teams are moving toward accessible design systems. By enforcing accessibility into a single source of truth or a shared component library, fixes are implemented once and propagated globally. This eliminates the "human error" every individual campaign and allows for meaningful iterations and improvements over time.
 
 #### Email clients
 
@@ -647,4 +651,3 @@ Real change will require a commitment from the email clients to implement and ma
 -----
 
 If you have found this report helpful, please consider a small donation via our [Open Collective page](https://opencollective.com/email-markup-consortium#category-CONTRIBUTE). We rely on donations to keep this report and other projects running.
-

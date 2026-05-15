@@ -138,11 +138,19 @@ Out of all the emails we tested, only 8 (0.002%) passed without issue. And those
 * NaomiWest.ca
 * Noble Panacea
 
-Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message.
+Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. 
 
-Also, some emails with mild or moderate issues may actually be very accessible as these rules often have exceptions that these emails may meet. For example, a level-one heading may be unnecessary if the message is short.
+After manually testing the passing emails we found both Customer.io and Naomi West has small issues with alt text not matching text in images well enough. 
 
+For Noble Panacea found a few issues:
+ * Alt text not matching text in images
+ * Alt text lacking description for detailed images
+ * Very small text in images was unreadable on narrow viewports
+ * Generic alt text on a decorative image
+ * Hidden characters in alt text
+ * 10px font size on footer text
 
+As well as issues with emails that pass tests, some emails with mild or moderate issues may actually be very accessible as these rules often have exceptions that these emails may meet. For example, a level-one heading may be unnecessary if the message is short.
 
 ### **Top 10 most common accessibility issues in email**
 

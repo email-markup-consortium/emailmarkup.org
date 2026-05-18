@@ -110,12 +110,17 @@ We’d like to give huge thanks to the team at [Parcel.io](https://parcel.io/) f
 
 #### Issues severity
 
-Accessibility issues are categorised into four, depending on how serious they are. These are defined by Deque Axe as:
+Accessibility issues are categorised into four, depending on how serious they are. These are defined by [Deque Axe](https://docs.deque.com/auditor/2.30/en/impact_levels) as:
 
-- **Mild** - Considered to be a nuisance or an annoyance bug. Prioritize fixing if the fix only takes a few minutes and the developer is working on the same screen/feature at the same time, otherwise the issue should not be prioritized. Will still get in the way of compliance if not fixed. Should be very infrequent.
-- **Moderate** - Results in some barriers for people with disabilities, but will not prevent them from accessing fundamental features or content. Prioritize fixing in this release, if there are no higher-priority issues. Will get in the way of compliance if not fixed. Should be fairly common.
-- **Serious** - Results in serious barriers for people with disabilities and will partially prevent them from accessing fundamental features or content. People relying on assistive technologies will experience significant frustration as a result. Issues falling under this category are major problems, and remediation should be a priority. Should be very common.
-- **Critical** - Results in blocked content for people with disabilities, and will definitely prevent them from accessing fundamental features or content. This type of issue puts your organisation at risk. Prioritise fixing as soon as possible, within the week if possible. Remediation should be a top priority. Should be infrequent.
+- **Mild** - Mild impact issues are those issues that are like bugs that are difficult to replicate or occur intermittently. You can consider fixing these issues only if you find a low-risk solution.
+
+- **Moderate** - Moderate impact issues are those issues that result in lesser impact on users than serious issues. While your end-user may appreciate a fix or patch, it won't necessarily impact their ability to use or interact with the website.
+
+- **Serious** - This issue results in some barriers for individuals with disabilities but would not prevent them from accessing fundamental elements or content.
+
+Serious impact issues are those issues whereusers with disabilities encounter some obstacles as a result of this problem, but it does not prevent them from accessing fundamental components or content. Serious issues may make the organization vulnerable to legal action. Users must ensure to address serious issues once they have taken care of critical issues.
+
+- **Critical** - Critical impact issues are those issues that have significant obstacles for people with disabilities. Users who depend on assistive technology can get frustrated while trying to access the content. Some content that is inaccessible may make the organization vulnerable to legal action. This results in the issue preventing the website from being used successfully.
 
 In our test we looked to find the highest category of issue recorded in each email:
 
@@ -306,9 +311,7 @@ It is worth noting that currently this rule is only checking for generic text in
 
 ### Comparing to the rule set from previous years
 
-In 2026 we're seeing a very similar failure rate for Critical & Serious issues, moving from 99.89% in 2025 to 99.88% in 2026.
-
-It's an insignificant change, however we are seeing some consistent improvements across most of the top 10 issues.
+The shift from 99.89% (2025) to 99.88% (2026) in Critical and Serious issues is small statically. However, the underlying data reveals a shift in how emails are failing and improving.
 
 | Description                             | Severity | 2023 % | 2024 % | 2025 % | 2026 % |
 |-----------------------------------------|----------|--------|--------|--------|--------|
@@ -323,11 +326,23 @@ It's an insignificant change, however we are seeing some consistent improvements
 | Missing `<title>` element               | Serious  | 35.05  | 34.95  | 41.35  | 45.21  |
 | Link text should be descriptive         | Moderate | 16.8   | 16.92  | 17.62  | 15.83  |
 
-A noticeable improvement can be seen across the simple attribute rules, such as `dir`, `lang`, `alt` and `role`. We are aware of a number of email building tools and frameworks that are now setting these attributes by default. 
+We are seeing consistent, incremental improvements in basic tag attribute-level compliance (`dir`, `lang`, `alt`, and `role`). This trend correlates with how modern email frameworks and visual email build tools are adopting an "accessibility-by-default" philosophy.
+
+<Quote
+  author="Cosmin Popovici"
+  role="Founder"
+  avatar="/img/people/cosmin-popovici.webp"
+  companyLogo="/img/logo-maizzle.svg"
+  companyName="Maizzle"
+>
+Maizzle has always been about giving developers full control over their HTML, but we still want to make it easier to get accessibility right. The EMC report was a useful reality check: it showed us where our documentation and starter templates can do more of the work, so people aren't starting from scratch every time.
+
+If you're building for email, accessibility shouldn't feel like extra work or something you tack on later. It should come through in your workflows, your components, your templates and your documentation. It's about giving developers a solid baseline to build from.
+</Quote>
 
 The only rule that has increased is "Missing `<title>` element", this in mainly a rule for the "view in browser" link that many emails include. If there is no browser version, or if the browser version has a `<title>` inserted into it, then this rule doesn't matter and the email would pass manual testing.
 
-Overall we are seeing positive movement but it's very slow, and without manual testing we are unsure if the changes are being made to just pass automated testing or if they are actually improvements.
+The data suggests things are improving or at minimum the industry is learning to "pass the test". This is a good start. We recommend senders include automated testing as part of their QA workflow. However, accessibility isn't a simple checklist and manual testing remains more reliable and is highly needed in the industry.
 
 ### Industry break down
 For this year's report, we again examined email messages sent by `.edu` (education) domains and `.gov` (government) domains. These are two sectors in which accessibility is not negotiable and should be held to a higher standard. 
@@ -361,10 +376,15 @@ For Serious issues;
 
 Government results for missing alt attributes in images are also lower than overall results, 5.32% compared to overall 47.88% and links without discernible text is down from 71.23% overall to just 17.42% in government emails.
 
-### Sender domains
-For this year's report we've introduced a breakdown of some sender domains: Substack, Shopify, and Beehiiv. Sender domain data has only been tracked for the last six months; emails from these senders may still appear in the full twelve months of data used elsewhere in this report.
+### Marketing and Newsletter Platforms
 
-We detected 6,909 Substack emails, 1,468 Shopify emails, and 2,189 Beehiiv emails.
+For this year's report we've additionally audited a new category of senders: marketing and newsletter platforms that own the HTML code of the emails sent by its customers.
+
+The newsletter platforms are [Substack](https://substack.com/) and [Beehiiv](https://www.beehiiv.com/). These platforms do not allow its users to upload a custom email template. Hence the HTML in any email sent by these platforms was under the platform's control. We only audited emails sent from their domains.
+
+The marketing platform is [Shopify's built-in email marketing solution](https://www.shopify.com/ae/email-marketing). The platform provides a visual email builder. While it also provides the ability to upload custom HTML, we only looked at ecommerce brands sending their marketing emails using Shopify's default sending domain `shopifyemail.com`. A brand not sending marketing emails from its own domain is unlikely to be using custom HTML.
+
+We detected 6,909 Substack emails, 1,468 Shopify emails, and 2,189 Beehiiv emails. These have only been tracked for the last six months; emails from these senders may still appear in the full twelve months of data used elsewhere in this report.
 100% of the emails found from each of these platforms failed out testing.
 
 These results don't necessarily reflect issues with the platforms. The issues could also come down to user choices. However, it is the responsibility of these platforms to help guide their users toward more accessible choices.
@@ -394,20 +414,6 @@ These results don't necessarily reflect issues with the platforms. The issues co
 99.59% of emails had non-descriptive link text (Link text should be descriptive). Such a high percentage suggests something systemic, such as poor default link text. Only 9 emails out of 2,189 did not have this issue.
 
 92.55% of emails were missing link text (Links must have discernible text). Often caused by linked images without alt text.
-
-
-<Quote
-  author="Cosmin Popovici"
-  role="Founder"
-  avatar="/img/people/cosmin-popovici.webp"
-  companyLogo="/img/logo-maizzle.svg"
-  companyName="Maizzle"
->
-Maizzle has always been about giving developers full control over their HTML, but we still want to make it easier to get accessibility right. The EMC report was a useful reality check: it showed us where our documentation and starter templates can do more of the work, so people aren't starting from scratch every time.
-
-If you're building for email, accessibility shouldn't feel like extra work or something you tack on later. It should come through in your workflows, your components, your templates and your documentation. It's about giving developers a solid baseline to build from.
-</Quote>
-
 
 
 ### Limits of automated testing

@@ -134,7 +134,7 @@ From this we can see that 99.88% of emails tested contain accessibility issues c
 
 #### Emails without issues
 
-Out of all the emails we tested, only 8 (0.002%) passed without issue. And those emails came from just three brands.
+Out of all the emails we tested, only 8 (0.002%) passed without issue. Those emails came from just three senders:
 
 * Customer.io
 * NaomiWest.ca
@@ -142,7 +142,7 @@ Out of all the emails we tested, only 8 (0.002%) passed without issue. And those
 
 Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. 
 
-After manually testing the passing emails we found both Customer.io and Naomi West has small issues with alt text not matching text in images well enough. 
+After manually testing the 8 passing emails, we found both Customer.io and NaomiWest.ca had small issues with alt text not matching text in images well enough. 
 
 For Noble Panacea found a few issues:
  * Alt text not matching text in images
@@ -168,7 +168,7 @@ The direction of the language set in the email client will inherit into the emai
 
 To fix this you can set a `dir` attribute on any direct children of the body element.
 
-It’s important to apply the correct direction, however if you need fallback for when a direction is not set then you can set `dir="auto"`. This is not as good as setting the correct direction but it’s much better than setting nothing.
+It’s important to apply the correct direction, however if you need fallback for when a direction is not set then you can set `dir="auto"`. This is not as good as setting the correct direction but it’s much better than setting nothing, as it allows the user agent to make a judgement rather than inheriting the value set on the email client .
 
 ---
 

@@ -11,15 +11,13 @@ import sponsors from '../../../../sponsors.json';
 import Quote from '@components/Quote';
 
 
-
+This report serves as a technical audit of the senders, platforms and email clients that define the modern inbox. It highlights the responsibility is divided by evaluating the systemic barriers within email clients and marketing platforms instead of solely pointing at the senders.
 
 The 2026 Email Accessibility Report reveals an industry at a technical standstill. Despite a marginal uptick, the email ecosystem remains in a state of systemic failure: 99.88% of the 376,348 emails analyzed this year contain 'Serious' or 'Critical' accessibility defects leaving only a 0.002% pass rate represented by just eight emails from three brands.
 
 This year's report we are also looking beyond the sender and at widely-used sender platforms with built-in email build/authoring tools. We audited 10,566 emails sent via Substack, Shopify and Beehiiv. None passed our automated testing.
 
 When it comes to email clients, we have taken a deeper look this year, nearly doubling our email client accessibility criteria from 20 to [37 feature benchmarks](/en/reports/email-clients/feature-support-rankings/). The data is clear: a major reason why accessibility is failing in email is a lack of implementation.
-
-This report serves as a technical audit of the senders, platforms and email clients that define the modern inbox. It highlights the responsibility is divided by evaluating the systemic barriers within email clients and marketing platforms instead of solely pointing at the senders.
 
 > **Result**
 >
@@ -64,8 +62,8 @@ The causes of the issues are systemic:
 This report is a call to action for shared responsibility:
 
 - **Senders:** Move beyond standard visual rendering QA. Use automated auditing tools like Parcel's accessibility checker to catch machine-checkable errors before deployment.
-- **Template and ESP tools:** audit your generated markup. Set better defaults and fallbacks. Add automated accessibility checks. Guide users into creating accessible content.
-- **Email clients:** support HTML/CSS features needed to author accessible code.
+- **Template and ESP tools:** Audit your generated markup. Set better defaults and fallbacks. Add automated accessibility checks. Guide users into creating accessible content.
+- **Email clients:** Support HTML/CSS features needed to author accessible code.
 
 ### A Few Leading the Way
 
@@ -89,18 +87,18 @@ And to scale these results, high-performing teams are moving toward accessible d
 
 ### The data
 
-The data was sourced by the Email Markup Consortium Data Collection project between May 2025 and May 2026. We collected 376,404 emails from multiple industries in multiple languages. 
+The data was sourced by the Email Markup Consortium Data Collection project between May 2025 and May 2026. We collected 376,404 emails from multiple industries across multiple languages. 
 
 - Number of emails collected between May 2025 and May 2026: 376,404
 - Number of emails that could not be analyzed (due to invalid code): 56
 - Number of emails analyzed: 376,348
 
-If you would like to add to and help expand our dataset or find out more about it, you can read more about our [data collection project](/en/projects/#data-collection).
+To learn more about and help expand our dataset of emails, visit the [Data Collection Project](/en/projects/#data-collection).
 
 
 ### Testing methodology
 
-The testing is performed via the [Parcel](https://parcel.io/) accessibility checker. This is a tool built specifically for email accessibility tests. Learn more about the tests and what they cover by reading the [Parcel accessibility-checker documentation](https://parcel.io/docs/dev-tools/accessibility-checker).
+Accessibility testing for this report is performed via the [Parcel](https://parcel.io/) accessibility checker. This is a tool built specifically for email accessibility tests. Learn more about the tests and what they cover by reading the [Parcel accessibility-checker documentation](https://parcel.io/docs/dev-tools/accessibility-checker).
 
 Parcel's accessibility checker looks at a wide range of accessibility issues, not only looking at compatibility with assistive technologies, but also looking for issues that could affect people with a wide range of accessible needs.
 
@@ -117,12 +115,11 @@ Accessibility issues are categorised into four, depending on how serious they ar
 - **Moderate** - Moderate impact issues are those issues that result in lesser impact on users than serious issues. While your end-user may appreciate a fix or patch, it won't necessarily impact their ability to use or interact with the website.
 
 - **Serious** - This issue results in some barriers for individuals with disabilities but would not prevent them from accessing fundamental elements or content.
-
-Serious impact issues are those issues whereusers with disabilities encounter some obstacles as a result of this problem, but it does not prevent them from accessing fundamental components or content. Serious issues may make the organization vulnerable to legal action. Users must ensure to address serious issues once they have taken care of critical issues.
+Serious impact issues are those issues where users with disabilities encounter some obstacles as a result of this problem, but it does not prevent them from accessing fundamental components or content. Serious issues may make the organization vulnerable to legal action. Users must ensure to address serious issues once they have taken care of critical issues.
 
 - **Critical** - Critical impact issues are those issues that have significant obstacles for people with disabilities. Users who depend on assistive technology can get frustrated while trying to access the content. Some content that is inaccessible may make the organization vulnerable to legal action. This results in the issue preventing the website from being used successfully.
 
-In our test we looked to find the highest category of issue recorded in each email:
+In our test we looked to find the highest category of issue recorded for each email:
 
 | Issue severity | Percentage of emails   |
 | -------------- | --------------------   |
@@ -400,7 +397,7 @@ These results don't necessarily reflect issues with the platforms. The issues co
 
 99.96% of emails had color contrast issues (Element has insufficient color contrast). Only 3 emails out of the 6,909 didn't have this issue. This is surprisingly high and suggests an underlying issue. Perhaps default text with poor contrast, or some dark mode issues.
 
-97.37% of emails were missing link text (Links must have discernible text). Often caused by linked images without alt text. 
+97.37% of emails were missing link text (Links must have discernible text). This is often caused by linked images without alt text. 
 
 
 #### Shopify
@@ -409,7 +406,7 @@ These results don't necessarily reflect issues with the platforms. The issues co
 99.59% of layout tables were missing a role attribute (Tables used for formatting should have the `role` attribute set to "none" or "presentation"). Only 6 out of 1,468 emails passed. 
 
 #### Beehiiv
-100% of emails were found to be missing `dir` attributes. Almost all passed the `lang` check, only 8 emails (0.37%) failed it. That points to a potnetially straightforward automated fix: infer the correct text direction for the language and set `dir` accordingly.
+100% of emails were found to be missing `dir` attributes. Almost all passed the `lang` check, only 8 emails (0.37%) failed it. That points to a potentially straightforward automated fix: infer the correct text direction for the language and set `dir` accordingly.
 
 99.59% of emails had non-descriptive link text (Link text should be descriptive). Such a high percentage suggests something systemic, such as poor default link text. Only 9 emails out of 2,189 did not have this issue.
 
@@ -417,9 +414,9 @@ These results don't necessarily reflect issues with the platforms. The issues co
 
 
 ### Limits of automated testing
-It is also worth mentioning that passing automated testing does not guarantee that an email is accessible. Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an image, but we do not check if the text is suitable for that image in the context of that message. 
+It is also worth mentioning that passing automated testing does not guarantee that an email is accessible. Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an `<img>` tag, but we do not check if the text is suitable for that image in the context of that message. 
 
-Something like a `<title>` element is not required for an email to be accessible, how ever a large number of emails have a view in browser version that shows the same content. In this context `<title>` is required. If there is no browser version, or if the browser version has a `<title>` inserted into it, then this rule doesn't matter and the email would pass manual testing.
+Something like a `<title>` element is not required for an email to be accessible, however a large number of emails have a view in browser version that shows the same content. In this context `<title>` is required. If there is no browser version, or if the browser version has a `<title>` inserted into it, then this rule doesn't matter and the email would pass manual testing.
 
 Advances in AI can help with picking up some of the more nuanced issues such as:
  * Checking the `lang` and `dir` attributes against the language used in the email.
@@ -444,13 +441,13 @@ Automated checkers are a useful starting point, but manual and user testing are 
 
 ### Conclusions
 
-Once again we are disappointed to see the same issues as we have in previous years. The top 10 issues remain the same.
+Once again, we are disappointed to see the same issues as we have in previous years. The top 10 issues remain the same.
 
 We are aware of email developers, building tools, email frameworks and emails clients making updates to improve accessibility but that's only having minimal impact in the real world emails we are looking at. 
 
 We know there are a few people doing some good work but we need to see bigger improvements from a much wider range of sources. 
 
-One underused opportunity could be building tools and frameworks flagging warnings for accessibility issues in real time rather than asking users to run checks. As a user selects a color, run and contrast check. As a user adds an images, help them with alt text. As they add a heading, make sure it's not skipping levels.
+One underused opportunity could be building tools and frameworks flagging warnings for accessibility issues in real time rather than asking users to run checks. As a user selects a color, run a contrast check. As a user adds an image, help them with alt text. As they add a heading, make sure it's not skipping levels.
 
 It would also be great to see more email clients supporting accessibility focused HTML and CSS features. And also better documenting the feature they support and recommending how to work within their limitations.
 
@@ -559,22 +556,22 @@ For a HTML/CSS feature to be tested, a reduced test case is created and sent to 
 
 ### Email client results
 
-This report looks at how well **HTML and CSS used inside email messages** are supported when those messages are rendered in a client. It does **not** assess the accessibility of the **email client application itself** for example the client’s own interface, keyboard navigation, or how well the client works with assistive technology.
+This report looks at how well **HTML and CSS used inside email messages** are supported when those messages are rendered in a client. It does **not** assess the accessibility of the **email client application itself**. For example, the client’s own interface, keyboard navigation, or how well the client works with assistive technology is not part of the audit.
 
-No email client in this round supported all **37** accessibility features. The highest score was **34/37** (Apple Mail on macOS). However those 3 failing tests all have partial support. Samsung with a score of 31/37 only has 2 failing tests, one point is lost for a partially supported test and 3 are untested.
+No email client in this round supported all **37** accessibility features. The highest score was **34/37** (Apple Mail on macOS). However, those 3 failing tests all have partial support. Samsung with a score of 31/37 only has 2 failing tests, one point is lost for a partially supported test and 3 are untested. Also credit to ProtonMail with a score of 29/37 we know the team there have been doing a lot of good work and seeing some big improvements in the results here.
 
 The table below lists every client tested and how many of the 37 features it supports.
 
 | Features (of 37) | Email client |
-| ---: | --- |
+| --- | --- |
 | 34 | Apple Mail (MacOS) |
 | 31 | Apple Mail (iOS) |
 | 31 | Samsung Email (Android) |
-| 27 | ProtonMail (Desktop webmail) |
-| 27 | ProtonMail (iOS) |
+| 29 | ProtonMail (Desktop webmail) |
+| 29 | ProtonMail (iOS) |
+| 26 | ProtonMail (Android) |
 | 25 | Outlook (Android) |
 | 25 | Mozilla Thunderbird (MacOS) |
-| 24 | ProtonMail (Android) |
 | 23 | SFR (Desktop webmail) |
 | 23 | GMX (iOS) |
 | 22 | Outlook (MacOS) |
@@ -622,7 +619,7 @@ The table below lists every client tested and how many of the 37 features it sup
 - **CSS preference media queries** (for example `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)`): needed to respect system appearance and user preferences.
 - **Other CSS** that often lags in clients includes `color-scheme`, `light-dark()`, `cursor`, `font-size-adjust`.
 
-For some of the newer CSS features like `light-dark()`, it's understandable that email clients may be a bit behind web. However, for things like `:hover`, `:focus` that have been in the CSS specification since 1998 and are supported by all modern browsers, it's very disappointing to not support them.
+For some of the newer CSS features like `light-dark()`, it's understandable that email clients may be a bit behind web. However, for features like `:hover`, `:focus` that have been in the CSS specification since 1998 and are supported by all modern browsers, it's very disappointing to not support them.
 
 <Quote
   author="Nicolas Hoffmann"

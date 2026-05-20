@@ -13,9 +13,9 @@ import Quote from '@components/Quote';
 
 This report serves as a technical audit of the senders, platforms and email clients that define the modern inbox. The results below are from analysis of over 376,000 emails across senders and geographies, looking at how each email scored on a detailed accessibility scorecard. This year's report also looks beyond the sender, including views of widely used newsletter platforms with built-in email build/authoring tools.
 
-The 2026 Email Accessibility Report reveals an industry at a technical standstill. Despite a marginal uptick, the email ecosystem remains in a state of systemic failure: 99.88% of the 376,348 emails analyzed this year contain 'Serious' or 'Critical' accessibility defects leaving only a 0.002% pass rate represented by just eight emails from three brands.
+The 2026 Email Accessibility Report reveals an industry at a technical standstill. Despite a marginal uptick, the email ecosystem remains in a state of systemic failure: 99.88% of the 376,348 emails analyzed this year contain 'Serious' or 'Critical' accessibility defects, leaving only a 0.002% pass rate represented by just eight emails from three brands.
 
-This year's report we are also looking beyond the sender and at widely-used newsletter platforms with built-in email build/authoring tools. We audited 10,566 emails sent via Substack, Shopify and Beehiiv. None passed our automated testing.
+In this year's report, we are also looking beyond the sender and at widely-used newsletter platforms with built-in email build/authoring tools. We audited 10,566 emails sent via Substack, Shopify and Beehiiv. None passed our automated testing.
 
 When it comes to email clients, we have taken a deeper look this year, nearly doubling our email client accessibility criteria from 20 to [37 feature benchmarks](/en/reports/email-clients/feature-support-rankings/). The data is clear: a major reason why accessibility is failing in email is a lack of implementation.
 
@@ -73,7 +73,7 @@ We recognize the work of brands like [Customer.io](https://customer.io/), [Naomi
 
 Achieving these results requires a QA process where accessibility is equal in importance to visual rendering. Currently, most senders prioritize rendering across email clients but do not pay enough attention to how accessible their messages are.
 
-And to scale these results, high-performing teams are moving toward accessible design systems. By enforcing accessibility into a single source of truth or a shared component library, fixes are implemented once and propagated globally. This eliminates the "human error" every individual campaign and allows for meaningful iterations and improvements over time.
+And to scale these results, high-performing teams are moving toward accessible design systems. By enforcing accessibility into a single source of truth or a shared component library, fixes are implemented once and propagated globally. This eliminates the "human error" from every individual campaign and allows for meaningful iterations and improvements over time.
 
 #### Email clients
 
@@ -98,7 +98,7 @@ To learn more about and help expand our dataset of emails, visit the [Data Colle
 
 #### The Email Markup Database
 
-In alignment with our commitment to transparency and collaboration, the broader trends of our data can be found on the [Email Markup Database](https://database.emailmarkup.org/), which serves as a comprehensive, continuosly updated repository of real-world HTML and CSS usage metrics in email.
+In alignment with our commitment to transparency and collaboration, the broader trends of our data can be found on the [Email Markup Database](https://database.emailmarkup.org/), which serves as a comprehensive, continuously updated repository of real-world HTML and CSS usage metrics in email.
 
 ### Testing methodology
 
@@ -119,7 +119,7 @@ Accessibility issues are categorised into four, depending on how serious they ar
 - **Moderate** - Moderate impact issues are those issues that result in lesser impact on users than serious issues. While your end-user may appreciate a fix or patch, it won't necessarily impact their ability to use or interact with the website.
 
 - **Serious** - This issue results in some barriers for individuals with disabilities but would not prevent them from accessing fundamental elements or content.
-Serious impact issues are those issues where users with disabilities encounter some obstacles as a result of this problem, but it does not prevent them from accessing fundamental components or content. Serious issues may make the organization vulnerable to legal action. Users must ensure to address serious issues once they have taken care of critical issues.
+Serious impact issues are those issues where users with disabilities encounter some obstacles as a result of this problem, but it does not prevent them from accessing fundamental components or content. 
 
 - **Critical** - Critical impact issues are those issues that have significant obstacles for people with disabilities. Users who depend on assistive technology can get frustrated while trying to access the content. Some content that is inaccessible may make the organization vulnerable to legal action. This results in the issue preventing the website from being used successfully.
 
@@ -144,11 +144,11 @@ Out of all the emails we tested, only 8 (0.002%) passed without issue. Those ema
 * NaomiWest.ca
 * Noble Panacea
 
-Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. 
+Emails that pass our checks may still have accessibility issues that we cannot pick up through automated testing. 
 
 After manually testing the 8 passing emails, we found both Customer.io and NaomiWest.ca had small issues with alt text not matching text in images well enough. 
 
-For Noble Panacea found a few issues:
+For Noble Panacea, we found a few issues:
  * Alt text not matching text in images
  * Alt text lacking description for detailed images
  * Very small text in images was unreadable on narrow viewports
@@ -172,7 +172,7 @@ The direction of the language set in the email client will inherit into the emai
 
 To fix this you can set a `dir` attribute on any direct children of the body element.
 
-It’s important to apply the correct direction, however if you need fallback for when a direction is not set then you can set `dir="auto"`. This is not as good as setting the correct direction but it’s much better than setting nothing, as it allows the user agent to make a judgement rather than inheriting the value set on the email client .
+It’s important to apply the correct direction, however if you need fallback for when a direction is not set then you can set `dir="auto"`. This is not as good as setting the correct direction but it’s much better than setting nothing, as it allows the user agent to make a judgement rather than inheriting the value set on the email client.
 
 ---
 
@@ -312,7 +312,7 @@ It is worth noting that currently this rule is only checking for generic text in
 
 ### Comparing to the rule set from previous years
 
-The shift from 99.89% (2025) to 99.88% (2026) in Critical and Serious issues is small statically. However, the underlying data reveals a shift in how emails are failing and improving.
+The shift from 99.89% (2025) to 99.88% (2026) in Critical and Serious issues is small statistically. However, the underlying data reveals a shift in how emails are failing and improving.
 
 | Description                             | Severity | 2023 % | 2024 % | 2025 % | 2026 % |
 |-----------------------------------------|----------|--------|--------|--------|--------|
@@ -387,7 +387,7 @@ The newsletter platforms are [Substack](https://substack.com/) and [Beehiiv](htt
 The marketing platform is [Shopify's built-in email marketing solution](https://www.shopify.com/ae/email-marketing). The platform provides a visual email builder. While it also provides the ability to upload custom HTML, we only looked at ecommerce brands sending their marketing emails using Shopify's default sending domain `shopifyemail.com`. A brand not sending marketing emails from its own domain is unlikely to be using custom HTML.
 
 We detected 6,909 Substack emails, 1,468 Shopify emails, and 2,189 Beehiiv emails. These have only been tracked for the last six months, however emails from these senders may still appear in the full twelve months of data used elsewhere in this report.
-100% of the emails found from each of these platforms failed out testing.
+100% of the emails found from each of these platforms failed our testing.
 
 These results don't necessarily reflect issues with the platforms. The issues could also come down to user choices. However, it is the responsibility of these platforms to help guide their users toward more accessible choices.
 
@@ -430,7 +430,7 @@ Advances in AI can help bridge the gap between automated syntax checking and man
  * Localization: validating the values of the `lang` and `dir` attributes against the language used in the email.
  * Image analysis: checking the value of the `alt` attribute against the image content, as well as looking at the context in which the image is used in the email.
  * Link evaluation: evaluating whether the link text provides a clear description of the destination based on the context rather than simply comparing the text to to a list of common phrases.
- * Design and code alignment: Checking semantic markup again design and content.
+ * Design and code alignment: Checking semantic markup against design and content.
  
 However, this is still not a replacement for manual testing. It's just a way to help speed up the process and catch some of the more common issues. Manual testing is still required to ensure the email is accessible to all users.
 
@@ -449,11 +449,11 @@ Automated checkers are a useful starting point, but manual and user testing are 
 
 ### Conclusions
 
-While a number of individual developers, email frameworks and email build tools have made improvements, the real-world impact is being diluted by a massive volume of HTML emails poorly created by a combination of legacy tools, unguided user behaviour and uneducated developers. The fact that simple tag attribute failures still dominate our top 10 issues proves this
+While a number of individual developers, email frameworks and email build tools have made improvements, the real-world impact is being diluted by a massive volume of HTML emails poorly created by a combination of legacy tools, unguided user behaviour and uneducated developers. The fact that simple tag attribute failures still dominate our top 10 issues proves this.
 
 There is a real need to shift accessibility checks from a post-build step to an integrated always-on process during build. Email frameworks and visual builders need to implement real-time linting and constraints warning their users of accessibility issues they're producing. As a user selects a color, run a contrast check. As a user adds an image, help them with alt text. As they add a heading, make sure it's not skipping levels.
 
-Senders cannot fully work around email clients limitations and produce fully accessible HTML messages. When an email client intentionally strips or alters semantic markup it has a clear responsibility to document these breaking changes. The data in the next section backs this.
+Senders cannot fully work around email client limitations and produce fully accessible HTML messages. When an email client intentionally strips or alters semantic markup it has a clear responsibility to document these breaking changes. The data in the next section backs this.
 
 ---
 
@@ -518,19 +518,19 @@ These features were tested on 43 email clients:
 1. Gmail (Mobile webmail)
 1. Outlook (Windows)
 1. Outlook (Windows mail)
-1. Outlook (MacOS)
+1. Outlook (macOS)
 1. Outlook (outlook.com)
 1. Outlook (iOS)
 1. Outlook (Android)
 1. Yahoo! Mail (Desktop webmail)
 1. Yahoo! Mail (iOS)
 1. Yahoo! Mail (Android)
-1. Apple Mail (MacOS)
+1. Apple Mail (macOS)
 1. Apple Mail (iOS)
 1. AOL (Desktop webmail)
 1. AOL (iOS)
 1. AOL (Android)
-1. Mozilla Thunderbird (MacOS)
+1. Mozilla Thunderbird (macOS)
 1. Samsung Email (Android)
 1. SFR (Desktop webmail)
 1. SFR (iOS)
@@ -538,9 +538,9 @@ These features were tested on 43 email clients:
 1. Orange (Desktop webmail)
 1. Orange (iOS)
 1. Orange (Android)
-1. ProtonMail (Desktop webmail)
-1. ProtonMail (iOS)
-1. ProtonMail (Android)
+1. Proton Mail (Desktop webmail)
+1. Proton Mail (iOS)
+1. Proton Mail (Android)
 1. HEY (Desktop webmail)
 1. Mail.ru (Desktop webmail)
 1. Fastmail (Desktop webmail)
@@ -560,7 +560,7 @@ These features were tested on 43 email clients:
 
 For a HTML/CSS feature to be tested, a reduced test case is created and sent to various inboxes. The rendered code by the email client is examined to determine whether an email client supports a feature. This is a very manual process. Plus, the lack of documentation by email clients makes it harder to know what to test (or re-test). As a result, a delay in reflecting the feature support for each email client is expected.
 
-We encourage transparency. If you are an engineer or a product owner working on an email clients, you can update your product's data on [Can I Email?](https://github.com/HTeuMeuLeu/caniemail). [ProtonMail](https://proton.me/mail) is now a regular contributor. [Jen Simmons](https://www.linkedin.com/in/jensimmons/) from Apple (Safari & Webkit) is another notable contributor to the project.
+We encourage transparency. If you are an engineer or a product owner working on an email clients, you can update your product's data on [Can I Email?](https://github.com/HTeuMeuLeu/caniemail). [Proton Mail](https://proton.me/mail) is now a regular contributor. [Jen Simmons](https://www.linkedin.com/in/jensimmons/) from Apple (Safari & Webkit) is another notable contributor to the project.
 
 <Quote
   author="Nicolas Hoffmann"
@@ -581,23 +581,23 @@ This report looks at how well **HTML and CSS used inside email messages** are su
 No email client currently supports all **37** accessibility features, but there are notable results.
 
 1. Apple Mail: The highest score is **34/37** (Apple Mail on macOS). However, those 3 failing tests all have partial support.
-1. Samsung Email is second with a score of 31/37 only has 2 failing tests, one point is lost for a partially supported test and 3 are untested.
-1.  ProtonMail  scored  29/37. We are in communication with the team and know they have been doing a lot of good work and allocating regular resource for this. 
+1. Samsung Email is second with a score of **31/37**, only has 2 failing tests, one point is lost for a partially supported test and 3 are untested.
+1.  Proton Mail  scored  **29/37**. We are in communication with the team and know they have been doing a lot of good work and allocating regular resource for this. 
 
 The table below lists every client tested and how many of the 37 features it supports.
 
 | Features (of 37) | Email client |
 | --- | --- |
-| 34 | Apple Mail (MacOS) |
+| 34 | Apple Mail (macOS) |
 | 31 | Apple Mail (iOS) |
 | 31 | Samsung Email (Android) |
-| 29 | ProtonMail (Desktop webmail), ProtonMail (iOS) |
-| 26 | ProtonMail (Android) |
+| 29 | Proton Mail (Desktop webmail), Proton Mail (iOS) |
+| 26 | Proton Mail (Android) |
 | 25 | Outlook (Android) |
-| 25 | Mozilla Thunderbird (MacOS) |
+| 25 | Mozilla Thunderbird (macOS) |
 | 23 | SFR (Desktop webmail) |
 | 23 | GMX (iOS) |
-| 22 | Outlook (MacOS) |
+| 22 | Outlook (macOS) |
 | 22 | Outlook (iOS) |
 | 22 | SFR (iOS) |
 | 21 | SFR (Android) |
@@ -642,18 +642,18 @@ The table below lists every client tested and how many of the 37 features it sup
 - **CSS preference media queries** (for example `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)`): needed to respect system appearance and user preferences.
 - **Other CSS** that often lags in clients includes `color-scheme`, `light-dark()`, `cursor`, `font-size-adjust`.
 
-For some of the newer CSS features like `light-dark()`, it's understandable that email clients may be a bit behind web. However, for features like `:hover`, `:focus` that have been in the CSS specification since 1998 and have been supported by all modern browsers for long time, it's very disappointing to not support them for email as well.
+For some of the newer CSS features like `light-dark()`, it's understandable that email clients may be a bit behind web. However, for features like `:hover`, `:focus` that have been in the CSS specification since 1998 and have been supported by all modern browsers for a long time, it's very disappointing to not support them for email as well.
 
 
 #### Gmail
 
-Gmail’s scores in this set range from **15/37** (iOS, Android, and mobile webmail) to **17/37** (desktop webmail). At the time of writing, Gmail still does not support key preference-driven features such as `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)` in a way authors can depend on. The issue is made worse by the forced dark mode that Gmail enforces, which take control away from the sender and often results in color contrast issues.
+Gmail’s scores in this set range from **15/37** (iOS, Android, and mobile webmail) to **17/37** (desktop webmail). At the time of writing, Gmail still does not support key preference-driven features such as `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)` in a way authors can depend on. The issue is made worse by the forced dark mode that Gmail enforces, which takes control away from the sender and often results in color contrast issues.
 
 For a company that promotes an accessible web, that gap remains a notable inconsistency. Google has been listed in 2026's [Forbes Accessibility 200](https://www.forbes.com/lists/accessibility/). It is recognized globally for its good accessibility work. This makes it really difficult to reconcile their excellent accessibility work in the digital space with the limited attention to accessibility support in Gmail, one of their main products.
 
 #### Outlook
 
-Outlook’s results are split by platform: **Outlook (Android)** is among the stronger clients (**25/37**), while **Outlook (Windows)** (**11/37**) and **Outlook (Windows mail)** (**8/37**) sit much lower. **Outlook (outlook.com)** scored **20/37**, and **Outlook (MacOS)** and **Outlook (iOS)** each scored **22/37**. The legacy Outlook for Windows desktop app still leaves many accessibility-oriented features unsupported for a large share of enterprise and government users who cannot choose another client.
+Outlook’s results are split by platform: **Outlook (Android)** is among the stronger clients (**25/37**), while **Outlook (Windows)** (**11/37**) and **Outlook (Windows mail)** (**8/37**) sit much lower. **Outlook (outlook.com)** scored **20/37**, and **Outlook (macOS)** and **Outlook (iOS)** each scored **22/37**. The legacy Outlook for Windows desktop app still leaves many accessibility-oriented features unsupported for a large share of enterprise and government users who cannot choose another client.
 
 The good news is that Microsoft is deprecating the legacy Windows app and moving toward a more unified rendering story across its clients; several Outlook surfaces already score meaningfully higher than classic Outlook for Windows in this feature set.
 
@@ -672,7 +672,7 @@ We urge email clients to audit their HTML sanitizers on a regular basis. Securit
 
 Real change  requires email clients to treat accessibility support with the same engineering attention allocated to security, performance and privacy. It requires a commitment from the email clients to implement and maintain support for accessibility standards. Commitments from senders to create and send more accessible messages cannot go beyond the limits imposed by email clients. 
 
-We believe email clients, ESPs, build tools and senders can work together toward an open, reliable, and inclusive email ecosystem. This ultimately benefits the end users (recpients) the most. In order to get there, all parties must understand their role and responsibility in this unique ecosystem.  
+We believe email clients, ESPs, build tools and senders can work together toward an open, reliable, and inclusive email ecosystem. This ultimately benefits the end users (recipients) the most. In order to get there, all parties must understand their role and responsibility in this unique ecosystem.  
 
 [Our mission](https://emailmarkup.org/en/docs/vision/) is to bring greater consistency to how email clients handle code and to empower everyone to build better, more inclusive experiences. Accessibility isn’t an optional enhancement; it’s a core part of delivering reliable, user-centered communication.
 

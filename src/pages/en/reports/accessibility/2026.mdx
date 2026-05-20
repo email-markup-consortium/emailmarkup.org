@@ -11,11 +11,11 @@ import sponsors from '../../../../sponsors.json';
 import Quote from '@components/Quote';
 
 
-This report serves as a technical audit of the senders, platforms and email clients that define the modern inbox. It highlights the responsibility is divided by evaluating the systemic barriers within email clients and marketing platforms instead of solely pointing at the senders.
+This report serves as a technical audit of the senders, platforms and email clients that define the modern inbox. The results below are from analysis of over 376,000 emails across senders and geographies, looking at how each email scored on a detailed accessibility scorecard. This year's report also looks beyond the sender, including views of widely used newsletter platforms with built-in email build/authoring tools.
 
 The 2026 Email Accessibility Report reveals an industry at a technical standstill. Despite a marginal uptick, the email ecosystem remains in a state of systemic failure: 99.88% of the 376,348 emails analyzed this year contain 'Serious' or 'Critical' accessibility defects leaving only a 0.002% pass rate represented by just eight emails from three brands.
 
-This year's report we are also looking beyond the sender and at widely-used sender platforms with built-in email build/authoring tools. We audited 10,566 emails sent via Substack, Shopify and Beehiiv. None passed our automated testing.
+This year's report we are also looking beyond the sender and at widely-used newsletter platforms with built-in email build/authoring tools. We audited 10,566 emails sent via Substack, Shopify and Beehiiv. None passed our automated testing.
 
 When it comes to email clients, we have taken a deeper look this year, nearly doubling our email client accessibility criteria from 20 to [37 feature benchmarks](/en/reports/email-clients/feature-support-rankings/). The data is clear: a major reason why accessibility is failing in email is a lack of implementation.
 
@@ -77,9 +77,10 @@ And to scale these results, high-performing teams are moving toward accessible d
 
 #### Email clients
 
-> TODO - looks like we need to update the feature rankings as some seem to be out of date.
+This year we nearly doubled our email client accessibility criteria from 20 to [37 feature benchmarks](/en/reports/email-clients/feature-support-rankings/). No client supports all of them, but we recognize the progress from leaders like Apple Mail (34/37 on macOS), Samsung Email (31/37), and Proton Mail (29/37).
 
-<br />
+Other email clients should aim to follow suit. We understand there are concerns around allowing certain HTML/CSS features that could potentially be exploited by malicious senders. If that applies to an accessibility feature, suitable workarounds or fallback options should be provided. The EMC would love to work closely with more email clients to help facilitate this.
+
 
 ---
 
@@ -89,12 +90,15 @@ And to scale these results, high-performing teams are moving toward accessible d
 
 The data was sourced by the Email Markup Consortium Data Collection project between May 2025 and May 2026. We collected 376,404 emails from multiple industries across multiple languages. 
 
-- Number of emails collected between May 2025 and May 2026: 376,404
+- Number of emails collected between May 2025 and May 2026: 376,404 (~15% fewer than last year)
 - Number of emails that could not be analyzed (due to invalid code): 56
 - Number of emails analyzed: 376,348
 
 To learn more about and help expand our dataset of emails, visit the [Data Collection Project](/en/projects/#data-collection).
 
+#### The Email Markup Database
+
+In alignment with our commitment to transparency and collaboration, the broader trends of our data can be found on the [Email Markup Database](https://database.emailmarkup.org/), which serves as a comprehensive, continuosly updated repository of real-world HTML and CSS usage metrics in email.
 
 ### Testing methodology
 
@@ -337,7 +341,7 @@ Maizzle has always been about giving developers full control over their HTML, bu
 If you're building for email, accessibility shouldn't feel like extra work or something you tack on later. It should come through in your workflows, your components, your templates and your documentation. It's about giving developers a solid baseline to build from.
 </Quote>
 
-The only rule that has increased is "Missing `<title>` element", this in mainly a rule for the "view in browser" link that many emails include. If there is no browser version, or if the browser version has a `<title>` inserted into it, then this rule doesn't matter and the email would pass manual testing.
+The only rule that has increased in percentage of tested emails is, "Missing `<title>` element", this is mainly a rule for the "view in browser" link that many emails include. If there is no browser version, or if the browser version has a `<title>` inserted into it, then this rule doesn't matter and the email would pass manual testing.
 
 The data suggests things are improving or at minimum the industry is learning to "pass the test". This is a good start. We recommend senders include automated testing as part of their QA workflow. However, accessibility isn't a simple checklist and manual testing remains more reliable and is highly needed in the industry.
 
@@ -382,7 +386,7 @@ The newsletter platforms are [Substack](https://substack.com/) and [Beehiiv](htt
 
 The marketing platform is [Shopify's built-in email marketing solution](https://www.shopify.com/ae/email-marketing). The platform provides a visual email builder. While it also provides the ability to upload custom HTML, we only looked at ecommerce brands sending their marketing emails using Shopify's default sending domain `shopifyemail.com`. A brand not sending marketing emails from its own domain is unlikely to be using custom HTML.
 
-We detected 6,909 Substack emails, 1,468 Shopify emails, and 2,189 Beehiiv emails. These have only been tracked for the last six months; emails from these senders may still appear in the full twelve months of data used elsewhere in this report.
+We detected 6,909 Substack emails, 1,468 Shopify emails, and 2,189 Beehiiv emails. These have only been tracked for the last six months, however emails from these senders may still appear in the full twelve months of data used elsewhere in this report.
 100% of the emails found from each of these platforms failed out testing.
 
 These results don't necessarily reflect issues with the platforms. The issues could also come down to user choices. However, it is the responsibility of these platforms to help guide their users toward more accessible choices.
@@ -415,15 +419,18 @@ These results don't necessarily reflect issues with the platforms. The issues co
 
 
 ### Limits of automated testing
-It is also worth mentioning that passing automated testing does not guarantee that an email is accessible. Email that pass our checks may still have accessibility issues that we cannot pick up through automated testing. For example, we check if an alt attribute is present on an `<img>` tag, but we do not check if the text is suitable for that image in the context of that message. 
 
-Something like a `<title>` element is not required for an email to be accessible, however a large number of emails have a view in browser version that shows the same content. In this context `<title>` is required. If there is no browser version, or if the browser version has a `<title>` inserted into it, then this rule doesn't matter and the email would pass manual testing.
+Passing automated testing does not guarantee real-world accessibility. Automated testing tools, like Parcel's accessibility checker, are great at verifying the presence of compliant syntax or comparing computed values against accessibility guidelines, but they cannot evaluate intent.
 
-Advances in AI can help with picking up some of the more nuanced issues such as:
- * Checking the `lang` and `dir` attributes against the language used in the email.
- * Checking the `alt` attribute against the image content, as well as looking at the context in which the image is used in the email.
- * More advanced checks on non-descriptive link text rather than just comparing to a list of generic text.
- * Checking semantic mark up again design and content.
+For example, an automated checker can verify that an `<img>` tag has an `alt` attribute, but it cannot determine if the alternative text is suitable for that image in the context of that message.
+
+Another context-dependent example is the missing `<title>` element. While critical to aid browser-tab navigation in the "View in Browser" (web fallback) version of the email, it is functionally redundant if an email doesn't provide a web fallback.
+
+Advances in AI can help bridge the gap between automated syntax checking and manual inspection by picking up some of the more nuanced issues such as:
+ * Localization: validating the values of the `lang` and `dir` attributes against the language used in the email.
+ * Image analysis: checking the value of the `alt` attribute against the image content, as well as looking at the context in which the image is used in the email.
+ * Link evaluation: evaluating whether the link text provides a clear description of the destination based on the context rather than simply comparing the text to to a list of common phrases.
+ * Design and code alignment: Checking semantic markup again design and content.
  
 However, this is still not a replacement for manual testing. It's just a way to help speed up the process and catch some of the more common issues. Manual testing is still required to ensure the email is accessible to all users.
 
@@ -442,15 +449,11 @@ Automated checkers are a useful starting point, but manual and user testing are 
 
 ### Conclusions
 
-Once again, we are disappointed to see the same issues as we have in previous years. The top 10 issues remain the same.
+While a number of individual developers, email frameworks and email build tools have made improvements, the real-world impact is being diluted by a massive volume of HTML emails poorly created by a combination of legacy tools, unguided user behaviour and uneducated developers. The fact that simple tag attribute failures still dominate our top 10 issues proves this
 
-We are aware of email developers, building tools, email frameworks and emails clients making updates to improve accessibility but that's only having minimal impact in the real world emails we are looking at. 
+There is a real need to shift accessibility checks from a post-build step to an integrated always-on process during build. Email frameworks and visual builders need to implement real-time linting and constraints warning their users of accessibility issues they're producing. As a user selects a color, run a contrast check. As a user adds an image, help them with alt text. As they add a heading, make sure it's not skipping levels.
 
-We know there are a few people doing some good work but we need to see bigger improvements from a much wider range of sources. 
-
-One underused opportunity could be building tools and frameworks flagging warnings for accessibility issues in real time rather than asking users to run checks. As a user selects a color, run a contrast check. As a user adds an image, help them with alt text. As they add a heading, make sure it's not skipping levels.
-
-It would also be great to see more email clients supporting accessibility focused HTML and CSS features. And also better documenting the feature they support and recommending how to work within their limitations.
+Senders cannot fully work around email clients limitations and produce fully accessible HTML messages. When an email client intentionally strips or alters semantic markup it has a clear responsibility to document these breaking changes. The data in the next section backs this.
 
 ---
 
@@ -461,6 +464,8 @@ It would also be great to see more email clients supporting accessibility focuse
 This data comes from our [Email Client Feature Support Rankings](/en/reports/email-clients/feature-support-rankings/), which is based on the features tested on ["Can I Email?"](https://www.caniemail.com/). The Email Markup Consortium in collaboration with [Flourish](https://flourishworld.com/), directly contribute to the ["Can I Email?"](https://www.caniemail.com/) project.
 
 The following 37 HTML/CSS features have been identified as features that help developers build accessible HTML emails:
+
+To reflect the constant evolution of modern front-end development, we have expanded our email client accessibility criteria this year from 20 to 37 core HTML/CSS features, which represent the technical stack required to author semantic and accessible HTML messages. These features are essential  for adaptive rendering, focus management, keyboard navigation and assistive technology compatibility.
 
 #### CSS features:
 
@@ -502,7 +507,7 @@ The following 37 HTML/CSS features have been identified as features that help de
   1. `<picture>` element
   1. `role` attribute
   1. `<ruby>` element
-  1. HTML5 semantics
+  1. HTML5 semantics (`<article>`, `<aside>`, `<details>`, `<figcaption>`, `<figure>`, `<footer>`, `<header>`, `<main>`, `<mark>`, `<nav>`, `<section>`, `<summary>`, `<time>`)
   1. `<table>` element
 
 These features were tested on 43 email clients:
@@ -553,13 +558,31 @@ These features were tested on 43 email clients:
 
 ### Testing methodology
 
-For a HTML/CSS feature to be tested, a reduced test case is created and sent to various inboxes. The rendered code by the email client is examined to determine whether an email client supports a feature. This is a very manual process so it can take a while to update if an email client adds or removes a feature.
+For a HTML/CSS feature to be tested, a reduced test case is created and sent to various inboxes. The rendered code by the email client is examined to determine whether an email client supports a feature. This is a very manual process. Plus, the lack of documentation by email clients makes it harder to know what to test (or re-test). As a result, a delay in reflecting the feature support for each email client is expected.
+
+We encourage transparency. If you are an engineer or a product owner working on an email clients, you can update your product's data on [Can I Email?](https://github.com/HTeuMeuLeu/caniemail). [ProtonMail](https://proton.me/mail) is now a regular contributor. [Jen Simmons](https://www.linkedin.com/in/jensimmons/) from Apple (Safari & Webkit) is another notable contributor to the project.
+
+<Quote
+  author="Nicolas Hoffmann"
+  role="Senior UX Engineer & UXE Team leader"
+  avatar="/img/people/nicolas-hoffmann.jpg"
+  companyLogo="/img/logo-proton-mail.png"
+  companyName="Proton Mail"
+>
+We're big believers in the EMC's mission. Their latest report helped us realize that our public documentation didn't actually reflect the progress we had made; we actually supported more accessibility-related features than we were getting credit for! Fixing that was just the start. Since then we have launched a wider effort to align our cross-platform implementations and automate our accessibility testing. The work is ongoing.
+
+For any engineers or PMs looking to improve their products: the EMC has already done the heavy lifting of identifying what matters. It's a fantastic starting point for making a real impact on the user experience.
+</Quote>
 
 ### Email client results
 
 This report looks at how well **HTML and CSS used inside email messages** are supported when those messages are rendered in a client. It does **not** assess the accessibility of the **email client application itself**. For example, the client’s own interface, keyboard navigation, or how well the client works with assistive technology is not part of the audit.
 
-No email client in this round supported all **37** accessibility features. The highest score was **34/37** (Apple Mail on macOS). However, those 3 failing tests all have partial support. Samsung with a score of 31/37 only has 2 failing tests, one point is lost for a partially supported test and 3 are untested. Also credit to ProtonMail with a score of 29/37 we know the team there have been doing a lot of good work and seeing some big improvements in the results here.
+No email client currently supports all **37** accessibility features, but there are notable results.
+
+1. Apple Mail: The highest score is **34/37** (Apple Mail on macOS). However, those 3 failing tests all have partial support.
+1. Samsung Email is second with a score of 31/37 only has 2 failing tests, one point is lost for a partially supported test and 3 are untested.
+1.  ProtonMail  scored  29/37. We are in communication with the team and know they have been doing a lot of good work and allocating regular resource for this. 
 
 The table below lists every client tested and how many of the 37 features it supports.
 
@@ -568,8 +591,7 @@ The table below lists every client tested and how many of the 37 features it sup
 | 34 | Apple Mail (MacOS) |
 | 31 | Apple Mail (iOS) |
 | 31 | Samsung Email (Android) |
-| 29 | ProtonMail (Desktop webmail) |
-| 29 | ProtonMail (iOS) |
+| 29 | ProtonMail (Desktop webmail), ProtonMail (iOS) |
 | 26 | ProtonMail (Android) |
 | 25 | Outlook (Android) |
 | 25 | Mozilla Thunderbird (MacOS) |
@@ -620,24 +642,14 @@ The table below lists every client tested and how many of the 37 features it sup
 - **CSS preference media queries** (for example `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)`): needed to respect system appearance and user preferences.
 - **Other CSS** that often lags in clients includes `color-scheme`, `light-dark()`, `cursor`, `font-size-adjust`.
 
-For some of the newer CSS features like `light-dark()`, it's understandable that email clients may be a bit behind web. However, for features like `:hover`, `:focus` that have been in the CSS specification since 1998 and are supported by all modern browsers, it's very disappointing to not support them.
-
-<Quote
-  author="Nicolas Hoffmann"
-  role="Senior UX Engineer & UXE Team leader"
-  avatar="/img/people/nicolas-hoffmann.jpg"
-  companyLogo="/img/logo-proton-mail.png"
-  companyName="Proton Mail"
->
-We're big believers in the EMC's mission. Their latest report helped us realize that our public documentation didn't actually reflect the progress we had made; we actually supported more accessibility-related features than we were getting credit for! Fixing that was just the start. Since then we have launched a wider effort to align our cross-platform implementations and automate our accessibility testing. The work is ongoing.
-
-For any engineers or PMs looking to improve their products: the EMC has already done the heavy lifting of identifying what matters. It's a fantastic starting point for making a real impact on the user experience.
-</Quote>
+For some of the newer CSS features like `light-dark()`, it's understandable that email clients may be a bit behind web. However, for features like `:hover`, `:focus` that have been in the CSS specification since 1998 and have been supported by all modern browsers for long time, it's very disappointing to not support them for email as well.
 
 
 #### Gmail
 
-Gmail’s scores in this set range from **15/37** (iOS, Android, and mobile webmail) to **17/37** (desktop webmail). At the time of writing, Gmail still does not support key preference-driven features such as `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)` in a way authors can depend on. For a company that promotes an accessible web, that gap remains a notable inconsistency. The issue is made worse by the forced dark mode that Gmail enforces, which take control away from the sender and often results in color contrast issues.
+Gmail’s scores in this set range from **15/37** (iOS, Android, and mobile webmail) to **17/37** (desktop webmail). At the time of writing, Gmail still does not support key preference-driven features such as `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)` in a way authors can depend on. The issue is made worse by the forced dark mode that Gmail enforces, which take control away from the sender and often results in color contrast issues.
+
+For a company that promotes an accessible web, that gap remains a notable inconsistency. Google has been listed in 2026's [Forbes Accessibility 200](https://www.forbes.com/lists/accessibility/). It is recognized globally for its good accessibility work. This makes it really difficult to reconcile their excellent accessibility work in the digital space with the limited attention to accessibility support in Gmail, one of their main products.
 
 #### Outlook
 
@@ -654,9 +666,15 @@ Yahoo Mail scored **16/37** on desktop webmail and on Android, and **14/37** on 
 
 The state of accessibility in email clients reflects the broader challenges facing the email ecosystem: a lack of coordination, missing standards, and uneven support for fundamental features.
 
-The Email Markup Consortium is looking to help close these gaps. Our mission is to bring greater consistency to how email clients handle code and to empower everyone to build better, more inclusive experiences. Accessibility isn’t an optional enhancement; it’s a core part of delivering reliable, user-centered communication.
+The Email Markup Consortium rejects the notion that the inbox must remain a sub-standard tier of the web. Regardless of the lack of markup standards in email, given the regular advances in front-end technology, the poor state of accessibility in email clients is a reflection of architecture and product choices.
 
-Real change will require a commitment from the email clients to implement and maintain support for accessibility standards. As well as commitments from senders to create and send more accessible messages. By working together toward an open, reliable, and inclusive email ecosystem, we move closer to a future where no user is left behind.
+We urge email clients to audit their HTML sanitizers on a regular basis. Security constraints do not require the stripping of most (if not all) of the accessibility-related HTML/CSS features in our benchmark. 
+
+Real change  requires email clients to treat accessibility support with the same engineering attention allocated to security, performance and privacy. It requires a commitment from the email clients to implement and maintain support for accessibility standards. Commitments from senders to create and send more accessible messages cannot go beyond the limits imposed by email clients. 
+
+We believe email clients, ESPs, build tools and senders can work together toward an open, reliable, and inclusive email ecosystem. This ultimately benefits the end users (recpients) the most. In order to get there, all parties must understand their role and responsibility in this unique ecosystem.  
+
+[Our mission](https://emailmarkup.org/en/docs/vision/) is to bring greater consistency to how email clients handle code and to empower everyone to build better, more inclusive experiences. Accessibility isn’t an optional enhancement; it’s a core part of delivering reliable, user-centered communication.
 
 
 

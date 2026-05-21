@@ -22,7 +22,7 @@ When it comes to email clients, we have taken a deeper look this year, nearly do
 > **Result**
 >
 > - 99.88% of HTML emails tested contain accessibility issues categorized as “Serious” or “Critical”.
-> - Only 8 emails (< 0.002%) passed all accessibility checks. These emails came from just three separate brands!
+> - Only 8 emails (0.002%) passed all accessibility checks. These emails came from just three separate brands!
 > - The majority of the issues are not edge cases. These are basic, machine-checkable accessibility failures.
 > - No email clients support all HTML/CSS accessibility features tested on "Can I Email?"
 
@@ -349,7 +349,7 @@ The data suggests things are improving or at minimum the industry is learning to
 For this year's report, we again examined email messages sent by `.edu` (education) domains and `.gov` (government) domains. These are two sectors in which accessibility is not negotiable and should be held to a higher standard. 
 
 #### Education
-We found 115 emails from education domains. 100% failed accessibility tests. 2% with Critical issues and 98% with Serious issues.
+We found 115 emails from education domains. 100% triggered at least one failure in our automated accessibility testing. 2% with Critical issues and 98% with Serious issues.
 
 Only 2 emails failed with a Critical issue, and that was the same issue across both. **Images must have alternate text**.
 
@@ -366,7 +366,7 @@ And all but 1 email had tables used for formatting that should have the `role` a
 On the positive side, we're not seeing many emails with missing alt attributes in images, only 1.74% compared to overall 47.88%. And we didn't detect any color contrast issues. The sample size is small but it's a good sign.
 
 #### Government
-We found 2,124 emails from government domains. 100% failed accessibility tests. 7% with Critical issues and 93% with Serious issues.
+We found 2,124 emails from government domains. 100% triggered at least one failure in our automated accessibility testing. 7% with Critical issues and 93% with Serious issues.
 
 The most common Critical issue was **Images must have alternate text** (5.3%), we're also seeing about 1.6% with **VML must have alternate text** (34 emails). As well as issues with **Zooming and scaling must not be disabled** (14 emails).
 
@@ -463,9 +463,9 @@ Senders cannot fully work around email client limitations and produce fully acce
 
 This data comes from our [Email Client Feature Support Rankings](/en/reports/email-clients/feature-support-rankings/), which is based on the features tested on ["Can I Email?"](https://www.caniemail.com/). The Email Markup Consortium in collaboration with [Flourish](https://flourishworld.com/), directly contribute to the ["Can I Email?"](https://www.caniemail.com/) project.
 
-The following 37 HTML/CSS features have been identified as features that help developers build accessible HTML emails:
-
 To reflect the constant evolution of modern front-end development, we have expanded our email client accessibility criteria this year from 20 to 37 core HTML/CSS features, which represent the technical stack required to author semantic and accessible HTML messages. These features are essential  for adaptive rendering, focus management, keyboard navigation and assistive technology compatibility.
+
+The following 37 HTML/CSS features have been identified as features that help developers build accessible HTML emails:
 
 #### CSS features:
 
@@ -510,7 +510,7 @@ To reflect the constant evolution of modern front-end development, we have expan
   1. HTML5 semantics (`<article>`, `<aside>`, `<details>`, `<figcaption>`, `<figure>`, `<footer>`, `<header>`, `<main>`, `<mark>`, `<nav>`, `<section>`, `<summary>`, `<time>`)
   1. `<table>` element
 
-These features were tested on 43 email clients:
+#### These features were tested on 43 email clients:
 
 1. Gmail (Desktop webmail)
 1. Gmail (iOS)
@@ -649,13 +649,15 @@ For some of the newer CSS features like `light-dark()`, it's understandable that
 
 Gmail’s scores in this set range from **15/37** (iOS, Android, and mobile webmail) to **17/37** (desktop webmail). At the time of writing, Gmail still does not support key preference-driven features such as `@media (prefers-color-scheme)` and `@media (prefers-reduced-motion)` in a way authors can depend on. The issue is made worse by the forced dark mode that Gmail enforces, which takes control away from the sender and often results in color contrast issues.
 
-For a company that promotes an accessible web, that gap remains a notable inconsistency. Google has been listed in 2026's [Forbes Accessibility 200](https://www.forbes.com/lists/accessibility/). It is recognized globally for its good accessibility work. This makes it really difficult to reconcile their excellent accessibility work in the digital space with the limited attention to accessibility support in Gmail, one of their main products.
+For a company that promotes an accessible web, that gap remains a notable inconsistency. Google has been listed in 2026's [Forbes Accessibility 200](https://www.forbes.com/lists/accessibility/). It is recognized globally for its good accessibility work. This makes it really difficult to reconcile their excellent accessibility work in the digital space with the limited support for accessibility-related features in Gmail, one of their main products.
 
 #### Outlook
 
 Outlook’s results are split by platform: **Outlook (Android)** is among the stronger clients (**25/37**), while **Outlook (Windows)** (**11/37**) and **Outlook (Windows mail)** (**8/37**) sit much lower. **Outlook (outlook.com)** scored **20/37**, and **Outlook (macOS)** and **Outlook (iOS)** each scored **22/37**. The legacy Outlook for Windows desktop app still leaves many accessibility-oriented features unsupported for a large share of enterprise and government users who cannot choose another client.
 
 The good news is that Microsoft is deprecating the legacy Windows app and moving toward a more unified rendering story across its clients; several Outlook surfaces already score meaningfully higher than classic Outlook for Windows in this feature set.
+
+The ongoing retirement of legacy Outlook rendering engines on Windows presents a major opportunity for accessibility improvements across the Microsoft email ecosystem. The step Microsoft is taking here makes the goal of enforcing markup standards in the email industry more feasible.
 
 #### Yahoo
 

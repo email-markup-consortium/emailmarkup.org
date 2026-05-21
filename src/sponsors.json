@@ -16,14 +16,6 @@
     "partner": false
   },
   {
-    "name": "Mailjet",
-    "link": "https://www.mailjet.com",
-    "logo": "/img/logo-mailjet.png",
-
-    "sponsor": true,
-    "partner": false
-  },
-  {
     "name": "Parcel",
     "link": "https://parcel.io",
     "logo": "/img/logo-parcel.png",

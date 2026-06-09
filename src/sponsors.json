@@ -38,5 +38,13 @@
 
     "sponsor": false,
     "partner": true
+  },
+  {
+    "name": "Migma",
+    "link": "https://migma.ai",
+    "logo": "/img/logo-migma.svg",
+
+    "sponsor": true,
+    "partner": false
   }
 ]

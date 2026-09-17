@@ -48,21 +48,25 @@ To work around that we can reset the supported color schemes with some CSS on th
 This additional code is only needed if you are planning on setting your own dark styles.
 
 
-## Recommendations
-It's tempting to add this in to all templates as a blanket fix, however it's important to remember that these users have set a preference for dark mode, therefore would prefer emails that showed as dark. If the current dark conversion is acceptable for you then it may be best to leave things as they are.
+## Recommendations for senders and developers
+It's tempting to add this in to all templates as a blanket fix. However it's important to remember that these users have set a preference for dark mode, therefore would prefer emails that showed as dark. If the current dark conversion is acceptable for you then it may be best to leave things as they are.
 
-If you are working on an email design system, an email building tool or an email framework, having this as an optional setting is probably the best way to go. Allowing users to choose on a case by case basis if they want to:
+If you maintain an email design system, building tool, or framework, setting this up as an opt-in toggle is the ideal approach. This gives developers the flexibility to choose on a case-by-case basis:
 * Block Gmail dark mode
 * Block Gmail but allow custom dark mode
 * Leave Gmail as it is
 
-One thing that feels counterintuitive is setting this `light only` value when your email is already designed as dark. However this is one of the best use cases for it as it will stop the iOS Gmail app from turning a dark email light.
+While setting a `light only` meta tag on an email already designed in dark mode seems counterintuitive, it is actually one of the most effective use cases. It prevents the iOS Gmail app from running the luminance inversion that turns your dark email light.
 
-## Is this the best solution
-Allowing full customization of dark mode is the dream for a lot of senders. However email clients have their reasons for not allowing this. So there is a need to find a compromise.
+## The path forward for email clients
+Blocking forced dark mode is a good start. It's a quick fix to the problem, however it brings back the original issue that forced dark mode was intended to fix. We are no longer respecting the user's preference.
 
-Forcing a dark theme is a good solution for simple text based emails, but falls down quickly as more design features are added.
+Allowing senders full customization of dark mode with `@media (prefers-color-scheme: dark)` is the ideal solution. [A number of email clients support this already](https://www.caniemail.com/features/css-at-media-prefers-color-scheme/) but some may still have their reasons for not allowing this. 
 
-This option allowing senders to block forced dark mode is a useful feature, an easy fix to implement and definitely a big improvement. 
+Alternatively using [CSS `light-dark()` functions](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark) would allow senders to set a preferred light and dark options for each color used. Alongside that a `<picture>` element could allow for sending preferred light and dark image option.
 
-We would have preferred to see something more granular, if media queries are an issue perhaps allowing users to set alternate colors with [CSS `light-dark()` functions](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark), or perhaps allowing senders to set [CSS `color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme) only on the problem areas, still allowing for some forced dark conversion where it works well.
+Another option, following Gmail's example of using `color-scheme` but instead done via [CSS `color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme) so it could be applied only where needed. Setting a header to `light only` so the transparent logo still shows, setting the main text content to `light dark` so it can be automatically converted for easier reading, and setting a footer to be `dark only`.
+
+The shared goal here is to support the end users. If they have stated a preference for a dark theme, that should be provided to them. The HTML and CSS spec has provided the solutions so it's down to senders and email clients to work on a way to use them.
+
+

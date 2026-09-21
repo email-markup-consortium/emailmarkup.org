@@ -2,7 +2,7 @@
 title: Gmail app dark mode update
 description: Gmail has updated to allow senders to block the forced dark mode conversion of emails.
 author: mark-robbins
-pubDate: 2026-09-14
+pubDate: 2026-09-21
 published: true
 layout: "@layouts/BlogLayout"
 ---

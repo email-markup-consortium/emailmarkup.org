@@ -5,9 +5,19 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
+## Attributes
+
+This element has no element-specific attributes.
+
 ## Recommendation
 
 It is highly recommended for an email client to support the `<strong>` element given the semantic meaning it gives its contents.
+
+## Impacts
+
+### Accessibility
+
+Preserving strong-importance markup retains the author’s intended meaning. Assistive technology does not consistently announce bold styling, so styling alone should not carry essential information.
 
 ## Resources
 

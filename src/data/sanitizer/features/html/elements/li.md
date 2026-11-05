@@ -7,9 +7,8 @@ sidebarType: sanitizer
 
 ## Attributes
 
+- `type` - deprecated
 - `value`
-- `type` - deprecated, no longer part of the HTML Standard
-
 
 ## Recommendation
 
@@ -21,12 +20,10 @@ It is highly recommended for an email client to support the `<li>` element and i
 
 The `<li>` element is a semantic element. It is vital for other semantic elements to be useful such as `<ul>` and `<ol>`.
 
-
 ## Resources
 
 - [MDN: `<li>`: The List Item element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li)
 - [HTML Standard: The `li` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element)
-
 
 ## Email client compatibility
 

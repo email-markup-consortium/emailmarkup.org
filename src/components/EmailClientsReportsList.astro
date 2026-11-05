@@ -1,5 +1,8 @@
 ---
-let posts = await Astro.glob('../pages/en/reports/email-clients/*.(md|mdx)');
+let posts = Object.values(import.meta.glob([
+  '../pages/en/reports/email-clients/*.{md,mdx}',
+  '!../pages/en/reports/email-clients/index.mdx',
+], { eager: true }));
 posts = posts
 .filter(post => !post.file.endsWith('index.mdx'));
 ---

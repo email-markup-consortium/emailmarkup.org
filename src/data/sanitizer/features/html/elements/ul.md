@@ -5,9 +5,18 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
+## Attributes
+
+- `compact` - deprecated
+- `type` - deprecated
+
 ## Recommendation
 
 It is highly recommended for an email client to support the `<ul>` element.
+
+### Deprecated attributes
+
+The positive recommendation does not include the deprecated attributes listed above. Their handling is under active discussion.
 
 ## Impacts
 

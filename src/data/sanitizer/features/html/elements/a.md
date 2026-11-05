@@ -7,14 +7,21 @@ sidebarType: sanitizer
 
 ## Attributes
 
+- `attributionsrc` - deprecated
+- `charset` - deprecated
+- `coords` - deprecated
 - `download`
 - `href`
 - `hreflang`
+- `interestfor` - experimental
+- `name` - deprecated
 - `ping`
 - `referrerpolicy`
 - `rel`
+- `rev` - deprecated
+- `shape` - deprecated
 - `target`
-
+- `type`
 
 ## Recommendation
 
@@ -23,7 +30,6 @@ It is highly recommended for an email client to support the `<a>` element. Howev
 ### download
 
 The Email Markup Consortium does not have an official recommendation at this stage.
-
 
 ### href
 
@@ -35,30 +41,25 @@ The fact that a URI scheme is registered with IANA is not enough to determine th
 
 While the `href` is needed to make the `<a>` useful, the Email Markup Consortium does not currently have an official stance on what URI schemes should be considered safe. It is out of this project's scope at this stage.
 
-
 ### hreflang
 
 The `hreflang` attribute and its allowed values can be safely supported.
-
 
 ### ping
 
 The use of the `ping` attribute, while safe, is a privacy concern as it can be used for tracking the user. In fact, this feature is disabled by default on Firefox for this reason.
 
-However, marketing emails heavily use "click tracker" links; a URL with the sole purpose of tracking clicks and redirecting to the actual desired URL. 
+However, marketing emails heavily use "click tracker" links; a URL with the sole purpose of tracking clicks and redirecting to the actual desired URL.
 
 If click trackers are deemed safe, the `ping` attribute should be too. If used in place of click trackers, it may even elevate the user experience as the user would not need to wait for the click tracker to redirect them to the page they intend to visit.
-
 
 ### target
 
 It is not recommended to support the `target` attribute with all its values. The email client can determine how and where links are opened instead.
 
-
 ### referrerpolicy
 
 The Email Markup Consortium does not have an official recommendation at this stage.
-
 
 ### rel
 
@@ -66,13 +67,29 @@ If `target="_blank"` is used, it is advised to have `rel="noreferrer"` and `rel=
 
 Newer browser versions implicitly sets `rel="noopener"`.
 
+### type
+
+The `type` attribute can be supported as advisory metadata about the linked resource. It does not make the destination safe or determine which URL schemes are supported.
+
+### interestfor
+
+This section is under active discussion. Any supported target reference must remain within the email message.
+
+### Deprecated attributes
+
+The positive recommendation does not include the deprecated attributes listed above. Their handling is under active discussion.
+
+## Impacts
+
+### Privacy
+
+Following links can disclose recipient identifiers embedded in URLs. The `ping` attribute can send additional tracking requests when a link is followed; referrer handling also affects what information is disclosed.
 
 ## Resources
 
 - [MDN: `<a>`: The Anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
 - [HTML Standard: The `a` element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element)
 - [Some email clients are vulnerable to attacks via 'mailto' links](https://www.zdnet.com/article/some-email-clients-are-vulnerable-to-attacks-via-mailto-links/)
-
 
 ## Email client compatibility
 

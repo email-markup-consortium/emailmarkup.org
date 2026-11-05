@@ -5,10 +5,13 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
+## Attributes
+
+This element has no element-specific attributes.
+
 ## Recommendation
 
-It is highly recommended for an email client to support the `<span>` element. 
-
+It is highly recommended for an email client to support the `<span>` element.
 
 ## Impacts
 
@@ -20,12 +23,10 @@ In the context of email in which some HTML elements are expected not to be suppo
 
 While it does not have any semantic meaning on its own and is mainly used for styling, adding the `role` tag attribute can change the semantic meaning of a `<span>`. Supporting `<span>` allows the developer to group elements that semantically need to belong to the same parent or wrap some content that needs to belong to an element with a specific role.
 
-
 ## Resources
 
 - [MDN: `<span>`: The Content Span element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span)
 - [HTML Standard: The `span` element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element)
-
 
 ## Email client compatibility
 

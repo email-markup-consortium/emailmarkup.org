@@ -7,14 +7,14 @@ sidebarType: sanitizer
 
 ## Attributes
 
+- `compact` - deprecated
 - `reversed`
 - `start`
 - `type`
 
-
 ## Recommendation
 
-It is highly recommended for an email client to support the `<ol>` element and its attributes.
+It is highly recommended for an email client to support the `<ol>` element and its attributes (excluding the deprecated `compact` attribute).
 
 ## Impacts
 
@@ -24,7 +24,7 @@ The `<ol>` element is a semantic element. Assistive techology including screen-r
 
 ## Resources
 
-- [MDN: `<ol>`: The Unordered List element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
+- [MDN: `<ol>`: The Ordered List element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
 - [HTML Standard: The `ol` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element)
 - [Reversing an ordered list in HTML](https://www.tempertemper.net/blog/reversing-an-ordered-list-in-html)
 

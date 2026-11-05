@@ -5,10 +5,17 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
+## Attributes
+
+- `align` - deprecated
+
 ## Recommendation
 
-It is highly recommended for an email client to support the `<div>` element. 
+It is highly recommended for an email client to support the `<div>` element.
 
+### Deprecated attributes
+
+The positive recommendation does not include the deprecated attributes listed above. Their handling is under active discussion.
 
 ## Impacts
 
@@ -20,12 +27,10 @@ In the context of email in which some HTML elements are expected not to be suppo
 
 While it does not have any semantic meaning on its own and is mainly used for styling, adding the `role` tag attribute can change the semantic meaning of a `<div>`. Supporting `<div>` allows the developer to group elements that semantically need to belong to the same parent.
 
-
 ## Resources
 
 - [MDN: `<div>`: The Content Division element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
 - [HTML Standard: The `div` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element)
-
 
 ## Email client compatibility
 

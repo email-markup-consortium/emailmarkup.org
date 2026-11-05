@@ -5,9 +5,19 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
+## Attributes
+
+This element has no element-specific attributes.
+
 ## Recommendation
 
 It is highly recommended for an email client to support the `<em>` element given the semantic meaning it gives its contents.
+
+## Impacts
+
+### Accessibility
+
+Preserving emphasis retains the author’s intended meaning. Speech rendering varies between assistive technologies, so meaning should not depend on visual styling alone.
 
 ## Resources
 

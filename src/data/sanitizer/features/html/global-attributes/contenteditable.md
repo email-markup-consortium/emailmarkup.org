@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `contenteditable` global attribute specifies whether an element can be edited by the user.
-
 ## Recommendation
 
 It is not recommended for an email client to support the `contenteditable` attribute.

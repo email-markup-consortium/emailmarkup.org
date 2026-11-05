@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `hidden` global attribute indicates to the browser that it should not render an element.
-
 ## Values
 
 The `hidden` attribute is an enumerated attribute that only accepts the following values:

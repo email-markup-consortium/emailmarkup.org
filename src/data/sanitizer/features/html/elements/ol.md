@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `<ol>` element represents an ordered list of items.
-
 ## Attributes
 
 - `reversed`

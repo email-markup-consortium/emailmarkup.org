@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `lang` global attribute defines the language of an HTML element and its children (unless otherwise overwritten).
-
 ## Recommendation
 
 It is highly recommended for an email client to support the `lang` attribute on all HTML tags as it provides key metadata to assistive technology such as screen readers and translation software.

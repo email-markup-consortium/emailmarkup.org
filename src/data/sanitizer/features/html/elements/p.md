@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `<p>` HTML element represents a paragraph. It is one of the most common semantic HTML elements.
-
 ## Recommendation
 
 It is highly recommended for an email client to support the `<p>` element.

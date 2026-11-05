@@ -5,9 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `<ul>` element represents an unordered list of items.
-
-
 ## Recommendation
 
 It is highly recommended for an email client to support the `<ul>` element.

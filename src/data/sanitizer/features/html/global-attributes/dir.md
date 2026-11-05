@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `dir` global attribute sets the direction of an element's text (left-to-right or right-to-left).
-
 ## Recommendation
 
 It is highly recommended for an email client to support the `dir` attribute. It allows the author to set the direction of the text in the HTML message. 

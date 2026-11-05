@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `<strong>` HTML element is a semantic element whose content is considered of strong importance.
-
 ## Recommendation
 
 It is highly recommended for an email client to support the `<strong>` element given the semantic meaning it gives its contents.

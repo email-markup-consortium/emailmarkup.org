@@ -12,11 +12,7 @@ sidebarType: sanitizer
 
 ## Recommendation
 
-It is highly recommended for an email client to support the `<dialog>` element.
-
-### open and closedby
-
-It is highly recommended to support `open` and `closedby` when the client can preserve their native display and dismissal behavior within the message. Modal activation and focus management require separate handling for each embedding context.
+This section is under active discussion.
 
 ## Impacts
 

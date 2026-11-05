@@ -16,7 +16,7 @@ sidebarType: sanitizer
 
 ## Recommendation
 
-It is highly recommended for an email client to support the `<meter>` element and its attributes.
+This section is under active discussion.
 
 ## Impacts
 

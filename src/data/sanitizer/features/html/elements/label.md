@@ -11,11 +11,7 @@ sidebarType: sanitizer
 
 ## Recommendation
 
-It is highly recommended for an email client to support the `<label>` element.
-
-### for
-
-It is highly recommended to support `for`. If control IDs are rewritten, update the label’s reference and keep it within the email message.
+This section is under active discussion.
 
 ## Impacts
 

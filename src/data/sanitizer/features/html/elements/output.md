@@ -13,11 +13,7 @@ sidebarType: sanitizer
 
 ## Recommendation
 
-It is highly recommended for an email client to support the `<output>` element.
-
-### for, form, and name
-
-It is highly recommended to support these attributes. If IDs are rewritten, update every referenced control and form ID while keeping references within the email message.
+This section is under active discussion.
 
 ## Impacts
 

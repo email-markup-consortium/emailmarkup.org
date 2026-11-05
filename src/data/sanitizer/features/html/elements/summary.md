@@ -11,7 +11,7 @@ This element has no element-specific attributes.
 
 ## Recommendation
 
-It is highly recommended for an email client to support the `<summary>` element.
+This section is under active discussion.
 
 ## Impacts
 

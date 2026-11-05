@@ -17,15 +17,7 @@ sidebarType: sanitizer
 
 ## Recommendation
 
-It is highly recommended for an email client to support the `<select>` element.
-
-### autocomplete, disabled, multiple, name, required, and size
-
-It is highly recommended to preserve these attributes when their associated native control behavior is supported. The client’s handling of form submission remains under active discussion.
-
-### form
-
-It is highly recommended to preserve the form association when the referenced form is supported. Update the reference if the form’s ID is rewritten and keep it within the email message.
+This section is under active discussion.
 
 ## Impacts
 

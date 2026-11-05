@@ -12,11 +12,7 @@ sidebarType: sanitizer
 
 ## Recommendation
 
-It is highly recommended for an email client to support the `<details>` element.
-
-### open and name
-
-It is highly recommended to support `open` and `name`. If names are rewritten to isolate mutually exclusive disclosure groups, preserve grouping within the message and avoid collisions with groups in the email client’s interface.
+This section is under active discussion.
 
 ## Impacts
 

@@ -13,15 +13,7 @@ sidebarType: sanitizer
 
 ## Recommendation
 
-It is highly recommended for an email client to support the `<fieldset>` element.
-
-### disabled and name
-
-It is highly recommended to support `disabled` and `name` when the associated controls are supported.
-
-### form
-
-It is highly recommended to preserve the form association when the referenced form is supported. If IDs are rewritten, update the reference and keep it within the email message.
+This section is under active discussion.
 
 ## Impacts
 

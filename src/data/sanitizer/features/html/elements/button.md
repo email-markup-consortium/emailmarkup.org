@@ -25,19 +25,7 @@ sidebarType: sanitizer
 
 ## Recommendation
 
-It is highly recommended for an email client to support the `<button>` element.
-
-### disabled, name, type, and value
-
-It is highly recommended to preserve these attributes when their associated behavior is supported. The `type` value determines whether a button submits, resets, or performs no default form action; submission and reset behavior remain under active discussion.
-
-### form, formaction, formenctype, formmethod, formnovalidate, and formtarget
-
-This section is under active discussion. These attributes can associate the button with a form or change where and how information is submitted. Form references must remain within the email message.
-
-### command, commandfor, popovertarget, popovertargetaction, and interestfor
-
-This section is under active discussion. Any supported target references must remain within the email message and must not control the email client’s interface.
+This section is under active discussion.
 
 ## Impacts
 

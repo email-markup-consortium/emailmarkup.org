@@ -1,12 +1,9 @@
 ---
-title: "<a>: The Anchor element"
+title: "<a>"
 description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
-
-The `<a>` element creates a hyperlink to anything a URL can address including web pages.
-
 
 ## Attributes
 

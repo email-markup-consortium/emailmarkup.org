@@ -1,11 +1,9 @@
 ---
-title: "<li>: The List Item element"
+title: "<li>"
 description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
-
-The `<li>` element represents an ordered list of items.
 
 ## Attributes
 

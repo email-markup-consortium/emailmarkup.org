@@ -1,11 +1,9 @@
 ---
-title: "<em>: The Emphasis element"
+title: "<em>"
 description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
-
-The `<em>` HTML element is a semantic element whose content is meant to stress emphasis.
 
 ## Recommendation
 

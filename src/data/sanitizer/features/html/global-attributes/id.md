@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `id` global attribute defines a unqiue identifier on an element.
-
 ## Recommendation
 
 It is highly recommended for an email client to support the `id` attribute.

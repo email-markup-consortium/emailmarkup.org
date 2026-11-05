@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `data-*` attributes provide a way for adding custom attribute to HTML elements in a standard way. They provide no functionality on their own, but can be accessed via CSS and JavaScript.
-
 ## Recommendation
 
 The Email Markup Consortium does not have an official stance yet.

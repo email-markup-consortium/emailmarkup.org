@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The WAI-ARIA (`aria-*`) attributes can be used to modify the accessibility tree of a document. This allows assistive technologies to interact differently with the document and present a different experience to users.
-
 ## Recommendation
 
 It is highly recommended for an email client to support the `aria-*` attributes. When used correctly, they can significantly improve the accessibility of the document.

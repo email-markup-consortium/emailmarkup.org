@@ -1,11 +1,9 @@
 ---
-title: "<strong>: The Strong Importance element"
+title: "<strong>"
 description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
-
-The `<strong>` HTML element is a semantic element whose content is considered of strong importance.
 
 ## Recommendation
 

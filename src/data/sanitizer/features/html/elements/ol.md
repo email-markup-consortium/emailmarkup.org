@@ -1,11 +1,9 @@
 ---
-title: "<ol>: The Ordered List element"
+title: "<ol>"
 description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
-
-The `<ol>` element represents an ordered list of items.
 
 ## Attributes
 

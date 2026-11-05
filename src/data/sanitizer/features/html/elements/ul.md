@@ -1,12 +1,9 @@
 ---
-title: "<ul>: The Unordered List element"
+title: "<ul>"
 description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
-
-The `<ul>` element represents an unordered list of items.
-
 
 ## Recommendation
 

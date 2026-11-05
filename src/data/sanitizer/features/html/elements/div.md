@@ -5,8 +5,6 @@ layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
 
-The `<div>` element is a generic container with no special meaning.
-
 ## Recommendation
 
 It is highly recommended for an email client to support the `<div>` element. 

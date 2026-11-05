@@ -1,11 +1,9 @@
 ---
-title: "<p>: The Paragraph element"
+title: "<p>"
 description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
 ---
-
-The `<p>` HTML element represents a paragraph. It is one of the most common semantic HTML elements.
 
 ## Recommendation
 

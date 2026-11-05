@@ -399,23 +399,19 @@ caniemail.data
                     <td>{unslugify(tagName)}</td>
 
                     <td>
-                      {features.y.length}
-                      {features.y.length ? <span>(<a href={getCaniemailFeaturesURL(features.y)}>view</a>)</span> : ''}
+                      {features.y.length}{features.y.length ? <span>(<a href={getCaniemailFeaturesURL(features.y)}>view</a>)</span> : ''}
                     </td>
 
                     <td>
-                      {features.a.length}
-                      {features.a.length ? <span>(<a href={getCaniemailFeaturesURL(features.a)}>view</a>)</span> : ''}
+                      {features.a.length}{features.a.length ? <span>(<a href={getCaniemailFeaturesURL(features.a)}>view</a>)</span> : ''}
                     </td>
 
                     <td>
-                      {features.n.length}
-                      {features.n.length ? <span>(<a href={getCaniemailFeaturesURL(features.n)}>view</a>)</span> : ''}
+                      {features.n.length}{features.n.length ? <span>(<a href={getCaniemailFeaturesURL(features.n)}>view</a>)</span> : ''}
                     </td>
 
                     <td>
-                      {findUntestedFeatures(tagName, features).length}
-                      {findUntestedFeatures(tagName, features).length
+                      {findUntestedFeatures(tagName, features).length}{findUntestedFeatures(tagName, features).length
                         ? <span>(<a href={getCaniemailFeaturesURL(findUntestedFeatures(tagName, features))}>view</a>)</span>
                         : ''}
                     </td>

@@ -1,5 +1,8 @@
 ---
-let posts = await Astro.glob('../pages/en/reports/accessibility/*.(md|mdx)');
+let posts = Object.values(import.meta.glob([
+  '../pages/en/reports/accessibility/*.{md,mdx}',
+  '!../pages/en/reports/accessibility/index.mdx',
+], { eager: true }));
 posts = posts
 .filter(post => !post.file.endsWith('index.mdx'))
 .sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());

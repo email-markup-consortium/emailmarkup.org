@@ -1,5 +1,5 @@
 ---
-title: "<br>: the Line Break element"
+title: "<br>"
 description: ""
 layout: "@layouts/MainLayout"
 sidebarType: sanitizer
